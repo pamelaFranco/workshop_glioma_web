@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: single
 title: "Envío de Resúmenes (Abstracts)"
 permalink: /resumenes/
 ---
