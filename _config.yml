@@ -1,15 +1,110 @@
-title: "Workshop: IA Interpretable en Neurooncología: Decodificando la severidad tumoral mediante resonancia multimodal"
-description: "Workshop: IA Interpretable en Neurooncología: Decodificando la severidad tumoral mediante resonancia multimodal"
-url: "https://pamelaFranco.github.io" # Cambiar por tu URL de GitHub Pages
-baseurl: "/workshop_glioma"          # El nombre de tu repositorio
+# Welcome to Jekyll!
+locale                  : "es-ES"
+site_theme              : "default" # Opciones: "default", "air", "sunrise", "mint", "dirt" y "contrast"
+title                   : "Workshop: IA Interpretable en Neurooncología"
+title_separator         : "-"
+name                    : "Workshop Neurooncología IA"
+description             : "Decodificando la severidad tumoral mediante resonancia multimodal"
+url                     : "https://pamelaFranco.github.io"
+baseurl                 : "/workshop_glioma_web"
+repository              : "pamelaFranco/workshop_glioma_web"
 
-# Información de Contacto (Extraída del README)
+# Site Author
 author:
-  name: "Workshop Neurooncología IA"
-  email: "neurooncologia.ia@gmail.com"
-  instagram: "neuro_artint"
+  name             : "Dra. Pamela Franco"
+  avatar           : "profile.png"
+  bio              : "IA e Interpretabilidad en Neurooncología"
+  location         : "Santiago, Chile"
+  employer         : "Universidad Andrés Bello"
+  email            : "neurooncologia.ia@gmail.com"
+  instagram        : "neuro_artint"
 
-# Configuración de Markdown
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+keep_files:
+  - .git
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
 markdown: kramdown
 highlighter: rouge
-permalink: /:categories/:title/
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Collections
+collections:
+  teaching:
+    output: true
+    permalink: /:collection/:path/
+  publications:
+    output: true
+    permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+  talks:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: true
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
+
+whitelist:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
