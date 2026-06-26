@@ -1,14 +1,13 @@
-# Navigation Links
 main:
   - title: "Inicio"
-    url: "/"
+    url: /
   - title: "Expositores"
-    url: "/expositores/"
+    url: /expositores/
   - title: "Actividades"
-    url: "/actividades/"
+    url: /actividades/
   - title: "Resúmenes"
-    url: "/resumenes/"
+    url: /resumenes/
   - title: "Publicaciones"
-    url: "/publicaciones/"
+    url: /publicaciones/
   - title: "FAQ"
-    url: "/faq/"
+    url: /faq/
