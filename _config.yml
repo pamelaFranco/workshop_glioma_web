@@ -21,8 +21,20 @@ author:
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/neuro_artint"
 
-# Menú superior simplificado para evitar errores de sintaxis
-site_navigation: main
+# Configuración nativa del menú superior (pestañas)
+navigation:
+  - title: "Inicio"
+    url: /
+  - title: "Expositores"
+    url: /expositores/
+  - title: "Actividades"
+    url: /actividades/
+  - title: "Resúmenes"
+    url: /resumenes/
+  - title: "Publicaciones"
+    url: /publicaciones/
+  - title: "FAQ"
+    url: /faq/
 
 defaults:
   - scope:
