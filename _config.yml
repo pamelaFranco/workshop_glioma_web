@@ -29,7 +29,5 @@ defaults:
       layout: "single"
       author_profile: true
       mathjax: true
-  - scope:
-      path: ""
-    values:
-      navigation: true
+      sidebar:
+        nav: "main"
