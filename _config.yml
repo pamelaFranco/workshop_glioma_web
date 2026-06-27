@@ -21,6 +21,9 @@ author:
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/neuro_artint"
 
+# Menú superior simplificado para evitar errores de sintaxis
+site_navigation: main
+
 defaults:
   - scope:
       path: ""
@@ -29,5 +32,3 @@ defaults:
       layout: "single"
       author_profile: true
       mathjax: true
-      sidebar:
-        nav: "main"
