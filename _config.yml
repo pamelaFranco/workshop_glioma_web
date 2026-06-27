@@ -18,7 +18,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/neuro_artint"
 
-# Activar la barra de navegación usando el archivo de _data
+# Menú superior mapeado de forma nativa
 site_navigation: main
 
 defaults:
