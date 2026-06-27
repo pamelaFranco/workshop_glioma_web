@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: single
 title: "Workshop: IA Interpretable en Neurooncología"
 permalink: /
 author_profile: true
