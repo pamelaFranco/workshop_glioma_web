@@ -3,6 +3,7 @@ description: "Decodificando la severidad tumoral mediante resonancia multimodal"
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 plugins:
   - jekyll-remote-theme
+markdown: kramdown
 
 baseurl: "/workshop_glioma_web"
 url: "https://pamelaFranco.github.io"
@@ -32,4 +33,3 @@ defaults:
       path: ""
     values:
       navigation: true
-
