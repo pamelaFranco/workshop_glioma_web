@@ -2,6 +2,7 @@
 layout: single
 title: "Actividades del Workshop"
 permalink: /actividades/
+mathjax: true
 ---
 
 La forma más sencilla de ejecutar el laboratorio es a través de **Google Colab**, ya que no requiere instalación local.

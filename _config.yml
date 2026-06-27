@@ -27,10 +27,9 @@ defaults:
     values:
       layout: "single"
       author_profile: true
-
-# Configuración del menú
-defaults:
+      mathjax: true
   - scope:
       path: ""
     values:
       navigation: true
+

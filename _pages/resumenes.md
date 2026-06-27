@@ -2,6 +2,7 @@
 layout: single
 title: "Envío de Resúmenes (Abstracts)"
 permalink: /resumenes/
+mathjax: true
 ---
 
 Invitamos a investigadores y especialistas a presentar trabajos relacionados con procesamiento de imágenes médicas, Machine Learning/Deep Learning y aplicaciones en salud.

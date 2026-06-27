@@ -2,6 +2,7 @@
 layout: single
 title: "Preguntas Frecuentes (FAQ)"
 permalink: /faq/
+mathjax: true
 ---
 
 1. **¿El workshop tiene algún costo asociado?** **No, el taller es totalmente gratuito.** Sin embargo, los cupos son limitados; para asegurar tu lugar, es indispensable completar el **formulario de inscripción**.

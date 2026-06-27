@@ -2,6 +2,7 @@
 layout: single
 title: "Publicaciones Asociadas"
 permalink: /publicaciones/
+mathjax: true
 ---
 
 Este laboratorio virtual implementa los hallazgos descritos en los estudios:

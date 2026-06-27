@@ -2,6 +2,7 @@
 layout: single
 title: "Expositores y Especialistas"
 permalink: /expositores/
+mathjax: true
 ---
 
 Contamos con un equipo multidisciplinario de expertos en física, ingeniería y oncología:
