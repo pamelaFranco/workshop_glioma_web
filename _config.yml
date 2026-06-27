@@ -2,6 +2,9 @@ title: "Workshop: IA Interpretable en Neurooncología"
 description: "Decodificando la severidad tumoral mediante resonancia multimodal"
 remote_theme: "mmistakes/minimal-mistakes"
 
+plugins:
+  - jekyll-remote-theme
+
 baseurl: "/workshop_glioma_web"
 url: "https://pamelaFranco.github.io"
 
@@ -18,8 +21,8 @@ author:
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/neuro_artint"
 
-# Menú superior mapeado de forma nativa
-site_navigation: main
+# Configuración estricta del menú superior para Minimal Mistakes
+site_navigation: "main"
 
 defaults:
   - scope:
