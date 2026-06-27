@@ -3,7 +3,9 @@ description: "Decodificando la severidad tumoral mediante resonancia multimodal"
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 plugins:
   - jekyll-remote-theme
+
 markdown: kramdown
+highlighter: rouge
 
 baseurl: "/workshop_glioma_web"
 url: "https://pamelaFranco.github.io"
@@ -21,20 +23,8 @@ author:
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/neuro_artint"
 
-# Configuración nativa del menú superior (pestañas)
-navigation:
-  - title: "Inicio"
-    url: /
-  - title: "Expositores"
-    url: /expositores/
-  - title: "Actividades"
-    url: /actividades/
-  - title: "Resúmenes"
-    url: /resumenes/
-  - title: "Publicaciones"
-    url: /publicaciones/
-  - title: "FAQ"
-    url: /faq/
+# Indicar al tema que use el menú de navegación principal
+site_navigation: "main"
 
 defaults:
   - scope:
