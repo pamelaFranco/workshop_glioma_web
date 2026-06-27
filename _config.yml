@@ -1,8 +1,10 @@
 title: "Workshop: IA Interpretable en Neurooncología"
 description: "Decodificando la severidad tumoral mediante resonancia multimodal"
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
+# Configuración oficial y limpia para GitHub Pages
+theme: jekyll-theme-minimal-mistakes
 plugins:
-  - jekyll-remote-theme
+  - jekyll-include-cache
 
 markdown: kramdown
 highlighter: rouge
@@ -23,8 +25,8 @@ author:
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/neuro_artint"
 
-# Indicar al tema que use el menú de navegación principal
-site_navigation: "main"
+# Activa el menú de navegación
+site_navigation: main
 
 defaults:
   - scope:
