@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "Alianzas"
-permalink: /alianzas/
+permalink: /contact/
 author_profile: true
 
 ---
