@@ -15,6 +15,11 @@
 
 ---
 <p align="center">
+
+  <a href="https://pamelafranco.github.io/workshop_glioma_web/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Sitio_Web-Oficial-0D9488?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Sitio Web Oficial" />
+  </a>
+
   <a href="https://docs.google.com/forms/d/e/1FAIpQLScVTNZGnZ7jFYkFfVNsTKiw_LQcgZfaXG4y_08lIPOTNVzjhA/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Inscripción-Presencial-074E8C?style=for-the-badge&logo=googleforms&logoColor=white" alt="Inscripción Presencial" />
   </a>
