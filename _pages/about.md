@@ -1,56 +1,115 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Workshop: IA Interpretable en Neurooncología"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
+![Banner](Figuras/banner.svg)
 
- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+# IA Interpretable en Neurooncología: Decodificando la severidad tumoral mediante resonancia multimodal
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+---
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+<p align="center">
+  <a href="https://www.ismrm.org/meetings-workshops/endorsement-request/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/ISMRT--Endorsed-Workshop-005A9C?style=for-the-badge" alt="ISMRT Endorsed">
+  </a>
+</p>
 
-For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting
+> **Gran Noticia / Announcement:** ¡Este Workshop cuenta con el **respaldo y endoso oficial de la ISMRT** (*International Society for Magnetic Resonance Technicians*)! El patrocinio institucional fue discutido y aprobado por el comité ejecutivo durante la reunión anual en Ciudad del Cabo (*Cape Town*).
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](https://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+---
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+## Enlaces de Interés y Registro
 
-Create content & metadata
-------
-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+<p align="center">
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScVTNZGnZ7jFYkFfVNsTKiw_LQcgZfaXG4y_08lIPOTNVzjhA/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Inscripción-Presencial-074E8C?style=for-the-badge&logo=googleforms&logoColor=white" alt="Inscripción Presencial" />
+  </a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSffyLNNJZKNM4mLKOeudr3ltQmXyKQiwgkqvS51f6Oqe73-_A/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Inscripción-Online-1182C4?style=for-the-badge&logo=zoom&logoColor=white" alt="Inscripción Online" />
+  </a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScrvB4-sUyraLQAthbE9K0Ph2O1xWT8xWlNHzRo8drDvrYp3Q/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Abstract-Enviar_aquí-402C7C?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Enviar Abstract" />
+  </a>
+</p>
 
-**Markdown generator**
+<p align="center">
+  <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Programa/Charlas___Workshop_IA_Interpretable_Neurooncologia.pdf" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Programa-PDF-A63737?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white" alt="Programa" />
+  </a>
+  <a href="https://www.instagram.com/neuro_artint/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Instagram-NeuroArtInt-F2A20C?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+  </a>
+  <a href="mailto:neurooncologia.ia@gmail.com">
+    <img src="https://img.shields.io/badge/Consultas-Email-38585B?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+</p>
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual Markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the Markdown files, then commit and push them to the GitHub repository.
+---
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and Markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+## Sobre el Workshop
 
-Example: editing a Markdown file for a talk
-![Editing a Markdown file for a talk](/images/editing-talk.png)
+Este encuentro ofrece una **inmersión teórico-práctica** en el pipeline avanzado de la neurooncología de precisión. A través de un enfoque multidisciplinario, el programa aborda de forma integral el ciclo de vida del dato médico: desde la biología molecular del glioma y los principios físicos esenciales en la adquisición de Resonancia Magnética (RM), hasta llegar al modelado predictivo de vanguardia mediante Inteligencia Artificial (IA) e interpretabilidad clínica.
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+### Ejes Temáticos Principales
+
+* **Física y Fisiología Avanzada:** Comprensión profunda de la señal BOLD, codificación en el Espacio K y técnicas de relajometría cuantitativa.
+* **Microestructura y Hemodinámica:** Análisis avanzado de difusión (DTI), tractografía y mecánica de fluidos mediante secuencias como TOF-MRA.
+* **IA Interpretable y Radiómica:** Transformación avanzada de imágenes biomédicas en biomarcadores minables. Decodificación, interpretabilidad visual y análisis de modelos complejos mediante metodologías como SHAP.
+
+---
+
+## Información del Evento
+
+| Detalle | Información |
+| :--- | :--- |
+| **Fecha** | Jueves, 10 de diciembre de 2026 |
+| **Horario** | 8:00 AM - 17:00 PM (GMT-4 / Hora de Chile) |
+| **Modalidad Presencial** | **Auditorio Zócalo, Universidad Andrés Bello**<br>Antonio Varas 880, Providencia, Santiago, Chile. |
+| **Modalidad Online** | **Vía Zoom** (El enlace de acceso se enviará posterior a la inscripción). |
+
+---
+
+## Estructura del Programa y Charlas
+
+El evento se divide en tres grandes bloques progresivos diseñados para conectar la clínica con las ciencias exactas y la computación:
+
+### Bloque 1: Contexto Clínico y Física de la Resonancia Magnética
+* **Panorama de la Neurooncología:** Introducción a la heterogeneidad, espectro y desafíos en el manejo biológico del glioma. *(Especialista Clínico - FALP)*.
+* **Optimización y Protocolos de RM:** Configuración óptima de secuencias y el rol del Tecnólogo Médico en la reproducibilidad multicéntrica. *(TM. Alejandro Cerda - UNAB / ISMRT Sección Chile)*.
+* **Física de la RM y Espacio K:** Principios de la señal física, el espín y la generación de imágenes por Transformada de Fourier. *(Dr. Ignacio Espinoza - PUC)*.
+* **Artefactos en RM:** Identificación matemática y física de distorsiones, aliasing, y efectos del movimiento en el tejido real. *(Dr. Hernán Mella - PUCV)*.
+
+### Bloque 2: Fisiología, Microestructura y Dinámica Cerebral
+* **Microestructura por Difusión:** Exploración del Tensor de Difusión (DTI), métricas de anisotropía (FA, MD) y preservación de tractos de materia blanca. *(MSc. Cristian Montalba - PUC / iHEALTH)*.
+* **Mapeo Funcional (fMRI):** El acoplamiento neurovascular, efecto BOLD y la localización de áreas elocuentes. *(Dra. M. Daniela Cornejo - PUC)*.
+* **Modelado BOLD con PINNs:** Introducción a las Redes Neuronales Informadas por la Física para el microambiente tumoral. *(Dr. David Ortiz-Puerta - UV / iHEALTH)*.
+* **Evaluación Medular vía fNIRS:** Diagnósticos de la respuesta neurovascular donde la fMRI convencional posee limitaciones. *(Dr. A. Eblen-Zajjur - UA)*.
+* **Hemodinámica y Biomecánica:** Simulación de fuerzas mecánicas mediante Modelado por Elementos Finitos (FEM) y cuantificación de flujos. *(Dr. Julio Sotelo - USM / iHEALTH)*.
+
+### Bloque 3: Inteligencia Artificial, Radiómica e Interpretabilidad
+* **Introducción a Machine Learning:** Pipelines supervisados aplicados a imágenes, extracción de vectores y selección de características. *(Dr. Domingo Mery - PUC / iHEALTH / CENIA)*.
+* **Fundamentos de Radiómica:** Análisis computacional de descriptores de forma, intensidad y mapas de textura (GLCM). *(Dra. Paola Caprile - PUC / iHEALTH)*.
+* **IA en Neurooncología y SHAP:** Fusión de datos multimodales y apertura de la "caja negra" predictiva mediante valores SHAP. *(Dra. Pamela Franco - UNAB)*.
+* **Interpretabilidad Visual en Neuroimagen:** Aplicación de algoritmos de atribución espacial (Grad-CAM, RISE, RELAX) en mapas de calor plausibles. *(Dr. Diego Mellado C. - UNAB / ITISB)*.
+
+---
+
+## Sesión de Pósteres y Concurso Científico
+
+El workshop contará con una instancia de **Sesión de Pósteres** destinada a estudiantes de pregrado y postgrado para incentivar el intercambio académico en IA y Salud. Un comité científico multi-institucional evaluará las propuestas. 
+
+* **Premio al Mejor Póster:** $100.000 CLP en efectivo (además de menciones honrosas para el 2° y 3° lugar).
+
+El cierre contará con la participación especial de la **Dra. Liliana Jorquera** (Presidenta del Capítulo IEEE EMBS Chile Centro), quien presentará los beneficios e invitaciones de la red de ingeniería en medicina y biología en el país.
+
+---
+<p align="center">
+  <b>Organizan e Invitan:</b><br>
+  Universidad Andrés Bello (UNAB) | Pontificia Universidad Católica de Chile (PUC) | Fundación Arturo López Pérez (FALP)<br>
+  <i>Proyecto Endowment I+D: Investigación Clínica para la Salud (DI-07-25/ICS)</i>
+</p>
