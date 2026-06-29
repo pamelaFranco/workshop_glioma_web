@@ -17,7 +17,7 @@ main:
   - title: "Hands-on"
     url: /hands-on/    
     
-  - title: "Envió de Resúmenes"
+  - title: "Resúmenes"
     url: /resumenes/
         
   - title: "FAQ"
@@ -29,5 +29,4 @@ main:
   # - title: "CV"
   #   url: /cv-json/
     
-  - title: "Guide"
-    url: /markdown/
+
