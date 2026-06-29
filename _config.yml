@@ -20,7 +20,7 @@ repository              : "pamelaFranco/workshop_glioma_web"
 # Site Author - Organizador Institucional
 author:
   # Biographic information
-  avatar           : "image_.png" 
+  avatar           : "profile.png" 
   name             : "Comité Organizador"
   pronouns         : ""  
   bio              : "Espacio de difusión y laboratorios virtuales sobre IA e Interpretabilidad aplicada a la Neurooncología."
