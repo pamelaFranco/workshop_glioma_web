@@ -5,37 +5,9 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
-{% include base_path %}
-
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
----
-
 ## Publicaciones Asociadas
 
-Este laboratorio virtual implementa los hallazgos descritos en los estudios:
+Este laboratorio virtual implementa los hallazgos descritos en los siguientes estudios:
 
 | Publicación | Acceso Directo |
 | :--- | :--- |
@@ -43,7 +15,7 @@ Este laboratorio virtual implementa los hallazgos descritos en los estudios:
 | **Conferencia International Conference on Pattern Recognition Systems (ICPRS) 2025** | [Ver en IEEE Xplore](https://ieeexplore.ieee.org/document/11302837) |
 | **Abstract European Society of Magnetic Resonance in Medicine and Biology (ESMRMB) 2025** | [Ver en Springer](https://link.springer.com/article/10.1007/s10334-025-01278-8) |
 
-Si utilizas este código o hallazgos para tu investigación, por favor cita los siguientes trabajos:
+Si utilizas este código o los hallazgos para tu investigación, por favor cita los siguientes trabajos:
 
 <details>
 <summary><b>Haz clic aquí para ver las citas en formato BibTeX</b></summary>
@@ -54,12 +26,12 @@ Si utilizas este código o hallazgos para tu investigación, por favor cita los 
   author={Franco, Pamela and Montalba, Cristian and Caulier-Cisterna, Raúl and Espinoza, Ignacio and Cornejo, M. Daniela and others},
   journal={Magnetic Resonance Materials in Physics, Biology and Medicine (MAGMA)},
   year={2026},
-  note={10.1007/s10334-026-01346-7}
+  doi={10.1007/s10334-026-01346-7}
 }
 
 @inproceedings{Franco2025ICPRS,
   title={Radiomic Glioma Grading Using T1-weighted MRI vs. Diffusion Tensor Metrics: A Proof-of-Concept Comparative Analysis with Explainable Machine Learning},
-  author={Franco, Pamela and Montalba, Cristian and Caulier-Cisterna, Raúl and Espinoza, Ignacio and Cornejo, and others},
+  author={Franco, Pamela and Montalba, Cristian Beethet and Caulier-Cisterna, Raúl and Espinoza, Ignacio and Cornejo, M. Daniela and others},
   booktitle={2025 15th IEEE International Conference on Pattern Recognition Systems (ICPRS)},
   pages={1--7},
   year={2025},
