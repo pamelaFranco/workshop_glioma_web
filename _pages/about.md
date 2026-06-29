@@ -19,7 +19,7 @@ redirect_from:
   </a>
 </p>
 
-> **Gran Noticia / Announcement:** ¡Este Workshop cuenta con el **respaldo y endoso oficial de la ISMRT** (*International Society for Magnetic Resonance Technicians*)! El patrocinio institucional fue discutido y aprobado por el comité ejecutivo durante la reunión anual en Ciudad del Cabo (*Cape Town*).
+> **Gran Noticia:** ¡Este Workshop cuenta con el **respaldo y endoso oficial de la ISMRT** (*International Society for Magnetic Resonance Technicians*)! El patrocinio institucional fue discutido y aprobado por el comité ejecutivo durante la reunión anual en Ciudad del Cabo (*Cape Town*).
 
 ---
 
