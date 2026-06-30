@@ -149,7 +149,7 @@ collections:
   faq:
     output: true
     permalink: /:collection/:path/
-  alianzas:
+  apoyos:
     output: true
     permalink: /:collection/:path/
 
