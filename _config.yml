@@ -134,16 +134,22 @@ kramdown:
   enable_coderay: false
 
 collections:
-  teaching:
+  charlas:
     output: true
     permalink: /:collection/:path/
-  publications:
+  publicaciones:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  hands-on:
     output: true
     permalink: /:collection/:path/
-  talks:
+  resumenes:
+    output: true
+    permalink: /:collection/:path/
+  faq:
+    output: true
+    permalink: /:collection/:path/
+  alianzas:
     output: true
     permalink: /:collection/:path/
 
