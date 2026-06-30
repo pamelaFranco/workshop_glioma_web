@@ -23,8 +23,8 @@ main:
   - title: "FAQ"
     url: /faq/
     
-  - title: "Alianzas"
-    url: /alianzas/
+  - title: "Colaboradores"
+    url: /colaboradores/
     
   # - title: "CV"
   #   url: /cv-json/
