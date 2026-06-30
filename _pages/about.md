@@ -38,6 +38,9 @@ redirect_from:
 </p>
 
 <p align="center">
+  <a href="https://github.com/pamelaFranco/workshop_glioma" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Repositorio-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Ver en GitHub" />
+  </a>
   <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Programa/Charlas___Workshop_IA_Interpretable_Neurooncologia.pdf" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Programa-PDF-A63737?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white" alt="Programa" />
   </a>
