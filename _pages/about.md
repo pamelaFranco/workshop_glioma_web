@@ -82,7 +82,7 @@ Este encuentro ofrece una **inmersión teórico-práctica** en el pipeline avanz
 El evento se divide en tres grandes bloques progresivos diseñados para conectar la clínica con las ciencias exactas y la computación:
 
 ### Bloque 1: Contexto Clínico y Física de la Resonancia Magnética
-* **Panorama de la Neurooncología:** Introducción a la heterogeneidad, espectro y desafíos en el manejo biológico del glioma. *(Especialista Clínico - FALP)*.
+* **Panorama de la Neurooncología:** Introducción a la heterogeneidad, espectro y desafíos en el manejo biológico del glioma. *(Dr. Héctor Ramos - FALP)*.
 * **Optimización y Protocolos de RM:** Configuración óptima de secuencias y el rol del Tecnólogo Médico en la reproducibilidad multicéntrica. *(TM. Alejandro Cerda - UNAB / ISMRT Sección Chile)*.
 * **Física de la RM y Espacio K:** Principios de la señal física, el espín y la generación de imágenes por Transformada de Fourier. *(Dr. Ignacio Espinoza - PUC)*.
 * **Artefactos en RM:** Identificación matemática y física de distorsiones, aliasing, y efectos del movimiento en el tejido real. *(Dr. Hernán Mella - PUCV)*.
