@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-![Banner](Figuras/banner.svg)
+![Banner](Figuras/banner.png)
 
 # IA Interpretable en Neurooncología: Decodificando la severidad tumoral mediante resonancia multimodal
 
