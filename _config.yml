@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                  : "es-CL"
 site_theme              : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                   : "Workshop: IA Interpretable en Neurooncología"
+title                   : "Workshop: IA Neurooncología"
 title_separator         : "-"
 name                    : &name "Workshop IA Neurooncología"
 description             : &description "Decodificando la severidad tumoral mediante resonancia multimodal"
@@ -152,7 +152,9 @@ collections:
   apoyos:
     output: true
     permalink: /:collection/:path/
-
+  equipo:
+    output: true
+    permalink: /:collection/:path/
 defaults:
   - scope:
       path: ""

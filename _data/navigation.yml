@@ -26,7 +26,7 @@ main:
   - title: "Apoyos"
     url: /apoyos/
     
-  # - title: "CV"
-  #   url: /cv-json/
+  - title: "Equipo"
+    url: /equipo/
     
 
