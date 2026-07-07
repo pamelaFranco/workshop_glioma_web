@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Workshop: IA Interpretable en Neurooncología"
+title: ""
 author_profile: true
 redirect_from:
   - /about/
@@ -9,7 +9,7 @@ redirect_from:
 
 ![Banner](Figuras/banner.png)
 
-# IA Interpretable en Neurooncología: Decodificando la severidad tumoral mediante resonancia multimodal
+# Workshop: IA Interpretable en Neurooncología: Decodificando la severidad tumoral mediante resonancia multimodal
 
 ---
 
