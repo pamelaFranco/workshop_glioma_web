@@ -7,3 +7,190 @@ redirect_from:
   - /wordpress/blog-posts/
 ---
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo</title>
+    <style>
+        /* Contenedor principal estilo web académica */
+        .team-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #2d3748;
+        }
+
+        .team-title {
+            font-size: 2rem;
+            color: #1a365d;
+            font-weight: 700;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        /* Estructura de la tarjeta de integrante */
+        .member-card {
+            display: flex;
+            align-items: flex-start;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contenedor y diseño de la Imagen */
+        .member-avatar-container {
+            flex-shrink: 0;
+            margin-right: 24px;
+        }
+
+        .member-avatar {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            background-color: #f7fafc;
+        }
+
+        /* Bloque de Textos */
+        .member-info {
+            flex-grow: 1;
+        }
+
+        .member-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin: 0 0 4px 0;
+        }
+
+        .member-role {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .member-bio {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4a5568;
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* Bloque Destacado de Sinergia al Final */
+        .synergy-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .synergy-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #14532d;
+            margin-bottom: 6px;
+        }
+
+        .synergy-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #166534;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Adaptación para pantallas de celulares */
+        @media (max-width: 640px) {
+            .member-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 20px;
+            }
+            .member-avatar-container {
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
+            .member-bio {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="team-container">
+    <h2 class="team-title">Equipo de Investigación</h2>
+
+    <div class="member-card">
+        <div class="member-avatar-container">
+            <img class="member-avatar" src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/images/PF.jpg" alt="Pamela Franco">
+        </div>
+        <div class="member-info">
+            <div class="member-name">Pamela Franco</div>
+            <div class="member-role">Investigadora Responsable (Académica UNAB)</div>
+            <p class="member-bio">Ingeniera Física, Física Médica y Doctora en Ciencias de la Ingeniería, área ingeniería eléctrica. Académica de la Facultad de Ingeniería de la Universidad Andrés Bello (UNAB), donde se especializa en el procesamiento avanzado de imágenes médicas, <em>machine learning</em> e Inteligencia Artificial Explicable (XAI). En este proyecto, lidera la dirección estratégica, el diseño de modelos predictivos y la integración de biomarcadores radiómicos.</p>
+        </div>
+    </div>
+
+    <div class="member-card">
+        <div class="member-avatar-container">
+            <img class="member-avatar" src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/images/IE.jpg" alt="Ignacio Espinoza">
+        </div>
+        <div class="member-info">
+            <div class="member-name">Ignacio Espinoza</div>
+            <div class="member-role">Co-investigador Externo (Académico PUC)</div>
+            <p class="member-bio">Ingeniero Civil en Industrias, con Diploma Académico en Ingeniería Eléctrica, Licenciado en Física y Doctor en Física. Es académico en el Instituto de Física de la Pontificia Universidad Católica de Chile (PUC), donde lidera una destacada línea de investigación en física médica. Aporta al equipo su experiencia en análisis computacional complejo y optimización del <em>pipeline</em> de extracción radiómica.</p>
+        </div>
+    </div>
+
+    <div class="member-card">
+        <div class="member-avatar-container">
+            <img class="member-avatar" src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/images/DC.jpg" alt="Daniela Cornejo">
+        </div>
+        <div class="member-info">
+            <div class="member-name">Daniela Cornejo</div>
+            <div class="member-role">Co-investigadora Externa (Académica PUC)</div>
+            <p class="member-bio">Licenciada en Física, Doctora en Física Médica y académica conjunta en el Departamento de Psiquiatría de la Facultad de Medicina y el Instituto de Física de la PUC. Cuenta con una vasta trayectoria científica en el área de neuroimágenes avanzadas y resonancia magnética funcional (fMRI), siendo la responsable de la validación neurocientífica y la aplicabilidad clínica de los hallazgos en pacientes con gliomas.</p>
+        </div>
+    </div>
+
+    <div class="member-card">
+        <div class="member-avatar-container">
+            <img class="member-avatar" src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/images/CM.jpg" alt="Cristian Montalba">
+        </div>
+        <div class="member-info">
+            <div class="member-name">Cristian Montalba</div>
+            <div class="member-role">Personal Técnico (PUC)</div>
+            <p class="member-bio">Tecnólogo Médico, Magíster en Investigación en Ciencias de la Salud e investigador en el Centro de Imágenes Biomédicas de la PUC (CIB). Especializado en el procesamiento y manejo de datos de neurociencias basados en resonancia magnética (MRI), está a cargo de la anonimización, curaduría y estructuración de las bases de datos biomédicas, además de colaborar activamente en la gestión y vinculación para la obtención de patrocinios del workshop.</p>
+        </div>
+    </div>
+
+    <div class="synergy-box">
+        <div class="synergy-title">Sinergia Interdisciplinaria de Vanguardia:</div>
+        <p class="synergy-text">Lo que hace único a este equipo es la convergencia exacta de sus disciplinas. No es común reunir en un mismo proyecto capacidades avanzadas en Física Médica, Inteligencia Artificial Explicable e Informática Clínica. Esta colaboración entre la UNAB y la PUC permite que el proyecto no solo desarrolle algoritmos de alta precisión, sino que estos sean médica y físicamente interpretables, transformando datos complejos de resonancia multimodal en herramientas diagnósticas reales y confiables para la neurooncología en Chile.</p>
+    </div>
+</div>
+
+</body>
+</html>
