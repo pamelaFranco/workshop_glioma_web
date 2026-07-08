@@ -84,19 +84,19 @@ El evento se divide en tres grandes bloques progresivos diseñados para conectar
 ### Bloque 1: Contexto Clínico y Física de la Resonancia Magnética
 * **Panorama de la Neurooncología:** Introducción a la heterogeneidad, espectro y desafíos en el manejo biológico del glioma. *(Dr. Héctor Ramos - FALP)*.
 * **Optimización y Protocolos de RM:** Configuración óptima de secuencias y el rol del Tecnólogo Médico en la reproducibilidad multicéntrica. *(TM. Alejandro Cerda - UNAB / ISMRT Sección Chile)*.
-* **Física de la RM y Espacio K:** Principios de la señal física, el espín y la generación de imágenes por Transformada de Fourier. *(Dr. Ignacio Espinoza - PUC)*.
+* **Física de la RM y Espacio K:** Principios de la señal física, el espín y la generación de imágenes por Transformada de Fourier. *(Dr. Ignacio Espinoza - UC)*.
 * **Artefactos en RM:** Identificación matemática y física de distorsiones, aliasing, y efectos del movimiento en el tejido real. *(Dr. Hernán Mella - PUCV)*.
 
 ### Bloque 2: Fisiología, Microestructura y Dinámica Cerebral
-* **Microestructura por Difusión:** Exploración del Tensor de Difusión (DTI), métricas de anisotropía (FA, MD) y preservación de tractos de materia blanca. *(MSc. Cristian Montalba - PUC / iHEALTH)*.
+* **Microestructura por Difusión:** Exploración del Tensor de Difusión (DTI), métricas de anisotropía (FA, MD) y preservación de tractos de materia blanca. *(MSc. Cristian Montalba - UC / iHEALTH)*.
 * **Mapeo Funcional (fMRI):** El acoplamiento neurovascular, efecto BOLD y la localización de áreas elocuentes. *(Dra. M. Daniela Cornejo - PUC)*.
 * **Modelado BOLD con PINNs:** Introducción a las Redes Neuronales Informadas por la Física para el microambiente tumoral. *(Dr. David Ortiz-Puerta - UV / iHEALTH)*.
 * **Evaluación Medular vía fNIRS:** Diagnósticos de la respuesta neurovascular donde la fMRI convencional posee limitaciones. *(Dr. A. Eblen-Zajjur - UA)*.
 * **Hemodinámica y Biomecánica:** Simulación de fuerzas mecánicas mediante Modelado por Elementos Finitos (FEM) y cuantificación de flujos. *(Dr. Julio Sotelo - USM / iHEALTH)*.
 
 ### Bloque 3: Inteligencia Artificial, Radiómica e Interpretabilidad
-* **Introducción a Machine Learning:** Pipelines supervisados aplicados a imágenes, extracción de vectores y selección de características. *(Dr. Domingo Mery - PUC / iHEALTH / CENIA)*.
-* **Fundamentos de Radiómica:** Análisis computacional de descriptores de forma, intensidad y mapas de textura (GLCM). *(Dra. Paola Caprile - PUC / iHEALTH)*.
+* **Introducción a Machine Learning:** Pipelines supervisados aplicados a imágenes, extracción de vectores y selección de características. *(Dr. Domingo Mery - UC / iHEALTH / CENIA)*.
+* **Fundamentos de Radiómica:** Análisis computacional de descriptores de forma, intensidad y mapas de textura (GLCM). *(Dra. Paola Caprile - UC / iHEALTH)*.
 * **IA en Neurooncología y SHAP:** Fusión de datos multimodales y apertura de la "caja negra" predictiva mediante valores SHAP. *(Dra. Pamela Franco - UNAB)*.
 * **Interpretabilidad Visual en Neuroimagen:** Aplicación de algoritmos de atribución espacial (Grad-CAM, RISE, RELAX) en mapas de calor plausibles. *(Dr. Diego Mellado C. - UNAB / ITISB)*.
 
