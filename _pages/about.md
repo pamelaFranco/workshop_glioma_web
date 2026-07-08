@@ -120,7 +120,7 @@ A través de la red **REBECCA-IA** y en consonancia con los estándares internac
 
 <p align="center">
   <b>Organizan e Invitan:</b><br>
-  Universidad Andrés Bello (UNAB) | Pontificia Universidad Católica de Chile (PUC) | Fundación Arturo López Pérez (FALP)<br>
+  Universidad Andrés Bello (UNAB) | Pontificia Universidad Católica de Chile (UC) | Fundación Arturo López Pérez (FALP)<br>
   <!-- Aquí agregamos <b> para que todo el proyecto quede en negrilla -->
   <i><b>Proyecto Endowment I+D: Investigación Clínica para la Salud (DI-07-25/ICS)</b></i>
 </p>
