@@ -111,16 +111,16 @@ El workshop contará con una instancia de **Sesión de Pósteres** destinada a e
 El cierre contará con la participación especial de la **Dra. Liliana Jorquera** (Presidenta del Capítulo IEEE EMBS Chile Centro), quien presentará los beneficios e invitaciones de la red de ingeniería en medicina y biología en el país.
 
 ---
+
+## Alianza e Integración Internacional
+
+Este workshop se presenta en el marco de **REBECCA-IA**, una iniciativa financiada por el Programa Iberoamericano de Ciencia y Tecnología para el Desarrollo (CYTED) e impulsada por el [Instituto Tecnológico de Medellín (ITM)](https://www.itm.edu.co).
+
+A través de la red **REBECCA-IA** y en consonancia con los estándares internacionales de la **ISMRT** (International Society for MR Radiographers & Technologists), este encuentro busca fortalecer la cooperación científica, el intercambio de conocimientos avanzados y el desarrollo de tecnologías aplicadas a la salud visual y clínica en la región.
+
 <p align="center">
   <b>Organizan e Invitan:</b><br>
   Universidad Andrés Bello (UNAB) | Pontificia Universidad Católica de Chile (PUC) | Fundación Arturo López Pérez (FALP)<br>
   <!-- Aquí agregamos <b> para que todo el proyecto quede en negrilla -->
   <i><b>Proyecto Endowment I+D: Investigación Clínica para la Salud (DI-07-25/ICS)</b></i>
 </p>
-
-
-## Alianza e Integración Internacional
-
-Este workshop se presenta en el marco de **REBECCA-IA**, una iniciativa financiada por el Programa Iberoamericano de Ciencia y Tecnología para el Desarrollo (CYTED) e impulsada por el [Instituto Tecnológico de Medellín (ITM)](https://www.itm.edu.co).
-
-A través de la red **REBECCA-IA** y en consonancia con los estándares internacionales de la **ISMRT** (International Society for MR Radiographers & Technologists ), este encuentro busca fortalecer la cooperación científica, el intercambio de conocimientos avanzados y el desarrollo de tecnologías aplicadas a la salud visual y clínica en la región.
