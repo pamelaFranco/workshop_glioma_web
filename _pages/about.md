@@ -111,13 +111,13 @@ El workshop contará con una instancia de **Sesión de Pósteres** destinada a e
 El cierre contará con la participación especial de la **Dra. Liliana Jorquera** (Presidenta del Capítulo IEEE EMBS Chile Centro), quien presentará los beneficios e invitaciones de la red de ingeniería en medicina y biología en el país.
 
 ---
-<div align="center">
+<p align="center">
+  <b>Organizan e Invitan:</b><br>
+  Universidad Andrés Bello (UNAB) | Pontificia Universidad Católica de Chile (PUC) | Fundación Arturo López Pérez (FALP)<br>
+  <!-- Aquí agregamos <b> para que todo el proyecto quede en negrilla -->
+  <i><b>Proyecto Endowment I+D: Investigación Clínica para la Salud (DI-07-25/ICS)</b></i>
+</p>
 
-**Organizan e Invitan:**  
-Universidad Andrés Bello (UNAB) | Pontificia Universidad Católica de Chile (PUC) | Fundación Arturo López Pérez (FALP)  
-***Proyecto Endowment I+D: Investigación Clínica para la Salud (DI-07-25/ICS)***
-
-</div>
 
 ## Alianza e Integración Internacional
 
