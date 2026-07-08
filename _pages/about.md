@@ -89,7 +89,7 @@ El evento se divide en tres grandes bloques progresivos diseñados para conectar
 
 ### Bloque 2: Fisiología, Microestructura y Dinámica Cerebral
 * **Microestructura por Difusión:** Exploración del Tensor de Difusión (DTI), métricas de anisotropía (FA, MD) y preservación de tractos de materia blanca. *(MSc. Cristian Montalba - UC / iHEALTH)*.
-* **Mapeo Funcional (fMRI):** El acoplamiento neurovascular, efecto BOLD y la localización de áreas elocuentes. *(Dra. M. Daniela Cornejo - PUC)*.
+* **Mapeo Funcional (fMRI):** El acoplamiento neurovascular, efecto BOLD y la localización de áreas elocuentes. *(Dra. M. Daniela Cornejo - UC)*.
 * **Modelado BOLD con PINNs:** Introducción a las Redes Neuronales Informadas por la Física para el microambiente tumoral. *(Dr. David Ortiz-Puerta - UV / iHEALTH)*.
 * **Evaluación Medular vía fNIRS:** Diagnósticos de la respuesta neurovascular donde la fMRI convencional posee limitaciones. *(Dr. A. Eblen-Zajjur - UA)*.
 * **Hemodinámica y Biomecánica:** Simulación de fuerzas mecánicas mediante Modelado por Elementos Finitos (FEM) y cuantificación de flujos. *(Dr. Julio Sotelo - USM / iHEALTH)*.
