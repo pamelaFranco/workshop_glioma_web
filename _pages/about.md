@@ -123,4 +123,4 @@ El cierre contará con la participación especial de la **Dra. Liliana Jorquera*
 
 Este workshop se presenta en el marco de **REBECCA-IA**, una iniciativa financiada por el Programa Iberoamericano de Ciencia y Tecnología para el Desarrollo (CYTED) e impulsada por el [Instituto Tecnológico de Medellín (ITM)](https://www.itm.edu.co).
 
-A través de la red **REBECCA-IA** y en consonancia con los estándares internacionales de la **ISMRM** (International Society for Magnetic Resonance in Medicine), este encuentro busca fortalecer la cooperación científica, el intercambio de conocimientos avanzados y el desarrollo de tecnologías aplicadas a la salud visual y clínica en la región.
+A través de la red **REBECCA-IA** y en consonancia con los estándares internacionales de la **ISMRT** (International Society for MR Radiographers & Technologists ), este encuentro busca fortalecer la cooperación científica, el intercambio de conocimientos avanzados y el desarrollo de tecnologías aplicadas a la salud visual y clínica en la región.
