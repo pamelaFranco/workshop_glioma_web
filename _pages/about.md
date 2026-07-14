@@ -177,9 +177,53 @@ El cierre contará con la participación especial de la **Dra. Liliana Jorquera*
 
 Este workshop se presenta en el marco de **REBECCA-IA**, una iniciativa financiada por el Programa Iberoamericano de Ciencia y Tecnología para el Desarrollo (CYTED) e impulsada por el [Instituto Tecnológico de Medellín (ITM)](https://www.itm.edu.co).
 
-A través de la red **REBECCA-IA** y en consonancia con los estándares internacionales de la **ISMRT** (International Society for MR Radiographers & Technologists), este encuentro busca fortalecer la cooperación científica, el intercambio de conocimientos avanzados y el desarrollo de tecnologías aplicadas a la salud visual y clínica en la región.
+A través de la red **REBECCA-IA** y en consonancia con los estándares internacionales de la **ISMRT** (*International Society for MR Radiographers & Technologists*), este encuentro busca fortalecer la cooperación científica, el intercambio de conocimientos avanzados y el desarrollo de tecnologías aplicadas a la salud visual y clínica en la región.
 
-<p align="center">
+---
+
+### Instituciones y Colaboradores
+
+<!-- Grilla de Logos Responsiva -->
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 25px; margin: 30px 0; padding: 20px 10px; background-color: #fafafa; border-radius: 8px;">
+  
+  <!-- UNAB -->
+  <div style="flex: 1 1 120px; max-width: 140px; text-align: center;">
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/unab.png" alt="UNAB" style="max-height: 55px; width: auto; filter: grayscale(15%) contrast(105%);" />
+  </div>
+
+  <!-- PUC -->
+  <div style="flex: 1 1 120px; max-width: 140px; text-align: center;">
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/uc.png" alt="UC" style="max-height: 55px; width: auto; filter: grayscale(15%) contrast(105%);" />
+  </div>
+
+  <!-- FALP -->
+  <div style="flex: 1 1 120px; max-width: 140px; text-align: center;">
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/falp.png" alt="FALP" style="max-height: 55px; width: auto; filter: grayscale(15%) contrast(105%);" />
+  </div>
+
+  <!-- ISMRT -->
+  <div style="flex: 1 1 120px; max-width: 140px; text-align: center;">
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Figuras/ISMRT.png" alt="ISMRT" style="max-height: 45px; width: auto;" />
+  </div>
+
+  <!-- IEEE EMBS -->
+  <div style="flex: 1 1 120px; max-width: 140px; text-align: center;">
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Figuras/ieee-embs.png" alt="IEEE EMBS" style="max-height: 45px; width: auto;" />
+  </div>
+
+  <!-- Guerbet -->
+  <div style="flex: 1 1 120px; max-width: 140px; text-align: center;">
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Figuras/guerbet.jpg" alt="Guerbet" style="max-height: 45px; width: auto;" />
+  </div>
+
+  <!-- Rebecca IA -->
+  <div style="flex: 1 1 120px; max-width: 140px; text-align: center;">
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Figuras/rebeccaia.jpg" alt="Rebecca IA" style="max-height: 50px; width: auto; border-radius: 4px;" />
+  </div>
+
+</div>
+
+<p align="center" style="margin-top: 30px;">
   <b>Organizan e Invitan:</b><br>
   Universidad Andrés Bello (UNAB) | Pontificia Universidad Católica de Chile (UC) | Fundación Arturo López Pérez (FALP)<br>
   <!-- Aquí agregamos <b> para que todo el proyecto quede en negrilla -->
