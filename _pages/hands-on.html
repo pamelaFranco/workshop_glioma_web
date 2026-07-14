@@ -67,59 +67,118 @@ author_profile: true
 
 <h2>Actividades del Workshop</h2>
 
-<h3><em>Hands-on</em> I.A: Fundamentos del Espacio K y Formación de Imágenes</h3>
-<ul>
-  <li><strong>Objetivo:</strong> Comprender la relación entre el Espacio K y la imagen real mediante la Transformada de Fourier.</li>
-  <li><strong>Cuaderno:</strong> <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/EspacioK.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a></li>
-</ul>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; font-family: system-ui, -apple-system, sans-serif;">
 
-<h3><em>Hands-on</em> I.B: Simulador Interactivo de Secuencias (Ecuaciones de Bloch)</h3>
-<ul>
-  <li><strong>Objetivo:</strong> Experimentar en tiempo real con los parámetros de adquisición (TR, TE, &alpha;) y observar su efecto en la magnetización y el contraste del fantoma.</li>
-  <li><strong>Cuaderno:</strong> <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/simulador_secuencias.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a></li>
-</ul>
+  <!-- Tarjeta 1 -->
+  <div style="background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; border-left: 5px solid #A63737;">
+    <div>
+      <h3 style="margin-top: 0; margin-bottom: 8px; color: #333; font-size: 1.15rem;">Hands-on I.A: Fundamentos del Espacio K y Formación de Imágenes</h3>
+      <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px; line-height: 1.4;">Comprender la relación entre el Espacio K y la imagen real mediante la Transformada de Fourier.</p>
+    </div>
+    <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/EspacioK.ipynb" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #F9F9F9; border: 1px solid #A63737; color: #A63737; padding: 10px 16px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.25s ease;" onmouseover="this.style.backgroundColor='#A63737'; this.style.color='#fff'; this.style.boxShadow='0 4px 10px rgba(166,55,55,0.2)';" onmouseout="this.style.backgroundColor='#F9F9F9'; this.style.color='#A63737'; this.style.boxShadow='none';">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 16px;" />
+      Abrir en Colab
+    </a>
+  </div>
 
-<h3><em>Hands-on</em> II: Generación de Mapas Paramétricos (T1 y T2)</h3>
-<ul>
-  <li><strong>Objetivo:</strong> Calcular mapas de tiempos de relajación utilizando modelos de ajuste no lineal.</li>
-  <li><strong>Cuaderno:</strong> <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/T1_T2_maps.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a></li>
-</ul>
+  <!-- Tarjeta 2 -->
+  <div style="background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; border-left: 5px solid #A63737;">
+    <div>
+      <h3 style="margin-top: 0; margin-bottom: 8px; color: #333; font-size: 1.15rem;">Hands-on I.B: Simulador de Secuencias (Ecuaciones de Bloch)</h3>
+      <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px; line-height: 1.4;">Experimentar en tiempo real con los parámetros de adquisición (TR, TE, &alpha;) y observar su efecto en el contraste del fantoma.</p>
+    </div>
+    <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/simulador_secuencias.ipynb" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #F9F9F9; border: 1px solid #A63737; color: #A63737; padding: 10px 16px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.25s ease;" onmouseover="this.style.backgroundColor='#A63737'; this.style.color='#fff'; this.style.boxShadow='0 4px 10px rgba(166,55,55,0.2)';" onmouseout="this.style.backgroundColor='#F9F9F9'; this.style.color='#A63737'; this.style.boxShadow='none';">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 16px;" />
+      Abrir en Colab
+    </a>
+  </div>
 
-<h3><em>Hands-on</em> III: Mapas de Difusión (DTI)</h3>
-<ul>
-  <li><strong>Objetivo:</strong> Obtener mapas de Fracción de Anisotropía (FA), Difusividad Media (MD), Difusividad Radial (RD) y Difusividad Axial (AD) para caracterizar la infiltración tumoral.</li>
-  <li><strong>Cuaderno:</strong> <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/DTI_mapas_difusion.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a></li>
-</ul>
+  <!-- Tarjeta 3 -->
+  <div style="background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; border-left: 5px solid #A63737;">
+    <div>
+      <h3 style="margin-top: 0; margin-bottom: 8px; color: #333; font-size: 1.15rem;">Hands-on II: Generación de Mapas Paramétricos (T1 y T2)</h3>
+      <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px; line-height: 1.4;">Calcular mapas de tiempos de relajación utilizando modelos de ajuste no lineal para caracterizar tejidos.</p>
+    </div>
+    <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/T1_T2_maps.ipynb" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #F9F9F9; border: 1px solid #A63737; color: #A63737; padding: 10px 16px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.25s ease;" onmouseover="this.style.backgroundColor='#A63737'; this.style.color='#fff'; this.style.boxShadow='0 4px 10px rgba(166,55,55,0.2)';" onmouseout="this.style.backgroundColor='#F9F9F9'; this.style.color='#A63737'; this.style.boxShadow='none';">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 16px;" />
+      Abrir en Colab
+    </a>
+  </div>
 
-<h3><em>Hands-on</em> IV: Mapeo Funcional (fMRI)</h3>
-<ul>
-  <li><strong>Objetivo:</strong> Mapear la arquitectura funcional del cerebro mediante el análisis de correlaciones de señales de baja frecuencia en estado de reposo (rs-fMRI).</li>
-  <li><strong>Cuaderno:</strong> <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/fMRI.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a></li>
-</ul>
+  <!-- Tarjeta 4 -->
+  <div style="background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; border-left: 5px solid #A63737;">
+    <div>
+      <h3 style="margin-top: 0; margin-bottom: 8px; color: #333; font-size: 1.15rem;">Hands-on III: Mapas de Difusión (DTI)</h3>
+      <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px; line-height: 1.4;">Obtener mapas de Fracción de Anisotropía (FA), MD, RD y AD para caracterizar la infiltración tumoral.</p>
+    </div>
+    <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/DTI_mapas_difusion.ipynb" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #F9F9F9; border: 1px solid #A63737; color: #A63737; padding: 10px 16px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.25s ease;" onmouseover="this.style.backgroundColor='#A63737'; this.style.color='#fff'; this.style.boxShadow='0 4px 10px rgba(166,55,55,0.2)';" onmouseout="this.style.backgroundColor='#F9F9F9'; this.style.color='#A63737'; this.style.boxShadow='none';">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 16px;" />
+      Abrir en Colab
+    </a>
+  </div>
 
-<h3><em>Hands-on</em> V: Hemodinámica y Biomecánica Cerebral (TOF-MRA)</h3>
-<ul>
-  <li><strong>Objetivo:</strong> Reconstrucción de la vasculatura mediante el uso de imágenes adquiridas en la secuencia Time-Of-Flight (TOF-MRA) y la aplicación de la Proyección de Máxima Intensidad (MIP).</li>
-  <li><strong>Cuaderno:</strong> <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/Vasculatura_Cerebral.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a></li>
-</ul>
+  <!-- Tarjeta 5 -->
+  <div style="background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; border-left: 5px solid #A63737;">
+    <div>
+      <h3 style="margin-top: 0; margin-bottom: 8px; color: #333; font-size: 1.15rem;">Hands-on IV: Mapeo Funcional (fMRI)</h3>
+      <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px; line-height: 1.4;">Mapear la arquitectura funcional del cerebro mediante el análisis de correlaciones de señales de baja frecuencia (rs-fMRI).</p>
+    </div>
+    <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/fMRI.ipynb" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #F9F9F9; border: 1px solid #A63737; color: #A63737; padding: 10px 16px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.25s ease;" onmouseover="this.style.backgroundColor='#A63737'; this.style.color='#fff'; this.style.boxShadow='0 4px 10px rgba(166,55,55,0.2)';" onmouseout="this.style.backgroundColor='#F9F9F9'; this.style.color='#A63737'; this.style.boxShadow='none';">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 16px;" />
+      Abrir en Colab
+    </a>
+  </div>
 
-<h3><em>Hands-on</em> VI: Extracción de Características y Mapas de Textura (GLCM)</h3>
-<ul>
-  <li><strong>Objetivo:</strong> Cuantificar la microestructura y heterogeneidad del glioma mediante la extracción de características radiómicas de textura de segundo orden (GLCM) a nivel de vóxel.</li>
-  <li><strong>Cuaderno:</strong> <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/radiomics.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a></li>
-</ul>
+  <!-- Tarjeta 6 -->
+  <div style="background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; border-left: 5px solid #A63737;">
+    <div>
+      <h3 style="margin-top: 0; margin-bottom: 8px; color: #333; font-size: 1.15rem;">Hands-on V: Hemodinámica y Biomecánica Cerebral (TOF-MRA)</h3>
+      <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px; line-height: 1.4;">Reconstrucción de la vasculatura mediante el uso de imágenes TOF-MRA y la aplicación de MIP.</p>
+    </div>
+    <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/Vasculatura_Cerebral.ipynb" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #F9F9F9; border: 1px solid #A63737; color: #A63737; padding: 10px 16px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.25s ease;" onmouseover="this.style.backgroundColor='#A63737'; this.style.color='#fff'; this.style.boxShadow='0 4px 10px rgba(166,55,55,0.2)';" onmouseout="this.style.backgroundColor='#F9F9F9'; this.style.color='#A63737'; this.style.boxShadow='none';">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 16px;" />
+      Abrir en Colab
+    </a>
+  </div>
 
-<h3><em>Hands-on</em> VII.A: Clasificación y Pipeline Radiómico</h3>
-<ul>
-  <li><strong>Objetivo:</strong> Construir un pipeline de Machine Learning para clasificar el grado tumoral (LGG vs. HGG) a partir de firmas radiómicas.</li>
-  <li><strong>Cuaderno:</strong> <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/ML.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a></li>
-</ul>
+  <!-- Tarjeta 7 -->
+  <div style="background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; border-left: 5px solid #A63737;">
+    <div>
+      <h3 style="margin-top: 0; margin-bottom: 8px; color: #333; font-size: 1.15rem;">Hands-on VI: Características y Mapas de Textura (GLCM)</h3>
+      <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px; line-height: 1.4;">Cuantificar la microestructura y heterogeneidad del glioma mediante la extracción de características radiómicas de textura.</p>
+    </div>
+    <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/radiomics.ipynb" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #F9F9F9; border: 1px solid #A63737; color: #A63737; padding: 10px 16px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.25s ease;" onmouseover="this.style.backgroundColor='#A63737'; this.style.color='#fff'; this.style.boxShadow='0 4px 10px rgba(166,55,55,0.2)';" onmouseout="this.style.backgroundColor='#F9F9F9'; this.style.color='#A63737'; this.style.boxShadow='none';">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 16px;" />
+      Abrir en Colab
+    </a>
+  </div>
 
-<h3><em>Hands-on</em> VII.B: Predicción de Severidad con IA</h3>
-<ul>
-  <li><strong>Objetivo:</strong> Modelar la severidad del tumor mediante Machine Learning interpretable (Caja Blanca).</li>
-  <li><strong>Cuaderno:</strong> <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/Glioma_classification.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a></li>
-</ul>
+  <!-- Tarjeta 8 -->
+  <div style="background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; border-left: 5px solid #A63737;">
+    <div>
+      <h3 style="margin-top: 0; margin-bottom: 8px; color: #333; font-size: 1.15rem;">Hands-on VII.A: Clasificación y Pipeline Radiómico</h3>
+      <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px; line-height: 1.4;">Construir un pipeline de Machine Learning para clasificar el grado tumoral (LGG vs. HGG) a partir de firmas radiómicas.</p>
+    </div>
+    <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/ML.ipynb" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #F9F9F9; border: 1px solid #A63737; color: #A63737; padding: 10px 16px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.25s ease;" onmouseover="this.style.backgroundColor='#A63737'; this.style.color='#fff'; this.style.boxShadow='0 4px 10px rgba(166,55,55,0.2)';" onmouseout="this.style.backgroundColor='#F9F9F9'; this.style.color='#A63737'; this.style.boxShadow='none';">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 16px;" />
+      Abrir en Colab
+    </a>
+  </div>
+
+  <!-- Tarjeta 9 -->
+  <div style="background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; border-left: 5px solid #A63737;">
+    <div>
+      <h3 style="margin-top: 0; margin-bottom: 8px; color: #333; font-size: 1.15rem;">Hands-on VII.B: Predicción de Severidad con IA</h3>
+      <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px; line-height: 1.4;">Modelar la severidad del tumor mediante Machine Learning interpretable (Caja Blanca) con análisis SHAP.</p>
+    </div>
+    <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/Glioma_classification.ipynb" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #F9F9F9; border: 1px solid #A63737; color: #A63737; padding: 10px 16px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.25s ease;" onmouseover="this.style.backgroundColor='#A63737'; this.style.color='#fff'; this.style.boxShadow='0 4px 10px rgba(166,55,55,0.2)';" onmouseout="this.style.backgroundColor='#F9F9F9'; this.style.color='#A63737'; this.style.boxShadow='none';">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 16px;" />
+      Abrir en Colab
+    </a>
+  </div>
+
+</div>
+
 
 <hr />
 
