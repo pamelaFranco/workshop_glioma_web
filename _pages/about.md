@@ -13,11 +13,32 @@ redirect_from:
 
 ---
 
-<p align="center">
-  <a href="https://www.ismrm.org/meetings-workshops/endorsement-request/" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/ISMRT--Endorsed-Workshop-005A9C?style=for-the-badge" alt="ISMRT Endorsed">
+<div style="text-align: center; margin: 25px 0 35px 0; font-family: system-ui, -apple-system, sans-serif;">
+  <a href="https://www.ismrm.org/meetings-workshops/endorsement-request/" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     style="display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            background-color: #f0f7ff; 
+            border: 1.5px solid #005A9C; 
+            color: #005A9C; 
+            padding: 10px 24px; 
+            text-decoration: none; 
+            border-radius: 30px; 
+            font-weight: 700; 
+            font-size: 0.85rem; 
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 8px rgba(0, 90, 156, 0.1); 
+            transition: all 0.25s ease;"
+     onmouseover="this.style.backgroundColor='#005A9C'; this.style.color='#ffffff'; this.style.boxShadow='0 4px 15px rgba(0, 90, 156, 0.25)'; this.style.transform='translateY(-1px)';"
+     onmouseout="this.style.backgroundColor='#f0f7ff'; this.style.color='#005A9C'; this.style.boxShadow='0 2px 8px rgba(0, 90, 156, 0.1)'; this.style.transform='translateY(0)';">
+    <!-- Icono de medalla/estrella de aprobación en SVG -->
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+    ISMRT-Endorsed Workshop
   </a>
-</p>
+</div>
 
 > **Gran Noticia:** ¡Este Workshop cuenta con el **respaldo y endoso oficial de la ISMRT** (*International Society for Magnetic Resonance Technicians*)! El patrocinio institucional fue discutido y aprobado por el comité ejecutivo durante la reunión anual en Ciudad del Cabo (*Cape Town*).
 
@@ -86,8 +107,8 @@ redirect_from:
 
 <div style="font-family: system-ui, -apple-system, sans-serif; margin: 30px 0;">
   
-  <!-- Fila 1: Acciones Principales (Inscripciones y Abstract) -->
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 20px;">
+  <!-- Fila 1: Inscripciones (2 Columnas Simétricas) -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 15px;">
     
     <!-- Botón Inscripción Presencial -->
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScVTNZGnZ7jFYkFfVNsTKiw_LQcgZfaXG4y_08lIPOTNVzjhA/viewform?usp=sharing" 
@@ -107,24 +128,26 @@ redirect_from:
        style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #074E8C; color: white; padding: 16px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(7, 78, 140, 0.25); transition: all 0.25s ease;"
        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 18px rgba(7, 78, 140, 0.35)';"
        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(7, 78, 140, 0.25)';">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7a5 5 0 0 0-7.54-4.39A9 9 0 1 0 8 17h8a9 9 0 0 0 7-10z"></path><video width="0" height="0"></video><polygon points="23 7 16 12 16 2 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2" fill="currentColor"></rect></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7a5 5 0 0 0-7.54-4.39A9 9 0 1 0 8 17h8a9 9 0 0 0 7-10z"></path><polygon points="23 7 16 12 16 2 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2" fill="currentColor"></rect></svg>
       Inscripción Online (Zoom)
     </a>
 
-    <!-- Botón Enviar Abstract -->
+  </div>
+
+  <!-- Fila 2: Enviar Abstract Centrado -->
+  <div style="text-align: center; margin-bottom: 30px;">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScrvB4-sUyraLQAthbE9K0Ph2O1xWT8xWlNHzRo8drDvrYp3Q/viewform?usp=sharing" 
        target="_blank" 
        rel="noopener noreferrer" 
-       style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #402C7C; color: white; padding: 16px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(64, 44, 124, 0.25); transition: all 0.25s ease;"
+       style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; background-color: #402C7C; color: white; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(64, 44, 124, 0.25); transition: all 0.25s ease; min-width: 250px;"
        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 18px rgba(64, 44, 124, 0.35)';"
        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(64, 44, 124, 0.25)';">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
       Enviar Abstract (Póster)
     </a>
-
   </div>
 
-  <!-- Fila 2: Enlaces Complementarios y Redes (GitHub, Programa, Instagram, Email) -->
+  <!-- Fila 3: Enlaces Complementarios y Redes (GitHub, Programa, Instagram, Email) -->
   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px;">
     
     <!-- GitHub -->
@@ -172,8 +195,6 @@ redirect_from:
   </div>
 
 </div>
-
----
 
 ---
 
