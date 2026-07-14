@@ -84,32 +84,96 @@ redirect_from:
 
 ## Enlaces de Interés y Registro
 
-<p align="center">
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLScVTNZGnZ7jFYkFfVNsTKiw_LQcgZfaXG4y_08lIPOTNVzjhA/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Inscripción-Presencial-074E8C?style=for-the-badge&logo=googleforms&logoColor=white" alt="Inscripción Presencial" />
-  </a>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSffyLNNJZKNM4mLKOeudr3ltQmXyKQiwgkqvS51f6Oqe73-_A/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Inscripción-Online-1182C4?style=for-the-badge&logo=zoom&logoColor=white" alt="Inscripción Online" />
-  </a>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLScrvB4-sUyraLQAthbE9K0Ph2O1xWT8xWlNHzRo8drDvrYp3Q/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Abstract-Enviar_aquí-402C7C?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Enviar Abstract" />
-  </a>
-</p>
+<div style="font-family: system-ui, -apple-system, sans-serif; margin: 30px 0;">
+  
+  <!-- Fila 1: Acciones Principales (Inscripciones y Abstract) -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 20px;">
+    
+    <!-- Botón Inscripción Presencial -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScVTNZGnZ7jFYkFfVNsTKiw_LQcgZfaXG4y_08lIPOTNVzjhA/viewform?usp=sharing" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #A63737; color: white; padding: 16px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(166, 55, 55, 0.25); transition: all 0.25s ease;"
+       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 18px rgba(166, 55, 55, 0.35)';"
+       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(166, 55, 55, 0.25)';">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      Inscripción Presencial
+    </a>
 
-<p align="center">
-  <a href="https://github.com/pamelaFranco/workshop_glioma" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Repositorio-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Ver en GitHub" />
-  </a>
-  <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Programa/Charlas___Workshop_IA_Interpretable_Neurooncologia.pdf" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Programa-PDF-A63737?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white" alt="Programa" />
-  </a>
-  <a href="https://www.instagram.com/neuro_artint/" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Instagram-NeuroArtInt-F2A20C?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
-  </a>
-  <a href="mailto:neurooncologia.ia@gmail.com">
-    <img src="https://img.shields.io/badge/Consultas-Email-38585B?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-</p>
+    <!-- Botón Inscripción Online -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSffyLNNJZKNM4mLKOeudr3ltQmXyKQiwgkqvS51f6Oqe73-_A/viewform?usp=publish-editor" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #074E8C; color: white; padding: 16px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(7, 78, 140, 0.25); transition: all 0.25s ease;"
+       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 18px rgba(7, 78, 140, 0.35)';"
+       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(7, 78, 140, 0.25)';">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7a5 5 0 0 0-7.54-4.39A9 9 0 1 0 8 17h8a9 9 0 0 0 7-10z"></path><video width="0" height="0"></video><polygon points="23 7 16 12 16 2 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2" fill="currentColor"></rect></svg>
+      Inscripción Online (Zoom)
+    </a>
+
+    <!-- Botón Enviar Abstract -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScrvB4-sUyraLQAthbE9K0Ph2O1xWT8xWlNHzRo8drDvrYp3Q/viewform?usp=sharing" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #402C7C; color: white; padding: 16px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(64, 44, 124, 0.25); transition: all 0.25s ease;"
+       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 18px rgba(64, 44, 124, 0.35)';"
+       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(64, 44, 124, 0.25)';">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+      Enviar Abstract (Póster)
+    </a>
+
+  </div>
+
+  <!-- Fila 2: Enlaces Complementarios y Redes (GitHub, Programa, Instagram, Email) -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px;">
+    
+    <!-- GitHub -->
+    <a href="https://github.com/pamelaFranco/workshop_glioma" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       style="display: inline-flex; align-items: center; gap: 8px; background-color: #ffffff; border: 1px solid #e1e4e8; color: #24292e; padding: 10px 18px; border-radius: 24px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s ease;"
+       onmouseover="this.style.backgroundColor='#fafbfc'; this.style.borderColor='#1b1f23'; this.style.transform='translateY(-1px)';"
+       onmouseout="this.style.backgroundColor='#ffffff'; this.style.borderColor='#e1e4e8'; this.style.transform='translateY(0)';">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      GitHub
+    </a>
+
+    <!-- Programa PDF -->
+    <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Programa/Charlas___Workshop_IA_Interpretable_Neurooncologia.pdf" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       style="display: inline-flex; align-items: center; gap: 8px; background-color: #ffffff; border: 1px solid #e1e4e8; color: #A63737; padding: 10px 18px; border-radius: 24px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s ease;"
+       onmouseover="this.style.backgroundColor='#fff5f5'; this.style.borderColor='#A63737'; this.style.transform='translateY(-1px)';"
+       onmouseout="this.style.backgroundColor='#ffffff'; this.style.borderColor='#e1e4e8'; this.style.transform='translateY(0)';">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+      Programa (PDF)
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/neuro_artint/" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       style="display: inline-flex; align-items: center; gap: 8px; background-color: #ffffff; border: 1px solid #e1e4e8; color: #e1306c; padding: 10px 18px; border-radius: 24px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s ease;"
+       onmouseover="this.style.backgroundColor='#fff0f5'; this.style.borderColor='#e1306c'; this.style.transform='translateY(-1px)';"
+       onmouseout="this.style.backgroundColor='#ffffff'; this.style.borderColor='#e1e4e8'; this.style.transform='translateY(0)';">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      Instagram
+    </a>
+
+    <!-- Consultas Email -->
+    <a href="mailto:neurooncologia.ia@gmail.com" 
+       style="display: inline-flex; align-items: center; gap: 8px; background-color: #ffffff; border: 1px solid #e1e4e8; color: #4a5568; padding: 10px 18px; border-radius: 24px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s ease;"
+       onmouseover="this.style.backgroundColor='#f7fafc'; this.style.borderColor='#4a5568'; this.style.transform='translateY(-1px)';"
+       onmouseout="this.style.backgroundColor='#ffffff'; this.style.borderColor='#e1e4e8'; this.style.transform='translateY(0)';">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      Contacto Email
+    </a>
+
+  </div>
+
+</div>
+
+---
 
 ---
 
