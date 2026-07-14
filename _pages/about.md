@@ -106,7 +106,9 @@ El evento se divide en tres grandes bloques progresivos diseñados para conectar
 
 El workshop contará con una instancia de **Sesión de Pósteres** destinada a estudiantes de pregrado y postgrado para incentivar el intercambio académico en IA y Salud. Un comité científico multi-institucional evaluará las propuestas. 
 
-* **Premio al Mejor Póster:** $100.000 CLP en efectivo (además de menciones honrosas para el 2° y 3° lugar).
+* **Formatos aceptados:** Presencial (póster físico) y online (e-poster).
+* **Premio al Mejor Póster:** $100.000 CLP (nacionales) o $100 USD (extranjeros) en efectivo, además de menciones honrosas para el 2° y 3° lugar.
+
 
 El cierre contará con la participación especial de la **Dra. Liliana Jorquera** (Presidenta del Capítulo IEEE EMBS Chile Centro), quien presentará los beneficios e invitaciones de la red de ingeniería en medicina y biología en el país.
 
