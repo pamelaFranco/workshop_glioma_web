@@ -184,7 +184,7 @@ A través de la red **REBECCA-IA** y en consonancia con los estándares internac
 ### Instituciones y Colaboradores
 
 <!-- Grilla de Logos Responsiva -->
-<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 25px; margin: 30px 0; padding: 20px 10px; background-color: #fafafa; border-radius: 8px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 25px; margin: 30px 0; padding: 20px 10px; background-color: ##ffffff; border-radius: 8px;">
   
   <!-- UNAB -->
   <div style="flex: 1 1 120px; max-width: 140px; text-align: center;">
