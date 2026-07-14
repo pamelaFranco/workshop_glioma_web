@@ -21,6 +21,65 @@ redirect_from:
 
 > **Gran Noticia:** ¡Este Workshop cuenta con el **respaldo y endoso oficial de la ISMRT** (*International Society for Magnetic Resonance Technicians*)! El patrocinio institucional fue discutido y aprobado por el comité ejecutivo durante la reunión anual en Ciudad del Cabo (*Cape Town*).
 
+
+---
+<!-- Sección: ¿Por qué asistir? -->
+<div style="margin: 30px 0; font-family: system-ui, -apple-system, sans-serif;">
+  <h3 style="text-align: center; color: #333; margin-bottom: 25px; font-size: 1.6rem; font-weight: bold;">¿Por qué asistir?</h3>
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+    
+    <!-- Tarjeta 1: Learn from experts -->
+    <div style="flex: 1; min-width: 220px; background: #fafafa; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border-bottom: 3px solid #A63737;">
+      <div style="margin-bottom: 12px;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#A63737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+      </div>
+      <h4 style="margin: 0 0 8px 0; font-size: 1.1rem; color: #111;">Learn from experts</h4>
+      <p style="margin: 0; font-size: 0.9rem; color: #666; line-height: 1.4;">Clases magistrales dictadas por especialistas destacados en medicina, física médica e IA.</p>
+    </div>
+
+    <!-- Tarjeta 2: Hands-on coding sessions -->
+    <div style="flex: 1; min-width: 220px; background: #fafafa; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border-bottom: 3px solid #A63737;">
+      <div style="margin-bottom: 12px;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#A63737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+      </div>
+      <h4 style="margin: 0 0 8px 0; font-size: 1.1rem; color: #111;">Hands-on coding</h4>
+      <p style="margin: 0; font-size: 0.9rem; color: #666; line-height: 1.4;">Sesiones prácticas e interactivas en Python usando datos reales y modelos explicables.</p>
+    </div>
+
+    <!-- Tarjeta 3: Poster competition -->
+    <div style="flex: 1; min-width: 220px; background: #fafafa; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border-bottom: 3px solid #A63737;">
+      <div style="margin-bottom: 12px;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#A63737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="7"></circle>
+          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+        </svg>
+      </div>
+      <h4 style="margin: 0 0 8px 0; font-size: 1.1rem; color: #111;">Poster competition</h4>
+      <p style="margin: 0; font-size: 0.9rem; color: #666; line-height: 1.4;">Presenta tu investigación científica y compite por premios en efectivo y reconocimiento.</p>
+    </div>
+
+    <!-- Tarjeta 4: Networking -->
+    <div style="flex: 1; min-width: 220px; background: #fafafa; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border-bottom: 3px solid #A63737;">
+      <div style="margin-bottom: 12px;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#A63737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+      </div>
+      <h4 style="margin: 0 0 8px 0; font-size: 1.1rem; color: #111;">Networking</h4>
+      <p style="margin: 0; font-size: 0.9rem; color: #666; line-height: 1.4;">Conéctate con clínicos, tecnólogos, físicos e ingenieros de primer nivel.</p>
+    </div>
+
+  </div>
+</div>
 ---
 
 ## Enlaces de Interés y Registro
