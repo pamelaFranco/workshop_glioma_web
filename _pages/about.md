@@ -13,7 +13,8 @@ redirect_from:
 
 ---
 
-<div style="text-align: center; margin: 25px 0 35px 0; font-family: system-ui, -apple-system, sans-serif;">
+<!-- Sello ISMRT destacado y limpio bajo el título -->
+<div style="text-align: center; margin: 20px 0; font-family: system-ui, -apple-system, sans-serif;">
   <a href="https://www.ismrm.org/meetings-workshops/endorsement-request/" 
      target="_blank" 
      rel="noopener noreferrer" 
@@ -34,17 +35,14 @@ redirect_from:
             transition: all 0.25s ease;"
      onmouseover="this.style.backgroundColor='#005A9C'; this.style.color='#ffffff'; this.style.boxShadow='0 4px 15px rgba(0, 90, 156, 0.25)'; this.style.transform='translateY(-1px)';"
      onmouseout="this.style.backgroundColor='#f0f7ff'; this.style.color='#005A9C'; this.style.boxShadow='0 2px 8px rgba(0, 90, 156, 0.1)'; this.style.transform='translateY(0)';">
-    <!-- Icono de medalla/estrella de aprobación en SVG -->
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
     ISMRT-Endorsed Workshop
   </a>
 </div>
 
-> **Gran Noticia:** ¡Este Workshop cuenta con el **respaldo y endoso oficial de la ISMRT** (*International Society for Magnetic Resonance Technicians*)! El patrocinio institucional fue discutido y aprobado por el comité ejecutivo durante la reunión anual en Ciudad del Cabo (*Cape Town*).
-
-
 ---
-<!-- Sección: ¿Por qué asistir? -->
+
+<!-- Sección 1: ¿Por qué asistir? (Entrada visual fuerte) -->
 <div style="margin: 30px 0; font-family: system-ui, -apple-system, sans-serif;">
   <h3 style="text-align: center; color: #333; margin-bottom: 25px; font-size: 1.6rem; font-weight: bold;">¿Por qué asistir?</h3>
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
@@ -101,8 +99,22 @@ redirect_from:
 
   </div>
 </div>
+
 ---
 
+<!-- Sección 2: Información Clave del Evento (Ubicación física y fechas para dar contexto) -->
+## Información del Evento
+
+| Detalle | Información |
+| :--- | :--- |
+| **Fecha** | Jueves, 10 de diciembre de 2026 |
+| **Horario** | 8:00 AM - 17:00 PM (GMT-4 / Hora de Chile) |
+| **Modalidad Presencial** | **Auditorio Zócalo, Universidad Andrés Bello**<br>Antonio Varas 880, Providencia, Santiago, Chile. |
+| **Modalidad Online** | **Vía Zoom** (El enlace de acceso se enviará posterior a la inscripción). |
+
+---
+
+<!-- Sección 3: Llamado a la acción (Botones de inscripción ahora que el usuario está convencido) -->
 ## Enlaces de Interés y Registro
 
 <div style="font-family: system-ui, -apple-system, sans-serif; margin: 30px 0;">
@@ -198,6 +210,7 @@ redirect_from:
 
 ---
 
+<!-- Sección 4: El núcleo de qué trata -->
 ## Sobre el Workshop
 
 Este encuentro ofrece una **inmersión teórico-práctica** en el pipeline avanzado de la neurooncología de precisión. A través de un enfoque multidisciplinario, el programa aborda de forma integral el ciclo de vida del dato médico: desde la biología molecular del glioma y los principios físicos esenciales en la adquisición de Resonancia Magnética (RM), hasta llegar al modelado predictivo de vanguardia mediante Inteligencia Artificial (IA) e interpretabilidad clínica.
@@ -210,17 +223,7 @@ Este encuentro ofrece una **inmersión teórico-práctica** en el pipeline avanz
 
 ---
 
-## Información del Evento
-
-| Detalle | Información |
-| :--- | :--- |
-| **Fecha** | Jueves, 10 de diciembre de 2026 |
-| **Horario** | 8:00 AM - 17:00 PM (GMT-4 / Hora de Chile) |
-| **Modalidad Presencial** | **Auditorio Zócalo, Universidad Andrés Bello**<br>Antonio Varas 880, Providencia, Santiago, Chile. |
-| **Modalidad Online** | **Vía Zoom** (El enlace de acceso se enviará posterior a la inscripción). |
-
----
-
+<!-- Sección 5: Programa detallado -->
 ## Estructura del Programa y Charlas
 
 El evento se divide en tres grandes bloques progresivos diseñados para conectar la clínica con las ciencias exactas y la computación:
@@ -253,12 +256,14 @@ El workshop contará con una instancia de **Sesión de Pósteres** destinada a e
 * **Formatos aceptados:** Presencial (póster físico) y online (e-poster).
 * **Premio al Mejor Póster:** $100.000 CLP (nacionales) o $100 USD (extranjeros) en efectivo, además de menciones honrosas para el 2° y 3° lugar.
 
-
 El cierre contará con la participación especial de la **Dra. Liliana Jorquera** (Presidenta del Capítulo IEEE EMBS Chile Centro), quien presentará los beneficios e invitaciones de la red de ingeniería en medicina y biología en el país.
 
 ---
 
+<!-- Sección 6: Alianza Internacional + El aviso de la ISMRT movido estratégicamente aquí -->
 ## Alianza e Integración Internacional
+
+> **Gran Noticia:** ¡Este Workshop cuenta con el **respaldo y endoso oficial de la ISMRT** (*International Society for Magnetic Resonance Technicians*)! El patrocinio institucional fue discutido y aprobado por el comité ejecutivo durante la reunión anual en Ciudad del Cabo (*Cape Town*).
 
 Este workshop se presenta en el marco de **REBECCA-IA**, una iniciativa financiada por el Programa Iberoamericano de Ciencia y Tecnología para el Desarrollo (CYTED) e impulsada por el [Instituto Tecnológico de Medellín (ITM)](https://www.itm.edu.co).
 
@@ -269,7 +274,7 @@ A través de la red **REBECCA-IA** y en consonancia con los estándares internac
 ### Instituciones y Colaboradores
 
 <!-- Grilla de Logos Responsiva -->
-<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 25px; margin: 30px 0; padding: 20px 10px; background-color: ##ffffff; border-radius: 8px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 25px; margin: 30px 0; padding: 20px 10px; background-color: #ffffff; border-radius: 8px;">
   
   <!-- UNAB -->
   <div style="flex: 1 1 120px; max-width: 140px; text-align: center;">
@@ -309,8 +314,5 @@ A través de la red **REBECCA-IA** y en consonancia con los estándares internac
 </div>
 
 <p align="center" style="margin-top: 30px;">
-  <b>Organizan e Invitan:</b><br>
-  Universidad Andrés Bello (UNAB) | Pontificia Universidad Católica de Chile (UC) | Fundación Arturo López Pérez (FALP)<br>
-  <!-- Aquí agregamos <b> para que todo el proyecto quede en negrilla -->
   <i><b>Proyecto Endowment I+D: Investigación Clínica para la Salud (DI-07-25/ICS)</b></i>
 </p>
