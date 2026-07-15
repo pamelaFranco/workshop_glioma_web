@@ -293,22 +293,22 @@ A través de la red **REBECCA-IA** y en consonancia con los estándares internac
 
   <!-- ISMRT -->
   <div style="flex: 1 1 120px; max-width: 140px; text-align: center;">
-    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Figuras/ISMRT.png" alt="ISMRT" style="max-height: 45px; width: auto;" />
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/main/Figuras/ISMRT.png" alt="ISMRT" style="max-height: 45px; width: auto;" />
   </div>
 
   <!-- IEEE EMBS -->
   <div style="flex: 1 1 120px; max-width: 140px; text-align: center;">
-    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Figuras/ieee-embs.png" alt="IEEE EMBS" style="max-height: 45px; width: auto;" />
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/main/Figuras/ieee-embs.png" alt="IEEE EMBS" style="max-height: 45px; width: auto;" />
   </div>
 
   <!-- Guerbet -->
   <div style="flex: 1 1 120px; max-width: 140px; text-align: center;">
-    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Figuras/guerbet.jpg" alt="Guerbet" style="max-height: 45px; width: auto;" />
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/main/Figuras/guerbet.jpg" alt="Guerbet" style="max-height: 45px; width: auto;" />
   </div>
 
   <!-- Rebecca IA -->
   <div style="flex: 1 1 120px; max-width: 140px; text-align: center;">
-    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Figuras/rebeccaia.jpg" alt="Rebecca IA" style="max-height: 50px; width: auto; border-radius: 4px;" />
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/main/Figuras/rebeccaia.jpg" alt="Rebecca IA" style="max-height: 50px; width: auto; border-radius: 4px;" />
   </div>
 
 </div>
