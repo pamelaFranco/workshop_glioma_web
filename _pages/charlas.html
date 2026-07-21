@@ -1,171 +1,438 @@
 ---
 layout: archive
-title: "Charlas"
+title: "Charlas y Expositores"
 permalink: /charlas/
 author_profile: true
 ---
 
+<style>
+  :root {
+    --primary: #A63737;
+    --secondary: #074E8C;
+    --accent: #402C7C;
+    --dark: #1e293b;
+    --light-bg: #f8fafc;
+    --border-color: #e2e8f0;
+  }
+
+  /* -------------------------------------------------------------
+     1. ESTADÍSTICAS DESTACADAS (Grid Responsiva de 5 ítems)
+  ------------------------------------------------------------- */
+  .grid-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+  }
+
+  .stat-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--primary);
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 900px) {
+    .grid-stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* -------------------------------------------------------------
+     2. TABLA DE EXPOSITORES RESPONSIVA Y ESTILIZADA
+  ------------------------------------------------------------- */
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    margin-bottom: 40px;
+  }
+
+  .speakers-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    font-size: 0.92rem;
+    text-align: left;
+  }
+
+  .speakers-table thead tr {
+    background-color: var(--light-bg);
+    color: var(--dark);
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .speakers-table th {
+    padding: 14px 16px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .speakers-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+    color: #334155;
+    vertical-align: middle;
+  }
+
+  .speakers-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .speakers-table tbody tr:hover {
+    background-color: #f1f5f9;
+  }
+
+  .link-orcid {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #a6ce39;
+    font-weight: 600;
+    text-decoration: none !important;
+  }
+  .link-orcid:hover {
+    text-decoration: underline !important;
+  }
+
+  .link-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #0077b5;
+    font-weight: 600;
+    text-decoration: none !important;
+  }
+  .link-linkedin:hover {
+    text-decoration: underline !important;
+  }
+
+  /* -------------------------------------------------------------
+     3. GRID DE FASES DEL WORKSHOP (Sustituye la lista ordenada)
+  ------------------------------------------------------------- */
+  .grid-phases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 25px 0 35px 0;
+  }
+
+  .phase-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 18px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .phase-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .phase-badge {
+    display: inline-block;
+    background: #f1f5f9;
+    color: var(--secondary);
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+
+  .phase-title {
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 0.98rem;
+    margin: 0 0 6px 0;
+  }
+
+  .phase-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 900px) {
+    .grid-phases {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid-phases {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* -------------------------------------------------------------
+     4. BOTÓN CTA PROGRAMA COMPLETO
+  ------------------------------------------------------------- */
+  .btn-pdf-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--primary);
+    color: #ffffff !important;
+    padding: 14px 32px;
+    text-decoration: none !important;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(166, 55, 55, 0.25);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .btn-pdf-cta:hover {
+    background-color: #ffffff;
+    color: var(--primary) !important;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(166, 55, 55, 0.35);
+  }
+</style>
+
 <!-- Sección de Estadísticas Destacadas -->
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px; margin: 30px 0; font-family: system-ui, -apple-system, sans-serif;">
-  <div style="flex: 1; min-width: 140px; background-color: #f9f9f9; border-top: 4px solid #A63737; padding: 20px 10px; text-align: center; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
-    <span style="display: block; font-size: 2.2rem; font-weight: bold; color: #A63737; margin-bottom: 5px; line-height: 1.2;">10+</span>
-    <span style="font-size: 0.8rem; color: #555; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">Expositores</span>
+<div class="grid-stats">
+  <div class="stat-card">
+    <span class="stat-number">10+</span>
+    <span class="stat-label">Expositores</span>
   </div>
-  <div style="flex: 1; min-width: 140px; background-color: #f9f9f9; border-top: 4px solid #A63737; padding: 20px 10px; text-align: center; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
-    <span style="display: block; font-size: 2.2rem; font-weight: bold; color: #A63737; margin-bottom: 5px; line-height: 1.2;">8 hrs</span>
-    <span style="font-size: 0.8rem; color: #555; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">De Contenido</span>
+  <div class="stat-card">
+    <span class="stat-number">8 hrs</span>
+    <span class="stat-label">De Contenido</span>
   </div>
-  <div style="flex: 1; min-width: 140px; background-color: #f9f9f9; border-top: 4px solid #A63737; padding: 20px 10px; text-align: center; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
-    <span style="display: block; font-size: 2.2rem; font-weight: bold; color: #A63737; margin-bottom: 5px; line-height: 1.2;">9</span>
-    <span style="font-size: 0.8rem; color: #555; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">Sesiones Prácticas</span>
+  <div class="stat-card">
+    <span class="stat-number">9</span>
+    <span class="stat-label">Sesiones Prácticas</span>
   </div>
-  <div style="flex: 1; min-width: 140px; background-color: #f9f9f9; border-top: 4px solid #A63737; padding: 20px 10px; text-align: center; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
-    <span style="display: block; font-size: 1.8rem; font-weight: bold; color: #A63737; margin-bottom: 5px; line-height: 1.2; padding-top: 5px;">Híbrido</span>
-    <span style="font-size: 0.8rem; color: #555; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">Formato de Evento</span>
+  <div class="stat-card">
+    <span class="stat-number" style="font-size: 1.6rem; padding-top: 4px;">Híbrido</span>
+    <span class="stat-label">Formato Evento</span>
   </div>
-  <div style="flex: 1; min-width: 140px; background-color: #f9f9f9; border-top: 4px solid #A63737; padding: 20px 10px; text-align: center; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
-    <span style="display: block; font-size: 1.8rem; font-weight: bold; color: #A63737; margin-bottom: 5px; line-height: 1.2; padding-top: 5px;">Pósteres</span>
-    <span style="font-size: 0.8rem; color: #555; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">Competencia</span>
+  <div class="stat-card">
+    <span class="stat-number" style="font-size: 1.6rem; padding-top: 4px;">Pósteres</span>
+    <span class="stat-label">Competencia</span>
   </div>
 </div>
 
 <h2>Expositores y Especialistas</h2>
-<p>Contamos con un equipo multidisciplinario de expertos en física, ingeniería y oncología:</p>
+<p style="color: #64748b; margin-bottom: 20px;">Contamos con un equipo multidisciplinario de expertos en física médica, ingeniería, radiología y oncología:</p>
 
-<table style="width:100%; border-collapse: collapse; margin-bottom: 30px;">
-  <thead>
-    <tr style="border-bottom: 2px solid #ccc; text-align: left;">
-      <th style="padding: 10px;">Ponente</th>
-      <th style="padding: 10px;">Institución</th>
-      <th style="padding: 10px;">Especialidad</th>
-      <th style="padding: 10px;">Información</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>Dr. Héctor Ramos</strong></td>
-      <td style="padding: 10px;">(CIIC) FALP</td>
-      <td style="padding: 10px;">Neurooncología Clínica</td>
-      <td style="padding: 10px;"><a href="https://orcid.org/0000-0002-0612-8289" target="_blank">Perfil ORCID</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>TM. Alejandro Cerda</strong></td>
-      <td style="padding: 10px;">UNAB - ISMRT</td>
-      <td style="padding: 10px;">Protocolos Clínicos en Gliomas</td>
-      <td style="padding: 10px;"><a href="https://cl.linkedin.com/in/alejandro-cerda-escobar-53b13ba3" target="_blank">Perfil LinkedIn</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>Dr. Ignacio Espinoza</strong></td>
-      <td style="padding: 10px;">UC</td>
-      <td style="padding: 10px;">Física de la RM</td>
-      <td style="padding: 10px;"><a href="https://orcid.org/0000-0003-2400-4498" target="_blank">Perfil ORCID</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>Dr. Hernán Mella</strong></td>
-      <td style="padding: 10px;">PUCV</td>
-      <td style="padding: 10px;">Artefactos en RM</td>
-      <td style="padding: 10px;"><a href="https://orcid.org/0000-0001-8712-146X" target="_blank">Perfil ORCID</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>MSc. Cristian Montalba</strong></td>
-      <td style="padding: 10px;">UC - iHEALTH</td>
-      <td style="padding: 10px;">Difusión y Tractografía</td>
-      <td style="padding: 10px;"><a href="https://orcid.org/0000-0003-3370-0233" target="_blank">Perfil ORCID</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>Dra. M. Daniela Cornejo</strong></td>
-      <td style="padding: 10px;">UC</td>
-      <td style="padding: 10px;">Mapeo Funcional fMRI</td>
-      <td style="padding: 10px;"><a href="https://orcid.org/0009-0003-0425-5721" target="_blank">Perfil ORCID</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>Dr. David Ortiz-Puerta</strong></td>
-      <td style="padding: 10px;">UV - iHEALTH</td>
-      <td style="padding: 10px;">PINNs y Modelado BOLD</td>
-      <td style="padding: 10px;"><a href="https://orcid.org/0000-0001-6285-3066" target="_blank">Perfil ORCID</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>Dr. Antonio Eblen-Zajjur</strong></td>
-      <td style="padding: 10px;">UA</td>
-      <td style="padding: 10px;">Neurovascular y fNIRS</td>
-      <td style="padding: 10px;"><a href="https://orcid.org/0000-0002-0077-0318" target="_blank">Perfil ORCID</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>Dr. Julio Sotelo</strong></td>
-      <td style="padding: 10px;">USM - iHEALTH</td>
-      <td style="padding: 10px;">Hemodinámica y FEM</td>
-      <td style="padding: 10px;"><a href="https://orcid.org/0000-0002-0915-5215" target="_blank">Perfil ORCID</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>Dr. Domingo Mery</strong></td>
-      <td style="padding: 10px;">UC - iHEALTH - CENIA</td>
-      <td style="padding: 10px;">Machine Learning</td>
-      <td style="padding: 10px;"><a href="https://orcid.org/0000-0003-4748-3882" target="_blank">Perfil ORCID</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>Dra. Paola Caprile</strong></td>
-      <td style="padding: 10px;">UC - iHEALTH</td>
-      <td style="padding: 10px;">Radiómica</td>
-      <td style="padding: 10px;"><a href="https://orcid.org/0000-0001-7060-262X" target="_blank">Perfil ORCID</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>Dra. Pamela Franco</strong></td>
-      <td style="padding: 10px;">UNAB</td>
-      <td style="padding: 10px;">IA e Interpretabilidad</td>
-      <td style="padding: 10px;"><a href="https://orcid.org/0000-0001-7629-3653" target="_blank">Perfil ORCID</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>Dr. Diego Mellado</strong></td>
-      <td style="padding: 10px;">UNAB - ITISB</td>
-      <td style="padding: 10px;">Interpretabilidad Visual</td>
-      <td style="padding: 10px;"><a href="https://orcid.org/0000-0001-8078-253X" target="_blank">Perfil ORCID</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px;"><strong>Dra. Liliana Jorquera</strong></td>
-      <td style="padding: 10px;">UNAB - EMBS</td>
-      <td style="padding: 10px;">IEEE EMBS Chile</td>
-      <td style="padding: 10px;"><a href="https://orcid.org/0000-0002-6530-2080" target="_blank">Perfil ORCID</a></td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-container">
+  <table class="speakers-table">
+    <thead>
+      <tr>
+        <th>Ponente</th>
+        <th>Institución</th>
+        <th>Especialidad</th>
+        <th>Perfil / Red</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Dr. Héctor Ramos</strong></td>
+        <td>(CIIC) FALP</td>
+        <td>Neurooncología Clínica</td>
+        <td><a class="link-orcid" href="https://orcid.org/0000-0002-0612-8289" target="_blank">ORCID</a></td>
+      </tr>
+      <tr>
+        <td><strong>TM. Alejandro Cerda</strong></td>
+        <td>UNAB - ISMRT</td>
+        <td>Protocolos Clínicos en Gliomas</td>
+        <td><a class="link-linkedin" href="https://cl.linkedin.com/in/alejandro-cerda-escobar-53b13ba3" target="_blank">LinkedIn</a></td>
+      </tr>
+      <tr>
+        <td><strong>Dr. Ignacio Espinoza</strong></td>
+        <td>UC</td>
+        <td>Física de la RM</td>
+        <td><a class="link-orcid" href="https://orcid.org/0000-0003-2400-4498" target="_blank">ORCID</a></td>
+      </tr>
+      <tr>
+        <td><strong>Dr. Hernán Mella</strong></td>
+        <td>PUCV</td>
+        <td>Artefactos en RM</td>
+        <td><a class="link-orcid" href="https://orcid.org/0000-0001-8712-146X" target="_blank">ORCID</a></td>
+      </tr>
+      <tr>
+        <td><strong>MSc. Cristian Montalba</strong></td>
+        <td>UC - iHEALTH</td>
+        <td>Difusión y Tractografía</td>
+        <td><a class="link-orcid" href="https://orcid.org/0000-0003-3370-0233" target="_blank">ORCID</a></td>
+      </tr>
+      <tr>
+        <td><strong>Dra. M. Daniela Cornejo</strong></td>
+        <td>UC</td>
+        <td>Mapeo Funcional fMRI</td>
+        <td><a class="link-orcid" href="https://orcid.org/0009-0003-0425-5721" target="_blank">ORCID</a></td>
+      </tr>
+      <tr>
+        <td><strong>Dr. David Ortiz-Puerta</strong></td>
+        <td>UV - iHEALTH</td>
+        <td>PINNs y Modelado BOLD</td>
+        <td><a class="link-orcid" href="https://orcid.org/0000-0001-6285-3066" target="_blank">ORCID</a></td>
+      </tr>
+      <tr>
+        <td><strong>Dr. Antonio Eblen-Zajjur</strong></td>
+        <td>UA</td>
+        <td>Neurovascular y fNIRS</td>
+        <td><a class="link-orcid" href="https://orcid.org/0000-0002-0077-0318" target="_blank">ORCID</a></td>
+      </tr>
+      <tr>
+        <td><strong>Dr. Julio Sotelo</strong></td>
+        <td>USM - iHEALTH</td>
+        <td>Hemodinámica y FEM</td>
+        <td><a class="link-orcid" href="https://orcid.org/0000-0002-0915-5215" target="_blank">ORCID</a></td>
+      </tr>
+      <tr>
+        <td><strong>Dr. Domingo Mery</strong></td>
+        <td>UC - iHEALTH - CENIA</td>
+        <td>Machine Learning</td>
+        <td><a class="link-orcid" href="https://orcid.org/0000-0003-4748-3882" target="_blank">ORCID</a></td>
+      </tr>
+      <tr>
+        <td><strong>Dra. Paola Caprile</strong></td>
+        <td>UC - iHEALTH</td>
+        <td>Radiómica</td>
+        <td><a class="link-orcid" href="https://orcid.org/0000-0001-7060-262X" target="_blank">ORCID</a></td>
+      </tr>
+      <tr>
+        <td><strong>Dra. Pamela Franco</strong></td>
+        <td>UNAB</td>
+        <td>IA e Interpretabilidad</td>
+        <td><a class="link-orcid" href="https://orcid.org/0000-0001-7629-3653" target="_blank">ORCID</a></td>
+      </tr>
+      <tr>
+        <td><strong>Dr. Diego Mellado</strong></td>
+        <td>UNAB - ITISB</td>
+        <td>Interpretabilidad Visual</td>
+        <td><a class="link-orcid" href="https://orcid.org/0000-0001-8078-253X" target="_blank">ORCID</a></td>
+      </tr>
+      <tr>
+        <td><strong>Dra. Liliana Jorquera</strong></td>
+        <td>UNAB - EMBS</td>
+        <td>IEEE EMBS Chile</td>
+        <td><a class="link-orcid" href="https://orcid.org/0000-0002-6530-2080" target="_blank">ORCID</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<h2>Introducción al Workshop</h2>
-<p>Este repositorio contiene los materiales para el laboratorio virtual sobre neurooncología de precisión. El workshop integra nueve fases críticas del análisis de imágenes médicas:</p>
+<h2>Introducción al Workshop y Fases Prácticas</h2>
+<p style="color: #64748b;">El laboratorio virtual sobre neurooncología de precisión integra nueve fases críticas de análisis de imágenes médicas:</p>
 
-<ol>
-  <li><strong>Fundamentos del Espacio K:</strong> Exploración del dominio de la frecuencia en RM.</li>
-  <li><strong>Simulación de Secuencias:</strong> Modelado interactivo de las ecuaciones de Bloch para entender el contraste (<em>TR</em>, <em>TE</em>, <em>α</em>).</li>
-  <li><strong>Física de Resonancia:</strong> Generación de mapas paramétricos (<em>T1</em> y <em>T2</em>).</li>
-  <li><strong>Microestructura Tisular:</strong> Procesamiento de Tensores de Difusión (<em>DTI</em>).</li>
-  <li><strong>Mapeo Funcional:</strong> Exploración de la dinámica de la señal <em>BOLD</em> y <em>fMRI</em>.</li>
-  <li><strong>Hemodinámica y Biomecánica:</strong> Reconstrucción de vasculatura mediante <em>TOF-MRA</em>.</li>
-  <li><strong>Extracción de Características de Radiómica:</strong> Extracción de características cuantitativas de grado médico a partir de la distribución de grises en imágenes digitales.</li>
-  <li><strong>Pipeline Radiómico para la Clasificación de Gliomas (LGG vs. HGG):</strong> Selección de características críticas y clasificación automatizada a partir de métricas extraídas de resonancia magnética en T1, utilizando datos clínicos reales para diferenciar bajo y alto grado.</li>
-  <li><strong>IA Interpretable:</strong> Decodificación de severidad mediante radiómica y <em>SHAP</em>.</li>
-</ol>
+<div class="grid-phases">
+  <div class="phase-card">
+    <span class="phase-badge">FASE 01</span>
+    <h3 class="phase-title">Fundamentos del Espacio K</h3>
+    <p class="phase-desc">Exploración práctica del dominio de la frecuencia en resonancia magnética.</p>
+  </div>
 
-<div style="text-align: center; margin: 40px 0 50px 0; font-family: system-ui, -apple-system, sans-serif;">
-  <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Programa/Charlas___Workshop_IA_Interpretable_Neurooncologia.pdf" 
-     target="_blank" 
-     style="display: inline-block; 
-            background-color: #A63737; 
-            color: white; 
-            padding: 14px 32px; 
-            text-decoration: none; 
-            border-radius: 30px; 
-            font-weight: 700; 
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(166, 55, 55, 0.3); 
-            transition: all 0.3s ease;
-            border: 2px solid transparent;"
-     onmouseover="this.style.backgroundColor='#fff'; this.style.color='#A63737'; this.style.borderColor='#A63737'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(166, 55, 55, 0.4)';"
-     onmouseout="this.style.backgroundColor='#A63737'; this.style.color='white'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(166, 55, 55, 0.3)';">
-    <span style="display: flex; align-items: center; justify-content: center; gap: 8px;">
-      <!-- Icono de documento/PDF representado en SVG -->
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-      Ver Programa Completo (PDF)
-    </span>
+  <div class="phase-card">
+    <span class="phase-badge">FASE 02</span>
+    <h3 class="phase-title">Simulación de Secuencias</h3>
+    <p class="phase-desc">Modelado interactivo de las ecuaciones de Bloch para entender el contraste (<em>TR</em>, <em>TE</em>, <em>α</em>).</p>
+  </div>
+
+  <div class="phase-card">
+    <span class="phase-badge">FASE 03</span>
+    <h3 class="phase-title">Física de Resonancia</h3>
+    <p class="phase-desc">Generación y análisis de mapas paramétricos (<em>T1</em> y <em>T2</em>).</p>
+  </div>
+
+  <div class="phase-card">
+    <span class="phase-badge">FASE 04</span>
+    <h3 class="phase-title">Microestructura Tisular</h3>
+    <p class="phase-desc">Procesamiento de Tensores de Difusión (<em>DTI</em>) y reconstrucción tractográfica.</p>
+  </div>
+
+  <div class="phase-card">
+    <span class="phase-badge">FASE 05</span>
+    <h3 class="phase-title">Mapeo Funcional</h3>
+    <p class="phase-desc">Exploración de la dinámica de la señal <em>BOLD</em> y aplicaciones en <em>fMRI</em>.</p>
+  </div>
+
+  <div class="phase-card">
+    <span class="phase-badge">FASE 06</span>
+    <h3 class="phase-title">Hemodinámica y Biomecánica</h3>
+    <p class="phase-desc">Reconstrucción de la vasculatura mediante secuencias <em>TOF-MRA</em>.</p>
+  </div>
+
+  <div class="phase-card">
+    <span class="phase-badge">FASE 07</span>
+    <h3 class="phase-title">Extracción de Radiómica</h3>
+    <p class="phase-desc">Extracción de características cuantitativas de grado médico desde imágenes digitales.</p>
+  </div>
+
+  <div class="phase-card">
+    <span class="phase-badge">FASE 08</span>
+    <h3 class="phase-title">Clasificación de Gliomas</h3>
+    <p class="phase-desc">Pipeline radiómico automatizado para diferenciar bajo (LGG) y alto grado (HGG) en T1.</p>
+  </div>
+
+  <div class="phase-card">
+    <span class="phase-badge">FASE 09</span>
+    <h3 class="phase-title">IA Interpretable</h3>
+    <p class="phase-desc">Decodificación de la severidad clínica mediante radiómica explicable con <em>SHAP</em>.</p>
+  </div>
+</div>
+
+<div style="text-align: center; margin: 40px 0 50px 0;">
+  <a class="btn-pdf-cta" href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Programa/Charlas___Workshop_IA_Interpretable_Neurooncologia.pdf" target="_blank">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+      <polyline points="14 2 14 8 20 8"></polyline>
+      <line x1="16" y1="13" x2="8" y2="13"></line>
+      <line x1="16" y1="17" x2="8" y2="17"></line>
+      <polyline points="10 9 9 9 8 9"></polyline>
+    </svg>
+    Ver Programa Completo (PDF)
   </a>
 </div>
 

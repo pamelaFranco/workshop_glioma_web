@@ -5,20 +5,92 @@ permalink: /apoyos/
 author_profile: true
 ---
 
+<style>
+  /* Contenedores visuales y tarjetas */
+  .support-card {
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .support-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+  }
+
+  .support-logo-wrapper {
+    flex: 0 0 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .support-logo-wrapper img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .support-content {
+    flex: 1;
+    line-height: 1.6;
+    color: #333333;
+    font-size: 0.95rem;
+  }
+
+  /* Cajas informativas / Callouts */
+  .info-box {
+    background-color: #f8f9fa;
+    border-left: 4px solid #A63737;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+  }
+  
+  .language-box {
+    background-color: #f0f4f8;
+    border-left: 4px solid #2b5797;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  /* Layout adaptable para móviles */
+  @media (max-width: 600px) {
+    .support-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+    .support-logo-wrapper {
+      flex: initial;
+    }
+  }
+</style>
+
 <h2>Alianza e Integración Internacional</h2>
 <p>Este workshop se presenta en el marco de <strong>REBECCA-IA</strong>, una iniciativa financiada por el Programa Iberoamericano de Ciencia y Tecnología para el Desarrollo (CYTED) e impulsada por el <a href="https://www.itm.edu.co" target="_blank" rel="noopener noreferrer">Instituto Tecnológico de Medellín (ITM)</a>.</p>
 
 <p>Desde la red <strong>REBECCA-IA</strong>, el evento cuenta con la participación de las siguientes instituciones internacionales:</p>
-<ul style="margin-bottom: 20px; line-height: 1.6;">
+<ul>
   <li><strong>Institución Universitaria ITM</strong> (Medellín, Colombia)</li>
   <li><strong>Universidad Militar Nueva Granada</strong> (Bogotá, Colombia)</li>
   <li><strong>Universidad de Zacatecas</strong> (Zacatecas, México)</li>
 </ul>
 
-
-<div style="display: flex; justify-content: flex-start; margin-bottom: 20px;">
-  <a href="https://www.itm.edu.co" target="_blank" rel="noopener noreferrer" style="border-bottom: none;">
-    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/rebeccaia.jpg" alt="Logo REBECCA-IA" style="width: 180px; max-width: 100%; height: auto; display: block;"/>
+<div style="margin: 20px 0 30px 0;">
+  <a href="https://www.itm.edu.co" target="_blank" rel="noopener noreferrer" style="border-bottom: none; display: inline-block;">
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/rebeccaia.jpg" alt="Logo REBECCA-IA" style="width: 200px; max-width: 100%; height: auto; border-radius: 6px;"/>
   </a>
 </div>
 
@@ -27,39 +99,36 @@ author_profile: true
 <h2>Reconocimiento Internacional</h2>
 
 <!-- Bloque ISMRT -->
-<div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
-  <div style="flex: 1; min-width: 180px; display: flex; justify-content: center;">
+<div class="support-card">
+  <div class="support-logo-wrapper">
     <a href="https://www.ismrm.org/ismrt/" target="_blank" rel="noopener noreferrer" style="border-bottom: none;">
-      <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/ISMRT.png" alt="Logo ISMRT" style="width: 180px; max-width: 100%; height: auto; display: block;"/>
+      <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/ISMRT.png" alt="Logo ISMRT" />
     </a>
   </div>
-  
-  <div style="flex: 3; min-width: 250px; line-height: 1.6;">
+  <div class="support-content">
     Este workshop y su entorno de laboratorios virtuales cuentan con el <strong>respaldo oficial (Endorsement) de la ISMRT</strong> (<em>International Society for Magnetic Resonance Technicians</em>), ratificado por su Junta Ejecutiva durante la reunión anual en Ciudad del Cabo, Sudáfrica, 2026.<br /><br />
     Para conocer más sobre la división y sus directrices internacionales, visite el sitio oficial de la <a href="https://www.ismrm.org/ismrt/" target="_blank" rel="noopener noreferrer"><strong>ISMRT International</strong></a>.
   </div>
 </div>
 
 <!-- Bloque IEEE EMBS -->
-<div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
-  <div style="flex: 1; min-width: 180px; display: flex; justify-content: center;">
-    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/ieee-embs.png" alt="Logo IEEE EMBS" style="width: 180px; max-width: 100%; height: auto; display: block;"/>
+<div class="support-card">
+  <div class="support-logo-wrapper">
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/ieee-embs.png" alt="Logo IEEE EMBS" />
   </div>
-  
-  <div style="flex: 3; min-width: 250px; line-height: 1.6;">
+  <div class="support-content">
     Asimismo, esta iniciativa cuenta con el valioso <strong>respaldo técnico y académico del Capítulo EMBS</strong> (<em>Engineering in Medicine and Biology Society</em>) de la <strong>IEEE</strong>, fortaleciendo el desarrollo y la difusión de la ingeniería biomédica y la inteligencia artificial en el ámbito de la salud.
   </div>
 </div>
 
 <!-- Bloque Guerbet -->
-<div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
-  <div style="flex: 1; min-width: 180px; display: flex; justify-content: center;">
+<div class="support-card">
+  <div class="support-logo-wrapper">
     <a href="https://www.guerbet.com" target="_blank" rel="noopener noreferrer" style="border-bottom: none;">
-      <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/guerbet.jpg" alt="Logo Guerbet" style="width: 180px; max-width: 100%; height: auto; display: block;"/>
+      <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/guerbet.jpg" alt="Logo Guerbet" />
     </a>
   </div>
-  
-  <div style="flex: 3; min-width: 250px; line-height: 1.6;">
+  <div class="support-content">
     Agradecemos también el destacado <strong>apoyo y colaboración de Guerbet</strong>, líder global en soluciones de imagen médica y medios de contraste, cuyo compromiso contribuye activamente al éxito de este espacio de formación y actualización en neurorradiología avanzada.
   </div>
 </div>
@@ -67,7 +136,9 @@ author_profile: true
 <hr />
 
 <h2>Agradecimientos</h2>
-<p>Este trabajo fue financiado por el Concurso Endowment I + D en Salud de la Universidad Andrés Bello (UNAB) 2025, proyecto DI-07-25/ICS.</p>
+<div class="info-box">
+  <p style="margin: 0;">Este trabajo fue financiado por el Concurso Endowment I + D en Salud de la <strong>Universidad Andrés Bello (UNAB) 2025</strong>, proyecto <code>DI-07-25/ICS</code>.</p>
+</div>
 
 <hr />
 
@@ -75,14 +146,15 @@ author_profile: true
 
 <h3>Contacto y Soporte Técnico</h3>
 <p>Si tienes dudas académicas, consultas sobre las inscripciones o experimentas problemas técnicos al ejecutar los cuadernos de Google Colab o de forma local, puedes comunicarte a través de los siguientes canales:</p>
+
 <ul>
   <li><strong>Reportar un problema:</strong> Abre un <a href="https://github.com/pamelaFranco/workshop_glioma/issues" target="_blank" rel="noopener noreferrer">Issue en GitHub</a> detallando el error.</li>
   <li><strong>Consultas Generales:</strong> Escríbenos directamente a <a href="mailto:neurooncologia.ia@gmail.com">neurooncologia.ia@gmail.com</a>.</li>
   <li><strong>Comunidad:</strong> Síguenos y envíanos un mensaje en nuestro Instagram oficial <a href="https://www.instagram.com/neuro_artint/" target="_blank" rel="noopener noreferrer">@neuro_artint</a>.</li>
 </ul>
 
-<br />
-
 <h3>Language / Idioma</h3>
-<p><em>The materials, documentation, and interactive notebooks in this repository are written in <strong>Spanish</strong> to support the local Latin American neuro-oncology and medical physics community.</em></p>
-<p><strong>Non-Spanish speakers:</strong> You can easily run and translate the Google Colab notebooks using standard browser translation extensions. The underlying Python code and medical imaging libraries (PyRadiomics, NiLearn, DIPY) follow international standards.</p>
+<div class="language-box">
+  <p style="margin-top: 0;"><em>The materials, documentation, and interactive notebooks in this repository are written in <strong>Spanish</strong> to support the local Latin American neuro-oncology and medical physics community.</em></p>
+  <p style="margin-bottom: 0;"><strong>Non-Spanish speakers:</strong> You can easily run and translate the Google Colab notebooks using standard browser translation extensions. The underlying Python code and medical imaging libraries (PyRadiomics, NiLearn, DIPY) follow international standards.</p>
+</div>

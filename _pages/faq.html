@@ -7,40 +7,184 @@ redirect_from:
   - /wordpress/blog-posts/
 ---
 
+<style>
+  /* Contenedor principal de FAQs */
+  .faq-container {
+    max-width: 800px;
+    margin: 25px auto;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  /* Estilos de cada tarjeta desplegable */
+  .faq-item {
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .faq-item:hover {
+    border-color: #A63737;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  }
+
+  /* Transición cuando el elemento está abierto */
+  .faq-item[open] {
+    border-left: 5px solid #A63737;
+  }
+
+  /* Pregunta (Encabezado del acordeón) */
+  .faq-question {
+    padding: 16px 20px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #24292e;
+    cursor: pointer;
+    list-style: none; /* Remueve la flecha por defecto */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none; /* Remueve flecha en Safari/Chrome */
+  }
+
+  .faq-question:hover {
+    background-color: #f8f9fa;
+    color: #A63737;
+  }
+
+  /* Icono de indicador (+ / -) */
+  .faq-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #A63737;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg); /* Gira el '+' para volverlo 'x' o '-' */
+  }
+
+  /* Respuesta (Contenido del acordeón) */
+  .faq-answer {
+    padding: 0 20px 18px 20px;
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border-top: 1px solid #f0f0f0;
+    margin-top: 4px;
+    padding-top: 12px;
+  }
+
+  /* Banner e información de contacto final */
+  .faq-footer {
+    text-align: center;
+    margin-top: 45px;
+    padding: 25px 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+  }
+
+  .faq-footer img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+  }
+
+  .faq-footer p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #495057;
+  }
+
+  .faq-footer a {
+    color: #A63737;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px dashed #A63737;
+    transition: color 0.2s ease;
+  }
+
+  .faq-footer a:hover {
+    color: #822a2a;
+    border-bottom-style: solid;
+  }
+</style>
+
 <h2>Preguntas Frecuentes (FAQ)</h2>
 
-<dl style="margin-top: 20px;">
-  <dt style="font-weight: bold; font-size: 1.1em; color: #222; margin-top: 20px;">1. ¿El workshop tiene algún costo asociado?</dt>
-  <dd style="margin-left: 0; margin-top: 5px; color: #444;">
-    <strong>No, el taller es totalmente gratuito.</strong> Sin embargo, los cupos son limitados; para asegurar tu lugar, es indispensable completar el <strong>formulario de inscripción</strong>.
-  </dd>
+<div class="faq-container">
 
-  <dt style="font-weight: bold; font-size: 1.1em; color: #222; margin-top: 20px;">2. ¿Es necesario instalar software especializado?</dt>
-  <dd style="margin-left: 0; margin-top: 5px; color: #444;">
-    No. El workshop está diseñado para ejecutarse en <strong>Google Colab</strong>. Solo necesitas una cuenta de Google y conexión a internet.
-  </dd>
+  <!-- Pregunta 1 -->
+  <details class="faq-item" open> <!-- 'open' hace que la primera aparezca abierta por defecto -->
+    <summary class="faq-question">
+      <span>1. ¿El workshop tiene algún costo asociado?</span>
+      <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+      <strong>No, el taller es totalmente gratuito.</strong> Sin embargo, los cupos son limitados; para asegurar tu lugar, es indispensable completar el <strong>formulario de inscripción</strong>.
+    </div>
+  </details>
 
-  <dt style="font-weight: bold; font-size: 1.1em; color: #222; margin-top: 20px;">3. ¿Qué nivel de conocimientos técnicos se requiere?</dt>
-  <dd style="margin-left: 0; margin-top: 5px; color: #444;">
-    El taller es de inmersión técnica. Se recomienda familiaridad básica con Python, aunque los <em>notebooks</em> están guiados paso a paso para que perfiles clínicos puedan seguirlos.
-  </dd>
+  <!-- Pregunta 2 -->
+  <details class="faq-item">
+    <summary class="faq-question">
+      <span>2. ¿Es necesario instalar software especializado?</span>
+      <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+      No. El workshop está diseñado para ejecutarse completamente en la nube a través de <strong>Google Colab</strong>. Solo necesitas una cuenta de Google y una conexión a internet estable.
+    </div>
+  </details>
 
-  <dt style="font-weight: bold; font-size: 1.1em; color: #222; margin-top: 20px;">4. ¿Habrá premios por la presentación de trabajos?</dt>
-  <dd style="margin-left: 0; margin-top: 5px; color: #444;">
-    Sí. El comité científico premiará al <strong>Mejor Póster con $100.000 CLP (nacionales) o $100 USD (extranjeros)</strong>, además de menciones honrosas.
-  </dd>
+  <!-- Pregunta 3 -->
+  <details class="faq-item">
+    <summary class="faq-question">
+      <span>3. ¿Qué nivel de conocimientos técnicos se requiere?</span>
+      <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+      El taller es de inmersión técnica. Se recomienda una familiaridad básica con Python, aunque todos los <em>notebooks</em> están guiados paso a paso para que profesionales con perfiles clínicos o biológicos puedan seguirlos sin inconvenientes.
+    </div>
+  </details>
 
-  <dt style="font-weight: bold; font-size: 1.1em; color: #222; margin-top: 20px;">5. ¿Cómo envío mi resumen?</dt>
-  <dd style="margin-left: 0; margin-top: 5px; color: #444;">
-    Debes enviarlo antes del <strong>15 de noviembre de 2026</strong> utilizando los botones de inscripción o envío de <em>abstracts</em> de la plataforma.
-  </dd>
-</dl>
+  <!-- Pregunta 4 -->
+  <details class="faq-item">
+    <summary class="faq-question">
+      <span>4. ¿Habrá premios por la presentación de trabajos?</span>
+      <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+      Sí. El comité científico premiará al <strong>Mejor Póster con $100.000 CLP (nacionales) o $100 USD (extranjeros)</strong>, además de otorgar menciones honrosas a los trabajos destacados.
+    </div>
+  </details>
 
+  <!-- Pregunta 5 -->
+  <details class="faq-item">
+    <summary class="faq-question">
+      <span>5. ¿Cómo envío mi resumen (abstract)?</span>
+      <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+      Debes enviarlo antes del <strong>15 de noviembre de 2026</strong> utilizando el botón o formulario de envío de <em>abstracts</em> disponible en la plataforma.
+    </div>
+  </details>
 
-<div style="text-align: center; margin-top: 40px; clear: both;">
-  <img src="/workshop_glioma_web/Figuras/pie_pagina.svg" alt="Banner" style="max-width: 100%; height: auto; margin-bottom: 10px;">
-  <p style="font-size: 0.95em; color: #444; font-style: italic;">
-    Para cualquier consulta o más información, puedes escribirnos a 
-    <a href="mailto:neurooncologia@gmail.com" style="color: #0066cc; font-weight: bold; text-decoration: underline;">neurooncologia@gmail.com</a>.
+</div>
+
+<div class="faq-footer">
+  <img src="/workshop_glioma_web/Figuras/pie_pagina.svg" alt="Banner Informativo">
+  <p>
+    ¿Tienes alguna otra duda o consulta adicional? Escríbenos directamente a 
+    <a href="mailto:neurooncologia@gmail.com">neurooncologia@gmail.com</a>
   </p>
 </div>
