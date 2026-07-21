@@ -362,14 +362,14 @@ El cierre contará con la participación especial de la **Dra. Liliana Jorquera*
   <div style="background: #ffffff; border: 1px solid var(--border-color); border-left: 4px solid var(--primary); border-radius: 8px; padding: 20px;">
     <div style="color: var(--primary); font-size: 0.75rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Workshop Chair & Webmaster</div>
     <div style="font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-top: 2px;">Dra. Pamela Franco</div>
-    <div style="font-size: 0.88rem; color: #64748b;">Universidad Andrés Bello (UNAB)</div>
+    <div style="font-size: 0.88rem; color: #64748b;">UNAB</div>
     <p style="margin: 10px 0 0 0; font-size: 0.8rem; color: #4a5568; font-style: italic; border-top: 1px dashed var(--border-color); padding-top: 6px;">Gestión de Endosos Internacionales, Dirección Estratégica y Plataforma Web.</p>
   </div>
 
   <div style="background: #ffffff; border: 1px solid var(--border-color); border-left: 4px solid var(--secondary); border-radius: 8px; padding: 20px;">
     <div style="color: var(--secondary); font-size: 0.75rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px;">Scientific Committee</div>
     <ul style="margin: 0; padding-left: 18px; font-size: 0.9rem; color: #333; line-height: 1.5;">
-      <li><strong>MSc. Cristian Montalba</strong> <span style="font-size: 0.7rem; background: #e0f2fe; color: #0369a1; padding: 1px 5px; border-radius: 4px; font-weight: 600;">Chair</span><br><small style="color:#64748b;">Pontificia Universidad Católica de Chile (UC)</small></li>
+      <li><strong>MSc. Cristian Montalba</strong> <span style="font-size: 0.7rem; background: #e0f2fe; color: #0369a1; padding: 1px 5px; border-radius: 4px; font-weight: 600;">Chair</span><br><small style="color:#64748b;">UC</small></li>
       <li style="margin-top: 6px;"><strong>Dra. M. Daniela Cornejo</strong><br><small style="color:#64748b;">UC</small></li>
       <li style="margin-top: 6px;"><strong>Dr. Ignacio Espinoza</strong><br><small style="color:#64748b;">UC</small></li>
     </ul>
@@ -378,7 +378,7 @@ El cierre contará con la participación especial de la **Dra. Liliana Jorquera*
   <div style="background: #ffffff; border: 1px solid var(--border-color); border-left: 4px solid var(--accent); border-radius: 8px; padding: 20px;">
     <div style="color: var(--accent); font-size: 0.75rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Diseño y Manufactura 3D</div>
     <div style="font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-top: 2px;">Manuel Chapa, PhD(c)</div>
-    <div style="font-size: 0.88rem; color: #64748b;">Pontificia Universidad Católica de Chile (UC)</div>
+    <div style="font-size: 0.88rem; color: #64748b;">UC</div>
     <p style="margin: 10px 0 0 0; font-size: 0.8rem; color: #4a5568; font-style: italic; border-top: 1px dashed var(--border-color); padding-top: 6px;">Diseño y elaboración de galardones 3D para el Concurso Científico de Pósteres.</p>
   </div>
 
