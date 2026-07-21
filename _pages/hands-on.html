@@ -10,7 +10,7 @@ header:
 ---
 
 <style>
-  /* Estilos locales optimizados */
+  /* Botón Principal GitHub */
   .btn-github {
     display: inline-flex;
     align-items: center;
@@ -25,7 +25,7 @@ header:
     font-size: 0.95rem;
     box-shadow: 0 2px 5px rgba(166,55,55,0.3);
     transition: all 0.2s ease-in-out;
-    margin: 10px 0;
+    margin: 10px 0 20px 0;
   }
   .btn-github:hover {
     background-color: #822a2a;
@@ -33,14 +33,34 @@ header:
     box-shadow: 0 4px 12px rgba(166,55,55,0.4);
   }
 
+  /* Encabezados de Bloque / Módulo */
+  .block-header {
+    background-color: #f8f9fa;
+    border-left: 5px solid #A63737;
+    padding: 12px 18px;
+    border-radius: 0 8px 8px 0;
+    margin: 35px 0 20px 0;
+  }
+  .block-header h3 {
+    margin: 0;
+    color: #24292e;
+    font-size: 1.2rem;
+  }
+  .block-header p {
+    margin: 4px 0 0 0;
+    font-size: 0.88rem;
+    color: #586069;
+  }
+
+  /* Contenedores Grid */
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
-    margin-top: 20px;
     font-family: system-ui, -apple-system, sans-serif;
   }
 
+  /* Tarjetas */
   .card-handson {
     background: #ffffff;
     border: 1px solid #e1e4e8;
@@ -50,40 +70,40 @@ header:
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-left: 5px solid #A63737;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .card-handson:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    border-color: #A63737;
   }
 
   .card-image {
     width: 100%;
-    height: 160px;
+    height: 150px;
     object-fit: cover;
     border-bottom: 1px solid #e1e4e8;
   }
 
   .card-body {
-    padding: 18px 18px 10px 18px;
+    padding: 16px;
   }
   .card-title {
     margin-top: 0;
     margin-bottom: 8px;
     color: #24292e;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.3;
   }
   .card-text {
     font-size: 0.88rem;
     color: #586069;
-    margin-bottom: 15px;
+    margin: 0;
     line-height: 1.45;
   }
 
   .card-footer {
-    padding: 0 18px 18px 18px;
+    padding: 0 16px 16px 16px;
   }
 
   .btn-colab {
@@ -94,7 +114,7 @@ header:
     background-color: #F9F9F9;
     border: 1px solid #A63737;
     color: #A63737 !important;
-    padding: 10px 16px;
+    padding: 9px 14px;
     border-radius: 20px;
     text-decoration: none !important;
     font-weight: 600;
@@ -111,23 +131,7 @@ header:
 </style>
 
 <h2>Introducción</h2>
-<p>Este repositorio contiene los materiales desarrollados por <strong>Pamela Franco</strong> para el laboratorio virtual sobre neurooncología de precisión. El workshop integra nueve fases críticas del análisis de imágenes médicas:</p>
-
-<ol>
-  <li><strong>Fundamentos del Espacio K:</strong> Exploración del dominio de la frecuencia en RM.</li>
-  <li><strong>Simulación de Secuencias:</strong> Modelado interactivo de las ecuaciones de Bloch para entender el contraste (TR, TE, &alpha;).</li>
-  <li><strong>Física de Resonancia:</strong> Generación de mapas paramétricos (T1 y T2).</li>
-  <li><strong>Microestructura Tisular:</strong> Procesamiento de Tensores de Difusión (DTI).</li>
-  <li><strong>Mapeo Funcional:</strong> Exploración de la dinámica de la señal BOLD y fMRI.</li>
-  <li><strong>Hemodinámica y Biomecánica:</strong> Reconstrucción de vasculatura mediante TOF-MRA.</li>
-  <li><strong>Extracción de Características de Radiómica:</strong> Extracción de características cuantitativas de grado médico a partir de la distribución de grises en imágenes digitales.</li>
-  <li><strong>Pipeline Radiómico para la Clasificación de Gliomas (LGG vs. HGG):</strong> Selección de características críticas y clasificación automatizada a partir de métricas extraídas de resonancia magnética en T1, utilizando datos clínicos reales para diferenciar bajo y alto grado.</li>
-  <li><strong>IA Interpretable:</strong> Decodificación de severidad mediante radiómica y SHAP.</li>
-</ol>
-
-<hr />
-
-<h2>Cómo usar este Workshop</h2>
+<p>Este repositorio contiene los materiales desarrollados por <strong>Pamela Franco</strong> para el laboratorio virtual sobre neurooncología de precisión. El workshop integra nueve fases críticas del análisis de imágenes médicas divididas en tres bloques metodológicos.</p>
 
 <a href="https://github.com/pamelaFranco/workshop_glioma" target="_blank" class="btn-github">
   <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
@@ -136,57 +140,23 @@ header:
   Repositorio Principal en GitHub (@pamelaFranco)
 </a>
 
-<h3>Obtener los materiales</h3>
-<p>Puedes trabajar con los materiales de este workshop de dos maneras:</p>
-
-<ul>
-  <li>
-    <strong>Opción A (Recomendada):</strong> Clonar el repositorio localmente mediante Git ejecutando en tu terminal:
-    <pre><code class="language-bash">git clone https://github.com/pamelaFranco/workshop_glioma.git</code></pre>
-  </li>
-  <li>
-    <strong>Opción B:</strong> Descargar el archivo comprimido directamente en formato ZIP haciendo <a href="https://github.com/pamelaFranco/workshop_glioma/archive/refs/heads/main.zip">clic aquí</a> (o desde el botón verde <strong>"Code" &gt; "Download ZIP"</strong> en la parte superior de la página de GitHub).
-  </li>
-</ul>
-
-<h3>Ejecución de las actividades</h3>
-<p>La forma más sencilla de ejecutar el laboratorio es a través de <strong>Google Colab</strong>, ya que no requiere instalación local.</p>
-
-<ol>
-  <li><strong>Selecciona el módulo:</strong> Haz clic en el botón <strong>"Open In Colab"</strong> de la actividad deseada.</li>
-  <li><strong>Configuración de Datos:</strong> Los notebooks cargan automáticamente los archivos desde este repositorio. Ejecuta las celdas en orden correlativo.</li>
-  <li>
-    <strong>Interactividad:</strong> Los laboratorios están diseñados como entornos de exploración dinámica. En cada módulo encontrarás herramientas interactivas para manipular datos médicos en tiempo real:
-    <ul>
-      <li><strong>Manipulación del Espacio K:</strong> Utiliza <em>sliders</em> para filtrar frecuencias en el dominio de Fourier. Observa instantáneamente cómo la eliminación de información afecta la reconstrucción de la imagen.</li>
-      <li><strong>Simulación de Magnetización (Ecuaciones de Bloch):</strong> Ajusta parámetros de adquisición (TR, TE, &alpha;) y constantes de tejido (T1, T2) para observar las curvas de relajación y entender la física detrás de la generación de contraste en el fantoma.</li>
-      <li><strong>Exploración de Mapas de Relajación (T1/T2):</strong> Interactúa con los algoritmos de ajuste para visualizar mapas paramétricos que diferencian tejidos sanos de lesiones oncológicas.</li>
-      <li><strong>Conectividad y Hemodinámica:</strong>
-        <ul>
-          <li><strong>fMRI:</strong> Explora umbrales de activación estadística para identificar redes funcionales cerebrales.</li>
-          <li><strong>Vasculatura:</strong> Ajusta niveles de segmentación en proyecciones TOF para aislar la red vascular cerebral.</li>
-          <li><strong>DTI:</strong> Visualiza la anisotropía y la integridad de los tractos de materia blanca afectados por el edema o la infiltración tumoral.</li>
-        </ul>
-      </li>
-      <li><strong>Extracción de Características de Radiómica:</strong> Este módulo actúa como una 'biopsia virtual por software' que extrae la firma digital oculta del glioma, transformando los patrones visuales de la resonancia magnética en mapas de colores y números que miden objetivamente la agresividad, el caos y la heterogeneidad del tumor.</li>
-      <li><strong>Flujo de Procesamiento y Clasificación Automatizada:</strong> Un pipeline integrado que transforma el caos de los datos radiómicos en un diagnóstico preciso. El sistema normaliza las variables y aplica un filtro de varianza para retener las características críticas; luego, proyecta estas firmas multidimensionales en un mapa visual bidimensional y entrena un clasificador probabilístico para diferenciar LGG de HGG, evaluando rigurosamente su rendimiento mediante métricas de sensibilidad y matrices de confusión clínica.</li>
-      <li><strong>Simulador Clínico e IA Interpretable (SHAP):</strong> En el módulo de clasificación de gliomas, ajusta variables del paciente (edad, volumen, ubicación) y observa cómo el modelo de IA actualiza sus predicciones y explicaciones visuales.</li>
-    </ul>
-  </li>
-</ol>
-
 <hr />
 
 <h2>Actividades del Workshop</h2>
 
-<div class="grid-container">
+<!-- ================= BLOQUE 1 ================= -->
+<div class="block-header">
+  <h3>Bloque I: Fundamentos de Física de RM y Mapas Paramétricos</h3>
+  <p>Formación de imagen en el espacio K, simulación de contraste y mapeo de relajación tisular.</p>
+</div>
 
+<div class="grid-container">
   <!-- Tarjeta 1 -->
   <div class="card-handson">
     <div>
       <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson1.png" alt="Espacio K" class="card-image" />
       <div class="card-body">
-        <h3 class="card-title">Hands-on I.A: Fundamentos del Espacio K y Formación de Imágenes</h3>
+        <h3 class="card-title">Hands-on I.A: Espacio K y Formación de Imágenes</h3>
         <p class="card-text">Comprender la relación entre el Espacio K y la imagen real mediante la Transformada de Fourier.</p>
       </div>
     </div>
@@ -204,7 +174,7 @@ header:
       <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson2.png" alt="Simulador de Secuencias" class="card-image" />
       <div class="card-body">
         <h3 class="card-title">Hands-on I.B: Simulador de Secuencias (Ecuaciones de Bloch)</h3>
-        <p class="card-text">Experimentar en tiempo real con los parámetros de adquisición (TR, TE, &alpha;) y observar su efecto en el contraste del fantoma.</p>
+        <p class="card-text">Experimentar con parámetros de adquisición (TR, TE, &alpha;) y su efecto en el contraste del fantoma.</p>
       </div>
     </div>
     <div class="card-footer">
@@ -220,8 +190,8 @@ header:
     <div>
       <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson3.png" alt="Mapas Paramétricos" class="card-image" />
       <div class="card-body">
-        <h3 class="card-title">Hands-on II: Generación de Mapas Paramétricos (T1 y T2)</h3>
-        <p class="card-text">Calcular mapas de tiempos de relajación utilizando modelos de ajuste no lineal para caracterizar tejidos.</p>
+        <h3 class="card-title">Hands-on II: Mapas Paramétricos (T1 y T2)</h3>
+        <p class="card-text">Calcular mapas de tiempos de relajación mediante modelos de ajuste no lineal para caracterizar tejidos.</p>
       </div>
     </div>
     <div class="card-footer">
@@ -231,14 +201,22 @@ header:
       </a>
     </div>
   </div>
+</div>
 
+<!-- ================= BLOQUE 2 ================= -->
+<div class="block-header">
+  <h3>Bloque II: Neuroimagen Avanzada (Microestructura, fMRI y Vasculatura)</h3>
+  <p>Evaluación de conectividad funcional, microestructura tisular y angiografía por resonancia.</p>
+</div>
+
+<div class="grid-container">
   <!-- Tarjeta 4 -->
   <div class="card-handson">
     <div>
       <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson4.png" alt="Mapas de Difusión" class="card-image" />
       <div class="card-body">
         <h3 class="card-title">Hands-on III: Mapas de Difusión (DTI)</h3>
-        <p class="card-text">Obtener mapas de Fracción de Anisotropía (FA), MD, RD y AD para caracterizar la infiltración tumoral.</p>
+        <p class="card-text">Obtener mapas de FA, MD, RD y AD para caracterizar la microestructura e infiltración tumoral.</p>
       </div>
     </div>
     <div class="card-footer">
@@ -255,7 +233,7 @@ header:
       <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson5.png" alt="Mapeo Funcional" class="card-image" />
       <div class="card-body">
         <h3 class="card-title">Hands-on IV: Mapeo Funcional (fMRI)</h3>
-        <p class="card-text">Mapear la arquitectura funcional del cerebro mediante el análisis de correlaciones de señales de baja frecuencia (rs-fMRI).</p>
+        <p class="card-text">Mapear la arquitectura funcional cerebral mediante el análisis de señales de baja frecuencia (rs-fMRI).</p>
       </div>
     </div>
     <div class="card-footer">
@@ -271,8 +249,8 @@ header:
     <div>
       <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson6.png" alt="Hemodinámica Cerebral" class="card-image" />
       <div class="card-body">
-        <h3 class="card-title">Hands-on V: Hemodinámica y Biomecánica Cerebral (TOF-MRA)</h3>
-        <p class="card-text">Reconstrucción de la vasculatura mediante el uso de imágenes TOF-MRA y la aplicación de MIP.</p>
+        <h3 class="card-title">Hands-on V: Hemodinámica y Vasculatura (TOF-MRA)</h3>
+        <p class="card-text">Reconstrucción 3D de la vasculatura cerebral mediante imágenes TOF-MRA y proyecciones MIP.</p>
       </div>
     </div>
     <div class="card-footer">
@@ -282,14 +260,22 @@ header:
       </a>
     </div>
   </div>
+</div>
 
+<!-- ================= BLOQUE 3 ================= -->
+<div class="block-header">
+  <h3>Bloque III: Radiómica e Inteligencia Artificial Interpretable</h3>
+  <p>Extracción de fenotipos digitales, machine learning y modelos explplicables en neurooncología.</p>
+</div>
+
+<div class="grid-container">
   <!-- Tarjeta 7 -->
   <div class="card-handson">
     <div>
       <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson7.png" alt="Radiómica" class="card-image" />
       <div class="card-body">
-        <h3 class="card-title">Hands-on VI: Características y Mapas de Textura (GLCM)</h3>
-        <p class="card-text">Cuantificar la microestructura y heterogeneidad del glioma mediante la extracción de características radiómicas de textura.</p>
+        <h3 class="card-title">Hands-on VI: Características y Textura (GLCM)</h3>
+        <p class="card-text">Cuantificar la heterogeneidad del glioma mediante la extracción de métricas radiómicas cuantitativas.</p>
       </div>
     </div>
     <div class="card-footer">
@@ -305,8 +291,8 @@ header:
     <div>
       <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson8.png" alt="Pipeline de Clasificación" class="card-image" />
       <div class="card-body">
-        <h3 class="card-title">Hands-on VII.A: Clasificación y Pipeline Radiómico</h3>
-        <p class="card-text">Construir un pipeline de Machine Learning para clasificar el grado tumoral (LGG vs. HGG) a partir de firmas radiómicas.</p>
+        <h3 class="card-title">Hands-on VII.A: Pipeline Radiómico (LGG vs. HGG)</h3>
+        <p class="card-text">Pipeline de Machine Learning para clasificar el grado tumoral a partir de firmas radiómicas.</p>
       </div>
     </div>
     <div class="card-footer">
@@ -322,8 +308,8 @@ header:
     <div>
       <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson9.png" alt="Explicabilidad SHAP" class="card-image" />
       <div class="card-body">
-        <h3 class="card-title">Hands-on VII.B: Predicción de Severidad con IA</h3>
-        <p class="card-text">Modelar la severidad del tumor mediante Machine Learning interpretable (Caja Blanca) con análisis SHAP.</p>
+        <h3 class="card-title">Hands-on VII.B: Predicción e Interpretabilidad (SHAP)</h3>
+        <p class="card-text">Modelar la severidad tumoral mediante Machine Learning interpretable (Caja Blanca) con análisis SHAP.</p>
       </div>
     </div>
     <div class="card-footer">
@@ -333,7 +319,6 @@ header:
       </a>
     </div>
   </div>
-
 </div>
 
 <hr />
@@ -344,7 +329,7 @@ header:
   <li><strong><code>Dataset/</code>:</strong> Datos multimodales (<code>.mat</code>, <code>.nii.gz</code>, <code>.dcm</code> y <code>.csv</code>).</li>
   <li><strong><code>Figuras/</code>:</strong> Recursos visuales y diagramas explicativos.</li>
   <li><strong><code>Formato Abstract/</code>:</strong> Planillas para escribir el resumen (<em>abstract</em>) en formato Word y LaTeX.</li>
-  <li><strong><code>Template/</code>:</strong> Formato editable de la charla (PPTX) e instrucciones del formato póster a presentar el día del evento.</li>
+  <li><strong><code>Template/</code>:</strong> Formato editable de la charla (PPTX) e instrucciones del formato póster.</li>
   <li><strong><code>Programa/</code>:</strong> Cronograma detallado en PDF.</li>
 </ul>
 
@@ -354,5 +339,5 @@ header:
 <p>Si prefieres ejecución local, requiere:</p>
 <ul>
   <li>Python 3.10+</li>
-  <li>Librerías: <code>pandas</code>, <code>numpy</code>, <code>scikit-learn</code>, <code>nibabel</code>, <code>dipy</code>, <code>nilearn</code>, <code>shap</code>, <code>matplotlib</code>, <code>scipy</code>, <code>os</code>, <code>pyradiomics</code>.</li>
+  <li>Librerías: <code>pandas</code>, <code>numpy</code>, <code>scikit-learn</code>, <code>nibabel</code>, <code>dipy</code>, <code>nilearn</code>, <code>shap</code>, <code>matplotlib</code>, <code>scipy</code>, <code>pyradiomics</code>.</li>
 </ul>
