@@ -270,27 +270,35 @@ El cierre contará con la participación especial de la **Dra. Liliana Jorquera*
       <h4 style="margin: 0 0 4px 0; color: #A63737; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">Workshop Chair & Webmaster</h4>
       <div style="font-size: 1.1rem; font-weight: 700; color: #1e3a8a;">Dra. Pamela Franco</div>
       <p style="margin: 4px 0 0 0; font-size: 0.88rem; color: #666;">Universidad Andrés Bello (UNAB)</p>
+      <p style="margin: 10px 0 0 0; font-size: 0.8rem; color: #4a5568; font-style: italic; border-top: 1px dashed #e2e8f0; padding-top: 6px;">Gestión de Endosos Internacionales, Dirección Estratégica y Plataforma Web.</p>
     </div>
 
     <!-- Scientific Committee -->
     <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #074E8C; border-radius: 8px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
       <h4 style="margin: 0 0 8px 0; color: #074E8C; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">Scientific Committee</h4>
       <ul style="margin: 0; padding-left: 18px; font-size: 0.92rem; color: #333; line-height: 1.6;">
-        <li><strong>MSc. Cristian Montalba</strong> <span style="font-size: 0.8rem; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Chair</span> <br><small style="color:#666;">Pontificia Universidad Católica de Chile (UC)</small></li>
-        <li style="margin-top: 6px;"><strong>Dra. M. Daniela Cornejo</strong> <br><small style="color:#666;">Pontificia Universidad Católica de Chile (UC)</small></li>
-        <li style="margin-top: 6px;"><strong>Dr. Ignacio Espinoza</strong> <br><small style="color:#666;">Pontificia Universidad Católica de Chile (UC)</small></li>
+        <li><strong>MSc. Cristian Montalba</strong> <span style="font-size: 0.75rem; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Chair</span> <br><small style="color:#666;">Pontificia Universidad Católica de Chile (UC)</small>
+          <br><small style="color:#074E8C; font-size: 0.78rem;"><em>Gestión de Patrocinios, Endosos y Vinculación</em></small>
+        </li>
+        <li style="margin-top: 8px;"><strong>Dra. M. Daniela Cornejo</strong> <br><small style="color:#666;">Pontificia Universidad Católica de Chile (UC)</small></li>
+        <li style="margin-top: 8px;"><strong>Dr. Ignacio Espinoza</strong> <br><small style="color:#666;">Pontificia Universidad Católica de Chile (UC)</small></li>
       </ul>
     </div>
 
     <!-- Diseño y Producción 3D -->
     <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #402C7C; border-radius: 8px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
       <h4 style="margin: 0 0 4px 0; color: #402C7C; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">Diseño y Manufactura 3D</h4>
-      <div style="font-size: 1.1rem; font-weight: 700; color: #1e3a8a;">Q. Manuel Chapa</div>
+      <div style="font-size: 1.1rem; font-weight: 700; color: #1e3a8a;">Manuel Chapa, Candidato a Doctor</div>
       <p style="margin: 4px 0 0 0; font-size: 0.88rem; color: #666;">Pontificia Universidad Católica de Chile (UC)</p>
-      <p style="margin: 8px 0 0 0; font-size: 0.8rem; color: #4a5568; font-style: italic;">Diseño y elaboración de galardones 3D para el Concurso Científico de Pósteres.</p>
+      <p style="margin: 10px 0 0 0; font-size: 0.8rem; color: #4a5568; font-style: italic; border-top: 1px dashed #e2e8f0; padding-top: 6px;">Diseño y elaboración de galardones 3D para el Concurso Científico de Pósteres.</p>
     </div>
 
   </div>
+
+  <!-- Nota de agradecimiento por gestiones de alianzas -->
+  <p style="font-size: 0.88rem; color: #4a5568; margin-top: 18px; text-align: center; font-style: italic;">
+    Agradecemos de forma especial las gestiones institucionales y el trabajo de vinculación realizado por el <strong>Dr. Ignacio Espinoza</strong>, la <strong>Dra. Pamela Franco</strong> y el <strong>MSc. Cristian Montalba</strong> para la obtención del endoso oficial de la <strong>ISMRT</strong>, el patrocinio de <strong>IEEE EMBS Chile Centro</strong> y la colaboración estratégica con <strong>FALP</strong>, <strong>Guerbet</strong> y la red <strong>REBECCA-IA</strong>.
+  </p>
 </div>
 
 ---
