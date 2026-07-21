@@ -101,10 +101,6 @@ redirect_from:
 </div>
 
 ---
-
-<!-- Sección 2: Información Clave del Evento (Ubicación física y fechas para dar contexto) -->
-## Información del Evento
-
 <!-- Sección 2: Información Clave del Evento (Diseño Estilizado) -->
 <div style="margin: 40px 0; font-family: system-ui, -apple-system, sans-serif;">
   <h2 style="color: #1a365d; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 20px;">Información General del Evento</h2>
