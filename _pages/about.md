@@ -105,13 +105,60 @@ redirect_from:
 <!-- Sección 2: Información Clave del Evento (Ubicación física y fechas para dar contexto) -->
 ## Información del Evento
 
-| Detalle | Información |
-| :--- | :--- |
-| **Fecha** | Jueves, 10 de diciembre de 2026 |
-| **Horario** | 8:00 AM - 17:00 PM (GMT-4 / Hora de Chile) |
-| **Modalidad Presencial** | **Auditorio Zócalo, Universidad Andrés Bello**<br>Antonio Varas 880, Providencia, Santiago, Chile. |
-| **Modalidad Online** | **Vía Zoom** (El enlace de acceso se enviará posterior a la inscripción). |
+<!-- Sección 2: Información Clave del Evento (Diseño Estilizado) -->
+<div style="margin: 40px 0; font-family: system-ui, -apple-system, sans-serif;">
+  <h2 style="color: #1a365d; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 20px;">Información General del Evento</h2>
 
+  <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); overflow: hidden;">
+    
+    <!-- Item 1: Fecha -->
+    <div style="display: flex; align-items: center; gap: 16px; padding: 18px 24px; border-bottom: 1px solid #f1f5f9;">
+      <div style="background: #fff5f5; padding: 12px; border-radius: 10px; color: #A63737; display: flex; align-items: center; justify-content: center;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+      </div>
+      <div>
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: #64748b;">Fecha del Evento</div>
+        <div style="font-size: 1.05rem; font-weight: 700; color: #1e293b; margin-top: 2px;">Jueves, 10 de diciembre de 2026</div>
+      </div>
+    </div>
+
+    <!-- Item 2: Horario -->
+    <div style="display: flex; align-items: center; gap: 16px; padding: 18px 24px; border-bottom: 1px solid #f1f5f9;">
+      <div style="background: #f0f7ff; padding: 12px; border-radius: 10px; color: #074E8C; display: flex; align-items: center; justify-content: center;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      </div>
+      <div>
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: #64748b;">Horario Oficial</div>
+        <div style="font-size: 1.05rem; font-weight: 700; color: #1e293b; margin-top: 2px;">8:00 AM – 17:00 PM <span style="font-weight: 400; font-size: 0.88rem; color: #64748b;">(GMT-4 / Hora de Chile)</span></div>
+      </div>
+    </div>
+
+    <!-- Item 3: Presencial -->
+    <div style="display: flex; align-items: flex-start; gap: 16px; padding: 18px 24px; border-bottom: 1px solid #f1f5f9;">
+      <div style="background: #f3f0ff; padding: 12px; border-radius: 10px; color: #402C7C; display: flex; align-items: center; justify-content: center; margin-top: 2px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      </div>
+      <div>
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: #64748b;">Modalidad Presencial</div>
+        <div style="font-size: 1.05rem; font-weight: 700; color: #1e293b; margin-top: 2px;">Auditorio Zócalo, Universidad Andrés Bello</div>
+        <div style="font-size: 0.88rem; color: #64748b; margin-top: 2px;">Antonio Varas 880, Providencia, Santiago, Chile.</div>
+      </div>
+    </div>
+
+    <!-- Item 4: Online -->
+    <div style="display: flex; align-items: flex-start; gap: 16px; padding: 18px 24px; background: #fafafa;">
+      <div style="background: #f0fdf4; padding: 12px; border-radius: 10px; color: #15803d; display: flex; align-items: center; justify-content: center; margin-top: 2px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 16 2 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+      </div>
+      <div>
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: #64748b;">Modalidad Online</div>
+        <div style="font-size: 1.05rem; font-weight: 700; color: #1e293b; margin-top: 2px;">Transmisión en Vivo vía Zoom</div>
+        <div style="font-size: 0.88rem; color: #64748b; margin-top: 2px;">El enlace de acceso exclusivo se enviará por correo posterior al registro.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
 ---
 
 <!-- Sección 3: Llamado a la acción (Botones de inscripción ahora que el usuario está convencido) -->
