@@ -57,13 +57,28 @@ redirect_from:
     transform: translateY(-2px);
   }
 
-  /* Grid tarjetas */
-  .grid-cards {
+  /* -------------------------------------------------------------
+     1. GRID "¿POR QUÉ ASISTIR?" (4 Tarjetas Simétricas)
+     - Escritorio: 4 en fila (4x1)
+     - Tablet/Móvil: 2x2 perfectos (nunca 3 y 1)
+  ------------------------------------------------------------- */
+  .grid-features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin: 30px 0;
   }
+  @media (max-width: 900px) {
+    .grid-features {
+      grid-template-columns: repeat(2, 1fr); /* 2x2 en pantallas medianas */
+    }
+  }
+  @media (max-width: 500px) {
+    .grid-features {
+      grid-template-columns: 1fr; /* 1 columna en teléfonos pequeños */
+    }
+  }
+
   .card-feature {
     background: #ffffff;
     border-radius: 12px;
@@ -79,7 +94,41 @@ redirect_from:
     box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   }
 
-  /* Timeline para el programa */
+  /* -------------------------------------------------------------
+     2. GRID "COMITÉS Y ORGANIZACIÓN" (3 Tarjetas Centradas)
+     - Escritorio: 3 en fila (1x3)
+     - Tablet: 2 en fila 1 + 1 centrada abajo
+  ------------------------------------------------------------- */
+  .grid-committees {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 25px 0;
+  }
+
+  @media (max-width: 900px) {
+    .grid-committees {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    /* La 3ra tarjeta se expande al ancho completo y se centra si queda sola abajo */
+    .grid-committees > div:nth-child(3) {
+      grid-column: 1 / -1;
+      max-width: 500px;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid-committees {
+      grid-template-columns: 1fr;
+    }
+    .grid-committees > div:nth-child(3) {
+      max-width: 100%;
+    }
+  }
+
+  /* Estilos resto del documento */
   .program-block {
     background: #ffffff;
     border-left: 4px solid var(--secondary);
@@ -91,60 +140,26 @@ redirect_from:
     border-right: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
   }
-  .program-block h3 {
-    margin-top: 0;
-    color: var(--secondary);
-    font-size: 1.2rem;
-  }
+  .program-block h3 { margin-top: 0; color: var(--secondary); font-size: 1.2rem; }
 
-  /* Botones Cta */
   .btn-cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: white !important;
-    padding: 14px 20px;
-    text-decoration: none !important;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: all 0.25s ease;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    color: white !important; padding: 14px 20px; text-decoration: none !important;
+    border-radius: 10px; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;
   }
-  .btn-cta:hover {
-    transform: translateY(-2px);
-    filter: brightness(110%);
-  }
+  .btn-cta:hover { transform: translateY(-2px); filter: brightness(110%); }
 
-  /* Logos Grid */
   .logo-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin: 30px 0;
-    padding: 25px 15px;
-    background: #ffffff;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+    gap: 30px; margin: 30px 0; padding: 25px 15px; background: #ffffff;
+    border-radius: 12px; border: 1px solid var(--border-color);
   }
-  .logo-item {
-    flex: 0 1 130px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  .logo-item { flex: 0 1 130px; display: flex; justify-content: center; align-items: center; }
   .logo-item img {
-    max-height: 50px;
-    width: auto;
-    object-fit: contain;
-    filter: grayscale(10%) opacity(0.9);
-    transition: filter 0.3s ease;
+    max-height: 50px; width: auto; object-fit: contain;
+    filter: grayscale(10%) opacity(0.9); transition: filter 0.3s ease;
   }
-  .logo-item img:hover {
-    filter: grayscale(0%) opacity(1);
-  }
+  .logo-item img:hover { filter: grayscale(0%) opacity(1); }
 </style>
 
 ![Banner](Figuras/banner.png){: .banner-img }
@@ -162,7 +177,7 @@ redirect_from:
 
 ## ¿Por qué asistir?
 
-<div class="grid-cards">
+<div class="grid-features">
   <div class="card-feature">
     <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#A63737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
     <h4 style="margin: 12px 0 6px; font-size: 1.1rem;">Learn from experts</h4>
@@ -342,7 +357,7 @@ El cierre contará con la participación especial de la **Dra. Liliana Jorquera*
 
 ## Comités y Organización del Workshop
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 25px 0;">
+<div class="grid-committees">
 
   <div style="background: #ffffff; border: 1px solid var(--border-color); border-left: 4px solid var(--primary); border-radius: 8px; padding: 20px;">
     <div style="color: var(--primary); font-size: 0.75rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Workshop Chair & Webmaster</div>
@@ -368,11 +383,6 @@ El cierre contará con la participación especial de la **Dra. Liliana Jorquera*
   </div>
 
 </div>
-
-<blockquote style="font-size: 0.88rem; color: #4a5568; font-style: italic; background: #f8fafc; border-left: 3px solid #cbd5e1; margin: 20px 0; padding: 10px 15px;">
-Agradecemos de forma especial las gestiones institucionales y el trabajo de vinculación realizado por el <strong>Dr. Ignacio Espinoza</strong>, la <strong>Dra. Pamela Franco</strong> y el <strong>MSc. Cristian Montalba</strong> para la obtención del endoso oficial de la <strong>ISMRT</strong>, el patrocinio de <strong>IEEE EMBS Chile Centro</strong> y la colaboración estratégica con <strong>FALP</strong>, <strong>Guerbet</strong> y la red <strong>REBECCA-IA</strong>.
-</blockquote>
-
 ---
 
 ## Alianza e Integración Internacional
