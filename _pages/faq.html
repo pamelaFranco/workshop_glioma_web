@@ -7,18 +7,17 @@ redirect_from:
   - /wordpress/blog-posts/
 ---
 
-<!-- Carga de la librería p5.js -->
+<!-- Carga de la librería p5.js y tu nuevo archivo externo -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script src="{{ '/assets/js/game-faq.js' | relative_url }}"></script>
 
 <style>
-  /* Contenedor principal de FAQs */
   .faq-container {
     max-width: 800px;
     margin: 25px auto;
     font-family: system-ui, -apple-system, sans-serif;
   }
 
-  /* Tarjetas desplegables */
   .faq-item {
     background: #ffffff;
     border: 1px solid #e1e4e8;
@@ -38,7 +37,6 @@ redirect_from:
     border-left: 5px solid #A63737;
   }
 
-  /* Preguntas */
   .faq-question {
     padding: 16px 20px;
     font-size: 1.05rem;
@@ -73,7 +71,6 @@ redirect_from:
     transform: rotate(45deg);
   }
 
-  /* Respuestas */
   .faq-answer {
     padding: 0 20px 18px 20px;
     color: #4a5568;
@@ -84,7 +81,6 @@ redirect_from:
     padding-top: 12px;
   }
 
-  /* Pie de página */
   .faq-footer {
     text-align: center;
     margin-top: 45px;
@@ -114,7 +110,6 @@ redirect_from:
     border-bottom: 1px dashed #A63737;
   }
 
-  /* Contenedor del Juego */
   #game-wrapper {
     display: flex;
     flex-direction: column;
@@ -126,6 +121,7 @@ redirect_from:
   #game-container {
     width: 100%;
     max-width: 500px;
+    min-height: 200px;
     border: 2px solid #A63737;
     border-radius: 10px;
     overflow: hidden;
@@ -144,7 +140,6 @@ redirect_from:
 
 <div class="faq-container">
 
-  <!-- Pregunta 1 -->
   <details class="faq-item" open>
     <summary class="faq-question">
       <span>1. ¿El workshop tiene algún costo asociado?</span>
@@ -155,7 +150,6 @@ redirect_from:
     </div>
   </details>
 
-  <!-- Pregunta 2 -->
   <details class="faq-item">
     <summary class="faq-question">
       <span>2. ¿Es necesario instalar software especializado?</span>
@@ -166,7 +160,6 @@ redirect_from:
     </div>
   </details>
 
-  <!-- Pregunta 3 -->
   <details class="faq-item">
     <summary class="faq-question">
       <span>3. ¿Qué nivel de conocimientos técnicos se requiere?</span>
@@ -177,7 +170,6 @@ redirect_from:
     </div>
   </details>
 
-  <!-- Pregunta 4 -->
   <details class="faq-item">
     <summary class="faq-question">
       <span>4. ¿Habrá premios por la presentación de trabajos?</span>
@@ -188,7 +180,6 @@ redirect_from:
     </div>
   </details>
 
-  <!-- Pregunta 5 -->
   <details class="faq-item">
     <summary class="faq-question">
       <span>5. ¿Cómo envío mi resumen (abstract)?</span>
@@ -199,7 +190,6 @@ redirect_from:
     </div>
   </details>
 
-  <!-- Pregunta 6: Juego Integrado -->
   <details class="faq-item" id="faq-juego">
     <summary class="faq-question">
       <span> Desafío de Pausa Cognitiva: Memoria MRI (Warhol Brain)</span>
@@ -216,7 +206,6 @@ redirect_from:
 
 </div>
 
-<!-- Pie de página con tu banner -->
 <div class="faq-footer">
   <img src="/workshop_glioma_web/Figuras/pie_pagina.svg" alt="Banner Informativo">
   <p>
@@ -224,176 +213,3 @@ redirect_from:
     <a href="mailto:neurooncologia@gmail.com">neurooncologia@gmail.com</a>
   </p>
 </div>
-
-<!-- Script de p5.js sin etiquetas Liquid -->
-<script>
-  let imgWarhol;
-  let secuencia = [];
-  let pasoJugador = 0;
-  let tiempoBrillo = 0;
-  let cuadranteActivo = -1;
-  let mensaje = "Haz clic en INICIAR";
-  let estadoJuego = 0; 
-  let p5Iniciado = false;
-
-  // Escuchar cuando el usuario abra el desplegable del juego para construir el Canvas
-  document.addEventListener("DOMContentLoaded", function() {
-    const faqJuego = document.getElementById("faq-juego");
-    if (faqJuego) {
-      faqJuego.addEventListener("toggle", function() {
-        if (faqJuego.open && !p5Iniciado) {
-          p5Iniciado = true;
-          new p5(sketchJuego);
-        }
-      });
-    }
-  });
-
-  const sketchJuego = (p) => {
-    p.preload = function() {
-      // Carga directa con respaldo cruzado
-      imgWarhol = p.loadImage(
-        '/workshop_glioma_web/Figuras/warhol_brain_fixed.png',
-        () => console.log("Imagen MRI local cargada."),
-        () => {
-          imgWarhol = p.loadImage('https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/warhol_brain_fixed.png');
-        }
-      );
-    };
-
-    p.setup = function() {
-      let container = document.getElementById('game-container');
-      let ancho = container ? container.offsetWidth : 480;
-      let canvas = p.createCanvas(ancho || 480, ancho || 480);
-      canvas.parent('game-container');
-    };
-
-    p.draw = function() {
-      p.background(0);
-
-      if (imgWarhol) {
-        p.image(imgWarhol, 0, 0, p.width, p.height);
-      }
-
-      dibujarResalte();
-      manejarLogicaJuego();
-      dibujarUI();
-    };
-
-    function dibujarResalte() {
-      if (cuadranteActivo !== -1) {
-        p.noStroke();
-        p.fill(255, 170);
-        let midX = p.width / 2;
-        let midY = p.height / 2;
-
-        if (cuadranteActivo === 0) p.rect(0, 0, midX, midY);
-        if (cuadranteActivo === 1) p.rect(midX, 0, midX, midY);
-        if (cuadranteActivo === 2) p.rect(0, midY, midX, midY);
-        if (cuadranteActivo === 3) p.rect(midX, midY, midX, midY);
-      }
-    }
-
-    function dibujarUI() {
-      p.fill(0, 200);
-      p.noStroke();
-      p.rect(p.width / 2 - 140, 15, 280, 75, 8);
-
-      p.fill(255);
-      p.textSize(15);
-      p.textAlign(p.CENTER, p.CENTER);
-      p.text(mensaje, p.width / 2, 38);
-      
-      p.textSize(13);
-      p.fill(166, 55, 55);
-      p.text("Nivel / Secuencia: " + secuencia.length, p.width / 2, 65);
-
-      if (estadoJuego === 0 || estadoJuego === 3) {
-        p.fill(166, 55, 55);
-        p.rect(p.width / 2 - 55, p.height - 55, 110, 40, 6);
-        p.fill(255);
-        p.textSize(16);
-        p.text("INICIAR", p.width / 2, p.height - 35);
-      }
-    }
-
-    function manejarLogicaJuego() {
-      if (estadoJuego === 1) {
-        if (p.frameCount % 50 === 0) {
-          if (tiempoBrillo < secuencia.length) {
-            cuadranteActivo = secuencia[tiempoBrillo];
-            tiempoBrillo++;
-          } else {
-            cuadranteActivo = -1;
-            estadoJuego = 2;
-            mensaje = "¡Tu turno! Repite";
-          }
-        } else if (p.frameCount % 50 === 35) {
-          cuadranteActivo = -1;
-        }
-      }
-    }
-
-    p.mousePressed = function() {
-      if ((estadoJuego === 0 || estadoJuego === 3) &&
-          p.mouseX > p.width / 2 - 55 && p.mouseX < p.width / 2 + 55 &&
-          p.mouseY > p.height - 55 && p.mouseY < p.height - 15) {
-        iniciarJuego();
-        return;
-      }
-
-      if (estadoJuego === 2) {
-        let clicCuadrante = detectarCuadrante(p.mouseX, p.mouseY);
-        if (clicCuadrante !== -1) {
-          cuadranteActivo = clicCuadrante;
-
-          if (clicCuadrante === secuencia[pasoJugador]) {
-            pasoJugador++;
-            if (pasoJugador >= secuencia.length) {
-              estadoJuego = 1;
-              mensaje = "¡Bien hecho!";
-              cuadranteActivo = -1;
-              setTimeout(agregarPaso, 800);
-            }
-          } else {
-            estadoJuego = 3;
-            mensaje = "¡Error! Reiniciar";
-            cuadranteActivo = -1;
-            secuencia = [];
-          }
-        }
-      }
-    };
-
-    p.mouseReleased = function() {
-      if (estadoJuego === 2) {
-        cuadranteActivo = -1;
-      }
-    };
-
-    function detectarCuadrante(mx, my) {
-      let midX = p.width / 2;
-      let midY = p.height / 2;
-
-      if (mx >= 0 && mx < midX && my >= 0 && my < midY) return 0;
-      if (mx >= midX && mx <= p.width && my >= 0 && my < midY) return 1;
-      if (mx >= 0 && mx < midX && my >= midY && my <= p.height) return 2;
-      if (mx >= midX && mx <= p.width && my >= midY && my <= p.height) return 3;
-
-      return -1;
-    }
-
-    function iniciarJuego() {
-      secuencia = [];
-      estadoJuego = 1;
-      agregarPaso();
-    }
-
-    function agregarPaso() {
-      secuencia.push(p.floor(p.random(0, 4)));
-      pasoJugador = 0;
-      tiempoBrillo = 0;
-      mensaje = "Observa la secuencia...";
-    }
-  };
-</script>
