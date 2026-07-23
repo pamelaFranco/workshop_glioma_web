@@ -227,10 +227,14 @@ redirect_from:
   const ctx = canvas.getContext('2d');
 
   let imgWarhol = new Image();
-  imgWarhol.crossOrigin = "Anonymous";
-  // Ruta primaria local, respaldo CDN Raw de GitHub
-  imgWarhol.src = "/workshop_glioma_web/Figuras/warhol_brain_fixed.png";
+  // Intenta la ruta del sitio, si falla va al repositorio público
+  let rutaLocal = window.location.pathname.includes('workshop_glioma_web') 
+    ? '/workshop_glioma_web/Figuras/warhol_brain_fixed.png' 
+    : 'Figuras/warhol_brain_fixed.png';
+
+  imgWarhol.src = rutaLocal;
   imgWarhol.onerror = function() {
+    console.warn("Ruta local falló, cargando desde GitHub Raw...");
     imgWarhol.src = "https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/warhol_brain_fixed.png";
   };
 
@@ -242,23 +246,23 @@ redirect_from:
   let timerInterval = null;
 
   function render() {
-    // Dibujar fondo
-    ctx.fillStyle = "#000";
+    // 1. Limpiar pantalla / Fondo
+    ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Dibujar Imagen
+    // 2. Dibujar Imagen MRI
     if (imgWarhol.complete && imgWarhol.naturalWidth !== 0) {
       ctx.drawImage(imgWarhol, 0, 0, canvas.width, canvas.height);
     } else {
-      ctx.fillStyle = "#333";
+      ctx.fillStyle = "#222222";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#fff";
-      ctx.font = "16px sans-serif";
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "14px sans-serif";
       ctx.textAlign = "center";
-      ctx.fillText("Cargando imagen MRI...", canvas.width/2, canvas.height/2);
+      ctx.fillText("Cargando resonancia...", canvas.width / 2, canvas.height / 2);
     }
 
-    // Dibujar Resalte
+    // 3. Dibujar Resalte del cuadrante activo
     if (cuadranteActivo !== -1) {
       ctx.fillStyle = "rgba(255, 255, 255, 0.65)";
       let w = canvas.width / 2;
@@ -269,11 +273,9 @@ redirect_from:
       if (cuadranteActivo === 3) ctx.fillRect(w, h, w, h);
     }
 
-    // Dibujar Caja UI Superior
+    // 4. Dibujar Caja UI Superior (Fondo + Texto)
     ctx.fillStyle = "rgba(0, 0, 0, 0.85)";
-    ctx.beginPath();
-    ctx.roundRect(canvas.width / 2 - 150, 15, 300, 75, 8);
-    ctx.fill();
+    ctx.fillRect(canvas.width / 2 - 140, 15, 280, 75);
 
     ctx.fillStyle = "#ffffff";
     ctx.font = "bold 16px sans-serif";
@@ -284,12 +286,10 @@ redirect_from:
     ctx.font = "14px sans-serif";
     ctx.fillText("Nivel / Secuencia: " + secuencia.length, canvas.width / 2, 68);
 
-    // Dibujar Botón Iniciar
+    // 5. Dibujar Botón Iniciar
     if (estadoJuego === 0 || estadoJuego === 3) {
       ctx.fillStyle = "#A63737";
-      ctx.beginPath();
-      ctx.roundRect(canvas.width / 2 - 60, canvas.height - 65, 120, 42, 6);
-      ctx.fill();
+      ctx.fillRect(canvas.width / 2 - 60, canvas.height - 65, 120, 42);
 
       ctx.fillStyle = "#ffffff";
       ctx.font = "bold 16px sans-serif";
@@ -336,7 +336,7 @@ redirect_from:
     return -1;
   }
 
-  canvas.addEventListener('mousedown', function(e) {
+  canvas.addEventListener('click', function(e) {
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;
@@ -375,8 +375,7 @@ redirect_from:
     }
   });
 
-  // Arrancar bucle de renderizado
-  imgWarhol.onload = render;
+  // Iniciar bucle inmediatamente
   render();
 })();
 </script>
