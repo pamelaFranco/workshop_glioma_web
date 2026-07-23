@@ -82,7 +82,7 @@ const sketchJuego = (p) => {
       p.textAlign(p.CENTER, p.CENTER);
       
       p.textSize(22);
-      p.text("🎉 ¡Excelente memoria!", p.width / 2, p.height / 2 - 60);
+      p.text("¡Excelente memoria!", p.width / 2, p.height / 2 - 60);
 
       p.textSize(14);
       p.fill(220);
