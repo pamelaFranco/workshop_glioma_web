@@ -4,7 +4,7 @@ let pasoJugador = 0;
 let tiempoBrillo = 0;
 let cuadranteActivo = -1;
 let mensaje = "Haz clic en INICIAR";
-let estadoJuego = 0; 
+let estadoJuego = 0; // 0: Inicio, 1: Mostrando secuencia, 2: Turno jugador, 3: Game over, 4: Transición
 let p5Iniciado = false;
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -88,7 +88,7 @@ const sketchJuego = (p) => {
 
   function manejarLogicaJuego() {
     if (estadoJuego === 1) {
-      if (p.frameCount % 50 === 0) {
+      if (p.frameCount % 40 === 0) {
         if (tiempoBrillo < secuencia.length) {
           cuadranteActivo = secuencia[tiempoBrillo];
           tiempoBrillo++;
@@ -97,7 +97,7 @@ const sketchJuego = (p) => {
           estadoJuego = 2;
           mensaje = "¡Tu turno! Repite";
         }
-      } else if (p.frameCount % 50 === 35) {
+      } else if (p.frameCount % 40 === 25) {
         cuadranteActivo = -1;
       }
     }
@@ -119,10 +119,12 @@ const sketchJuego = (p) => {
         if (clicCuadrante === secuencia[pasoJugador]) {
           pasoJugador++;
           if (pasoJugador >= secuencia.length) {
-            estadoJuego = 1;
+            estadoJuego = 4; // Transición limpia
             mensaje = "¡Bien hecho!";
-            cuadranteActivo = -1;
-            setTimeout(agregarPaso, 800);
+            setTimeout(() => {
+              cuadranteActivo = -1;
+              agregarPaso();
+            }, 1000);
           }
         } else {
           estadoJuego = 3;
@@ -154,7 +156,6 @@ const sketchJuego = (p) => {
 
   function iniciarJuego() {
     secuencia = [];
-    estadoJuego = 1;
     agregarPaso();
   }
 
@@ -163,5 +164,6 @@ const sketchJuego = (p) => {
     pasoJugador = 0;
     tiempoBrillo = 0;
     mensaje = "Observa la secuencia...";
+    estadoJuego = 1; // Solo se activa el nivel cuando se agregan los datos
   }
-}
+};
