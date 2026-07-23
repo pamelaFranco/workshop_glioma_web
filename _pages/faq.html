@@ -7,6 +7,9 @@ redirect_from:
   - /wordpress/blog-posts/
 ---
 
+<!-- Carga de la librería p5.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
 <style>
   /* Contenedor principal de FAQs */
   .faq-container {
@@ -118,6 +121,31 @@ redirect_from:
     color: #822a2a;
     border-bottom-style: solid;
   }
+
+  /* Estilos específicos para integrar el juego */
+  #game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  #game-container {
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid #A63737;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(166, 55, 55, 0.2);
+    background-color: #000;
+  }
+
+  #game-container canvas {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+  }
 </style>
 
 <h2>Preguntas Frecuentes (FAQ)</h2>
@@ -125,7 +153,7 @@ redirect_from:
 <div class="faq-container">
 
   <!-- Pregunta 1 -->
-  <details class="faq-item" open> <!-- 'open' hace que la primera aparezca abierta por defecto -->
+  <details class="faq-item" open>
     <summary class="faq-question">
       <span>1. ¿El workshop tiene algún costo asociado?</span>
       <span class="faq-icon">+</span>
@@ -179,8 +207,24 @@ redirect_from:
     </div>
   </details>
 
+  <!-- Pregunta 6: Juego Integrado -->
+  <details class="faq-item">
+    <summary class="faq-question">
+      <span>🧠 Desafío de Pausa Cognitiva: Memoria MRI (Warhol Brain)</span>
+      <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+      <p style="margin-top: 0;">¡Pon a prueba tu memoria secuencial reconociendo patrones sobre esta resonancia magnética estilizada!</p>
+      
+      <div id="game-wrapper">
+        <div id="game-container"></div>
+      </div>
+    </div>
+  </details>
+
 </div>
 
+<!-- Pie de página con tu banner e información de contacto -->
 <div class="faq-footer">
   <img src="/workshop_glioma_web/Figuras/pie_pagina.svg" alt="Banner Informativo">
   <p>
@@ -188,3 +232,158 @@ redirect_from:
     <a href="mailto:neurooncologia@gmail.com">neurooncologia@gmail.com</a>
   </p>
 </div>
+
+<!-- Lógica del Juego p5.js -->
+<script>
+  let imgWarhol;
+  let secuencia = [];
+  let pasoJugador = 0;
+  let tiempoBrillo = 0;
+  let cuadranteActivo = -1;
+  let mensaje = "Haz clic en INICIAR";
+  let estadoJuego = 0; 
+
+  function preload() {
+    imgWarhol = loadImage(
+      '/workshop_glioma_web/Figuras/warhol_brain_fixed.png',
+      () => console.log("Imagen MRI cargada correctamente."),
+      () => {
+        // Respaldo por si se prueba en entorno local
+        imgWarhol = loadImage('https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/warhol_brain_fixed.png');
+      }
+    );
+  }
+
+  function setup() {
+    let canvas = createCanvas(500, 500);
+    canvas.parent('game-container');
+  }
+
+  function draw() {
+    background(0);
+
+    if (imgWarhol) {
+      image(imgWarhol, 0, 0, width, height);
+    }
+
+    dibujarResalte();
+    manejarLogicaJuego();
+    dibujarUI();
+  }
+
+  function dibujarResalte() {
+    if (cuadranteActivo !== -1) {
+      noStroke();
+      fill(255, 170);
+      let midX = width / 2;
+      let midY = height / 2;
+
+      if (cuadranteActivo === 0) rect(0, 0, midX, midY);
+      if (cuadranteActivo === 1) rect(midX, 0, midX, midY);
+      if (cuadranteActivo === 2) rect(0, midY, midX, midY);
+      if (cuadranteActivo === 3) rect(midX, midY, midX, midY);
+    }
+  }
+
+  function dibujarUI() {
+    fill(0, 200);
+    noStroke();
+    rect(width / 2 - 150, 15, 300, 75, 8);
+
+    fill(255);
+    textSize(16);
+    textAlign(CENTER, CENTER);
+    text(mensaje, width / 2, 38);
+    
+    textSize(13);
+    fill(166, 55, 55);
+    text("Nivel / Secuencia: " + secuencia.length, width / 2, 65);
+
+    if (estadoJuego === 0 || estadoJuego === 3) {
+      fill(166, 55, 55);
+      rect(width / 2 - 55, height - 60, 110, 40, 6);
+      fill(255);
+      textSize(16);
+      text("INICIAR", width / 2, height - 40);
+    }
+  }
+
+  function manejarLogicaJuego() {
+    if (estadoJuego === 1) {
+      if (frameCount % 50 === 0) {
+        if (tiempoBrillo < secuencia.length) {
+          cuadranteActivo = secuencia[tiempoBrillo];
+          tiempoBrillo++;
+        } else {
+          cuadranteActivo = -1;
+          estadoJuego = 2;
+          mensaje = "¡Tu turno! Repite";
+        }
+      } else if (frameCount % 50 === 35) {
+        cuadranteActivo = -1;
+      }
+    }
+  }
+
+  function mousePressed() {
+    if ((estadoJuego === 0 || estadoJuego === 3) &&
+        mouseX > width / 2 - 55 && mouseX < width / 2 + 55 &&
+        mouseY > height - 60 && mouseY < height - 20) {
+      iniciarJuego();
+      return;
+    }
+
+    if (estadoJuego === 2) {
+      let clicCuadrante = detectarCuadrante(mouseX, mouseY);
+      if (clicCuadrante !== -1) {
+        cuadranteActivo = clicCuadrante;
+
+        if (clicCuadrante === secuencia[pasoJugador]) {
+          pasoJugador++;
+          if (pasoJugador >= secuencia.length) {
+            estadoJuego = 1;
+            mensaje = "¡Bien hecho! Siguiente...";
+            cuadranteActivo = -1;
+            setTimeout(agregarPaso, 800);
+          }
+        } else {
+          estadoJuego = 3;
+          mensaje = "¡Error! Reiniciar";
+          cuadranteActivo = -1;
+          secuencia = [];
+        }
+      }
+    }
+  }
+
+  function mouseReleased() {
+    if (estadoJuego === 2) {
+      cuadranteActivo = -1;
+    }
+  }
+
+  function detectarCuadrante(mx, my) {
+    let midX = width / 2;
+    let midY = height / 2;
+
+    if (mx >= 0 && mx < midX && my >= 0 && my < midY) return 0;
+    if (mx >= midX && mx <= width && my >= 0 && my < midY) return 1;
+    if (mx >= 0 && mx < midX && my >= midY && my <= height) return 2;
+    if (mx >= midX && mx <= width && my >= midY && my <= height) return 3;
+
+    return -1;
+  }
+
+  function iniciarJuego() {
+    secuencia = [];
+    estadoJuego = 1;
+    agregarPaso();
+  }
+
+  function agregarPaso() {
+    secuencia.push(floor(random(0, 4)));
+    pasoJugador = 0;
+    tiempoBrillo = 0;
+    mensaje = "Observa la secuencia...";
+  }
+</script>
