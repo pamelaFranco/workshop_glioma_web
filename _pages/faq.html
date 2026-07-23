@@ -207,10 +207,10 @@ redirect_from:
     </div>
   </details>
 
-  <!-- Pregunta 6: Juego Integrado -->
-  <details class="faq-item">
+ <!-- Pregunta 6: Juego Integrado (Actualizado con listener de apertura) -->
+  <details class="faq-item" id="faq-juego">
     <summary class="faq-question">
-      <span>🧠 Desafío de Pausa Cognitiva: Memoria MRI (Warhol Brain)</span>
+      <span> Desafío de Pausa Cognitiva: Memoria MRI (Warhol Brain)</span>
       <span class="faq-icon">+</span>
     </summary>
     <div class="faq-answer">
@@ -233,7 +233,8 @@ redirect_from:
   </p>
 </div>
 
-<!-- Lógica del Juego p5.js -->
+<!-- Lógica del Juego p5.js (Protegida de Jekyll con {% raw %}) -->
+{% raw %}
 <script>
   let imgWarhol;
   let secuencia = [];
@@ -242,148 +243,169 @@ redirect_from:
   let cuadranteActivo = -1;
   let mensaje = "Haz clic en INICIAR";
   let estadoJuego = 0; 
+  let p5Iniciado = false;
 
-  function preload() {
-    imgWarhol = loadImage(
-      '/workshop_glioma_web/Figuras/warhol_brain_fixed.png',
-      () => console.log("Imagen MRI cargada correctamente."),
-      () => {
-        // Respaldo por si se prueba en entorno local
-        imgWarhol = loadImage('https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/warhol_brain_fixed.png');
-      }
-    );
-  }
-
-  function setup() {
-    let canvas = createCanvas(500, 500);
-    canvas.parent('game-container');
-  }
-
-  function draw() {
-    background(0);
-
-    if (imgWarhol) {
-      image(imgWarhol, 0, 0, width, height);
-    }
-
-    dibujarResalte();
-    manejarLogicaJuego();
-    dibujarUI();
-  }
-
-  function dibujarResalte() {
-    if (cuadranteActivo !== -1) {
-      noStroke();
-      fill(255, 170);
-      let midX = width / 2;
-      let midY = height / 2;
-
-      if (cuadranteActivo === 0) rect(0, 0, midX, midY);
-      if (cuadranteActivo === 1) rect(midX, 0, midX, midY);
-      if (cuadranteActivo === 2) rect(0, midY, midX, midY);
-      if (cuadranteActivo === 3) rect(midX, midY, midX, midY);
-    }
-  }
-
-  function dibujarUI() {
-    fill(0, 200);
-    noStroke();
-    rect(width / 2 - 150, 15, 300, 75, 8);
-
-    fill(255);
-    textSize(16);
-    textAlign(CENTER, CENTER);
-    text(mensaje, width / 2, 38);
-    
-    textSize(13);
-    fill(166, 55, 55);
-    text("Nivel / Secuencia: " + secuencia.length, width / 2, 65);
-
-    if (estadoJuego === 0 || estadoJuego === 3) {
-      fill(166, 55, 55);
-      rect(width / 2 - 55, height - 60, 110, 40, 6);
-      fill(255);
-      textSize(16);
-      text("INICIAR", width / 2, height - 40);
-    }
-  }
-
-  function manejarLogicaJuego() {
-    if (estadoJuego === 1) {
-      if (frameCount % 50 === 0) {
-        if (tiempoBrillo < secuencia.length) {
-          cuadranteActivo = secuencia[tiempoBrillo];
-          tiempoBrillo++;
-        } else {
-          cuadranteActivo = -1;
-          estadoJuego = 2;
-          mensaje = "¡Tu turno! Repite";
+  // Inicializar p5 solo cuando se abra la sección desplegable
+  document.addEventListener("DOMContentLoaded", function() {
+    const faqJuego = document.getElementById("faq-juego");
+    if (faqJuego) {
+      faqJuego.addEventListener("toggle", function() {
+        if (faqJuego.open && !p5Iniciado) {
+          p5Iniciado = true;
+          // Dispara la inicialización de p5 si está cargado
+          if (typeof new p5 === 'function') {
+            new p5(sketchJuego);
+          }
         }
-      } else if (frameCount % 50 === 35) {
+      });
+    }
+  });
+
+  const sketchJuego = (p) => {
+    p.preload = function() {
+      imgWarhol = p.loadImage(
+        '/workshop_glioma_web/Figuras/warhol_brain_fixed.png',
+        () => console.log("Imagen MRI cargada correctamente."),
+        () => {
+          imgWarhol = p.loadImage('https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/warhol_brain_fixed.png');
+        }
+      );
+    };
+
+    p.setup = function() {
+      let container = document.getElementById('game-container');
+      let ancho = container ? container.offsetWidth || 480 : 480;
+      let canvas = p.createCanvas(ancho, ancho);
+      canvas.parent('game-container');
+    };
+
+    p.draw = function() {
+      p.background(0);
+
+      if (imgWarhol) {
+        p.image(imgWarhol, 0, 0, p.width, p.height);
+      }
+
+      dibujarResalte();
+      manejarLogicaJuego();
+      dibujarUI();
+    };
+
+    function dibujarResalte() {
+      if (cuadranteActivo !== -1) {
+        p.noStroke();
+        p.fill(255, 170);
+        let midX = p.width / 2;
+        let midY = p.height / 2;
+
+        if (cuadranteActivo === 0) p.rect(0, 0, midX, midY);
+        if (cuadranteActivo === 1) p.rect(midX, 0, midX, midY);
+        if (cuadranteActivo === 2) p.rect(0, midY, midX, midY);
+        if (cuadranteActivo === 3) p.rect(midX, midY, midX, midY);
+      }
+    }
+
+    function dibujarUI() {
+      p.fill(0, 200);
+      p.noStroke();
+      p.rect(p.width / 2 - 140, 15, 280, 75, 8);
+
+      p.fill(255);
+      p.textSize(15);
+      p.textAlign(p.CENTER, p.CENTER);
+      p.text(mensaje, p.width / 2, 38);
+      
+      p.textSize(13);
+      p.fill(166, 55, 55);
+      p.text("Nivel / Secuencia: " + secuencia.length, p.width / 2, 65);
+
+      if (estadoJuego === 0 || estadoJuego === 3) {
+        p.fill(166, 55, 55);
+        p.rect(p.width / 2 - 55, p.height - 55, 110, 40, 6);
+        p.fill(255);
+        p.textSize(16);
+        p.text("INICIAR", p.width / 2, p.height - 35);
+      }
+    }
+
+    function manejarLogicaJuego() {
+      if (estadoJuego === 1) {
+        if (p.frameCount % 50 === 0) {
+          if (tiempoBrillo < secuencia.length) {
+            cuadranteActivo = secuencia[tiempoBrillo];
+            tiempoBrillo++;
+          } else {
+            cuadranteActivo = -1;
+            estadoJuego = 2;
+            mensaje = "¡Tu turno! Repite";
+          }
+        } else if (p.frameCount % 50 === 35) {
+          cuadranteActivo = -1;
+        }
+      }
+    }
+
+    p.mousePressed = function() {
+      if ((estadoJuego === 0 || estadoJuego === 3) &&
+          p.mouseX > p.width / 2 - 55 && p.mouseX < p.width / 2 + 55 &&
+          p.mouseY > p.height - 55 && p.mouseY < p.height - 15) {
+        iniciarJuego();
+        return;
+      }
+
+      if (estadoJuego === 2) {
+        let clicCuadrante = detectarCuadrante(p.mouseX, p.mouseY);
+        if (clicCuadrante !== -1) {
+          cuadranteActivo = clicCuadrante;
+
+          if (clicCuadrante === secuencia[pasoJugador]) {
+            pasoJugador++;
+            if (pasoJugador >= secuencia.length) {
+              estadoJuego = 1;
+              mensaje = "¡Bien hecho! Siguiente...";
+              cuadranteActivo = -1;
+              setTimeout(agregarPaso, 800);
+            }
+          } else {
+            estadoJuego = 3;
+            mensaje = "¡Error! Reiniciar";
+            cuadranteActivo = -1;
+            secuencia = [];
+          }
+        }
+      }
+    };
+
+    p.mouseReleased = function() {
+      if (estadoJuego === 2) {
         cuadranteActivo = -1;
       }
+    };
+
+    function detectarCuadrante(mx, my) {
+      let midX = p.width / 2;
+      let midY = p.height / 2;
+
+      if (mx >= 0 && mx < midX && my >= 0 && my < midY) return 0;
+      if (mx >= midX && mx <= p.width && my >= 0 && my < midY) return 1;
+      if (mx >= 0 && mx < midX && my >= midY && my <= p.height) return 2;
+      if (mx >= midX && mx <= p.width && my >= midY && my <= p.height) return 3;
+
+      return -1;
     }
-  }
 
-  function mousePressed() {
-    if ((estadoJuego === 0 || estadoJuego === 3) &&
-        mouseX > width / 2 - 55 && mouseX < width / 2 + 55 &&
-        mouseY > height - 60 && mouseY < height - 20) {
-      iniciarJuego();
-      return;
+    function iniciarJuego() {
+      secuencia = [];
+      estadoJuego = 1;
+      agregarPaso();
     }
 
-    if (estadoJuego === 2) {
-      let clicCuadrante = detectarCuadrante(mouseX, mouseY);
-      if (clicCuadrante !== -1) {
-        cuadranteActivo = clicCuadrante;
-
-        if (clicCuadrante === secuencia[pasoJugador]) {
-          pasoJugador++;
-          if (pasoJugador >= secuencia.length) {
-            estadoJuego = 1;
-            mensaje = "¡Bien hecho! Siguiente...";
-            cuadranteActivo = -1;
-            setTimeout(agregarPaso, 800);
-          }
-        } else {
-          estadoJuego = 3;
-          mensaje = "¡Error! Reiniciar";
-          cuadranteActivo = -1;
-          secuencia = [];
-        }
-      }
+    function agregarPaso() {
+      secuencia.push(p.floor(p.random(0, 4)));
+      pasoJugador = 0;
+      tiempoBrillo = 0;
+      mensaje = "Observa la secuencia...";
     }
-  }
-
-  function mouseReleased() {
-    if (estadoJuego === 2) {
-      cuadranteActivo = -1;
-    }
-  }
-
-  function detectarCuadrante(mx, my) {
-    let midX = width / 2;
-    let midY = height / 2;
-
-    if (mx >= 0 && mx < midX && my >= 0 && my < midY) return 0;
-    if (mx >= midX && mx <= width && my >= 0 && my < midY) return 1;
-    if (mx >= 0 && mx < midX && my >= midY && my <= height) return 2;
-    if (mx >= midX && mx <= width && my >= midY && my <= height) return 3;
-
-    return -1;
-  }
-
-  function iniciarJuego() {
-    secuencia = [];
-    estadoJuego = 1;
-    agregarPaso();
-  }
-
-  function agregarPaso() {
-    secuencia.push(floor(random(0, 4)));
-    pasoJugador = 0;
-    tiempoBrillo = 0;
-    mensaje = "Observa la secuencia...";
-  }
+  };
 </script>
+{% endraw %}
