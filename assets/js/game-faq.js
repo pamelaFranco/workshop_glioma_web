@@ -1,10 +1,10 @@
 let imgWarhol;
 let secuencia = [];
 let pasoJugador = 0;
-let tiempoBrillo = 0;
 let cuadranteActivo = -1;
 let mensaje = "Haz clic en INICIAR";
-let estadoJuego = 0; // 0: Inicio, 1: Mostrando secuencia, 2: Turno jugador, 3: Game over, 4: Transición
+let estadoJuego = 0; // 0: Inicio, 1: Mostrando secuencia, 2: Turno jugador, 3: Game over, 4: Espera
+let timerSecuencia = null;
 let p5Iniciado = false;
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -45,7 +45,6 @@ const sketchJuego = (p) => {
     }
 
     dibujarResalte();
-    manejarLogicaJuego();
     dibujarUI();
   };
 
@@ -86,31 +85,49 @@ const sketchJuego = (p) => {
     }
   }
 
-  function manejarLogicaJuego() {
-    if (estadoJuego === 1) {
-      if (p.frameCount % 40 === 0) {
-        if (tiempoBrillo < secuencia.length) {
-          cuadranteActivo = secuencia[tiempoBrillo];
-          tiempoBrillo++;
-        } else {
+  function reproducirSecuencia() {
+    estadoJuego = 1;
+    mensaje = "Observa la secuencia...";
+    let idx = 0;
+
+    if (timerSecuencia) clearInterval(timerSecuencia);
+
+    // Muestra cada cuadrante por 500ms y luego descansa 300ms antes del siguiente
+    timerSecuencia = setInterval(() => {
+      if (idx < secuencia.length) {
+        cuadranteActivo = secuencia[idx];
+        
+        setTimeout(() => {
           cuadranteActivo = -1;
-          estadoJuego = 2;
-          mensaje = "¡Tu turno! Repite";
-        }
-      } else if (p.frameCount % 40 === 25) {
+        }, 500);
+
+        idx++;
+      } else {
+        clearInterval(timerSecuencia);
         cuadranteActivo = -1;
+        estadoJuego = 2;
+        mensaje = "¡Tu turno! Repite";
       }
-    }
+    }, 850);
+  }
+
+  function agregarPaso() {
+    secuencia.push(p.floor(p.random(0, 4)));
+    pasoJugador = 0;
+    reproducirSecuencia();
   }
 
   p.mousePressed = function() {
+    // Clic en el botón INICIAR
     if ((estadoJuego === 0 || estadoJuego === 3) &&
         p.mouseX > p.width / 2 - 55 && p.mouseX < p.width / 2 + 55 &&
         p.mouseY > p.height - 55 && p.mouseY < p.height - 15) {
-      iniciarJuego();
+      secuencia = [];
+      agregarPaso();
       return;
     }
 
+    // Clics del jugador
     if (estadoJuego === 2) {
       let clicCuadrante = detectarCuadrante(p.mouseX, p.mouseY);
       if (clicCuadrante !== -1) {
@@ -119,7 +136,7 @@ const sketchJuego = (p) => {
         if (clicCuadrante === secuencia[pasoJugador]) {
           pasoJugador++;
           if (pasoJugador >= secuencia.length) {
-            estadoJuego = 4; // Transición limpia
+            estadoJuego = 4; // Pausa breve
             mensaje = "¡Bien hecho!";
             setTimeout(() => {
               cuadranteActivo = -1;
@@ -152,18 +169,5 @@ const sketchJuego = (p) => {
     if (mx >= midX && mx <= p.width && my >= midY && my <= p.height) return 3;
 
     return -1;
-  }
-
-  function iniciarJuego() {
-    secuencia = [];
-    agregarPaso();
-  }
-
-  function agregarPaso() {
-    secuencia.push(p.floor(p.random(0, 4)));
-    pasoJugador = 0;
-    tiempoBrillo = 0;
-    mensaje = "Observa la secuencia...";
-    estadoJuego = 1; // Solo se activa el nivel cuando se agregan los datos
   }
 };
