@@ -3,9 +3,12 @@ let secuencia = [];
 let pasoJugador = 0;
 let cuadranteActivo = -1;
 let mensaje = "Haz clic en INICIAR";
-let estadoJuego = 0; // 0: Inicio, 1: Mostrando secuencia, 2: Turno jugador, 3: Game over, 4: Espera
+let estadoJuego = 0; // 0: Inicio, 1: Mostrando secuencia, 2: Turno jugador, 3: Game over, 4: Espera, 5: ¡Victoria/Invitación!
 let timerSecuencia = null;
 let p5Iniciado = false;
+
+// Nivel requerido para desbloquear la invitación especial
+const NIVEL_OBJETIVO = 10; 
 
 document.addEventListener("DOMContentLoaded", function() {
   const faqJuego = document.getElementById("faq-juego");
@@ -63,6 +66,39 @@ const sketchJuego = (p) => {
   }
 
   function dibujarUI() {
+    // Si alcanzó el nivel objetivo, mostramos la tarjeta de felicitación e invitación
+    if (estadoJuego === 5) {
+      p.fill(0, 230);
+      p.noStroke();
+      p.rect(20, 20, p.width - 40, p.height - 40, 12);
+
+      p.stroke(166, 55, 55);
+      p.strokeWeight(2);
+      p.noFill();
+      p.rect(25, 25, p.width - 50, p.height - 50, 10);
+
+      p.noStroke();
+      p.fill(255);
+      p.textAlign(p.CENTER, p.CENTER);
+      
+      p.textSize(22);
+      p.text("🎉 ¡Excelente memoria!", p.width / 2, p.height / 2 - 60);
+
+      p.textSize(14);
+      p.fill(220);
+      let textoInvitacion = "Nos vemos el 10 de diciembre en el\nWorkshop de IA Interpretable en Neurooncología.";
+      p.text(textoInvitacion, p.width / 2, p.height / 2);
+
+      // Botón para volver a jugar
+      p.fill(166, 55, 55);
+      p.rect(p.width / 2 - 70, p.height / 2 + 70, 140, 40, 6);
+      p.fill(255);
+      p.textSize(14);
+      p.text("JUGAR DE NUEVO", p.width / 2, p.height / 2 + 90);
+      return;
+    }
+
+    // UI Estándar durante el juego
     p.fill(0, 200);
     p.noStroke();
     p.rect(p.width / 2 - 140, 15, 280, 75, 8);
@@ -92,7 +128,6 @@ const sketchJuego = (p) => {
 
     if (timerSecuencia) clearInterval(timerSecuencia);
 
-    // Muestra cada cuadrante por 500ms y luego descansa 300ms antes del siguiente
     timerSecuencia = setInterval(() => {
       if (idx < secuencia.length) {
         cuadranteActivo = secuencia[idx];
@@ -118,6 +153,15 @@ const sketchJuego = (p) => {
   }
 
   p.mousePressed = function() {
+    // Clic en el botón JUGAR DE NUEVO desde la pantalla de invitación
+    if (estadoJuego === 5 &&
+        p.mouseX > p.width / 2 - 70 && p.mouseX < p.width / 2 + 70 &&
+        p.mouseY > p.height / 2 + 70 && p.mouseY < p.height / 2 + 110) {
+      secuencia = [];
+      agregarPaso();
+      return;
+    }
+
     // Clic en el botón INICIAR
     if ((estadoJuego === 0 || estadoJuego === 3) &&
         p.mouseX > p.width / 2 - 55 && p.mouseX < p.width / 2 + 55 &&
@@ -136,12 +180,19 @@ const sketchJuego = (p) => {
         if (clicCuadrante === secuencia[pasoJugador]) {
           pasoJugador++;
           if (pasoJugador >= secuencia.length) {
-            estadoJuego = 4; // Pausa breve
-            mensaje = "¡Bien hecho!";
-            setTimeout(() => {
-              cuadranteActivo = -1;
-              agregarPaso();
-            }, 1000);
+            
+            // Verificamos si alcanzó el nivel para mostrar la tarjeta de invitación
+            if (secuencia.length >= NIVEL_OBJETIVO) {
+              estadoJuego = 5; // Activa pantalla de victoria/invitación
+            } else {
+              estadoJuego = 4; // Pausa breve antes del siguiente nivel
+              mensaje = "¡Bien hecho!";
+              setTimeout(() => {
+                cuadranteActivo = -1;
+                agregarPaso();
+              }, 1000);
+            }
+
           }
         } else {
           estadoJuego = 3;
