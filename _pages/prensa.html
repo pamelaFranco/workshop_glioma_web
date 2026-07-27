@@ -1,0 +1,103 @@
+---
+layout: archive
+title: "Prensa"
+permalink: /prensa/
+author_profile: true
+---
+
+<style>
+  /* Tarjetas de noticias y publicaciones */
+  .news-card {
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .news-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+  }
+
+  .news-logo-wrapper {
+    flex: 0 0 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .news-logo-wrapper img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .news-content {
+    flex: 1;
+    line-height: 1.6;
+    color: #333333;
+    font-size: 0.95rem;
+  }
+
+  /* Cajas de notas breves de prensa */
+  .press-release {
+    background-color: #f8f9fa;
+    border-left: 4px solid #A63737;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+    line-height: 1.6;
+  }
+
+  /* Adaptabilidad móvil */
+  @media (max-width: 600px) {
+    .news-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+    .news-logo-wrapper {
+      flex: initial;
+    }
+  }
+</style>
+
+<h2>Notas de Prensa y Publicaciones</h2>
+
+<!-- Noticia ISMRT -->
+<div class="news-card">
+  <div class="news-logo-wrapper">
+    <a href="https://www.ismrm.org/ismrt/endorsed-events/" target="_blank" rel="noopener noreferrer" style="border-bottom: none;">
+      <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/ISMRT.png" alt="Logo ISMRT" />
+    </a>
+  </div>
+  <div class="news-content">
+    <strong>ISMRT International:</strong> El workshop ha sido incorporado en el listado oficial de <a href="https://www.ismrm.org/ismrt/endorsed-events/" target="_blank" rel="noopener noreferrer"><strong>eventos destacados e internacionales avalados por ISMRT</strong></a> (<em>International Society for Magnetic Resonance Technicians</em>).
+  </div>
+</div>
+
+<!-- Noticia CYTED / REBECCA-IA -->
+<div class="news-card">
+  <div class="news-logo-wrapper">
+    <a href="https://www.cyted.org/eventos.php?idm=251&id_rede=590" target="_blank" rel="noopener noreferrer" style="border-bottom: none;">
+      <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/rebeccaia.jpg" alt="Logo REBECCA-IA" />
+    </a>
+  </div>
+  <div class="news-content">
+    <strong>CYTED / REBECCA-IA:</strong> El evento forma parte de la <a href="https://www.cyted.org/eventos.php?idm=251&id_rede=590" target="_blank" rel="noopener noreferrer"><strong>agenda pública de eventos de REBECCA-IA</strong></a> dentro del Programa Iberoamericano de Ciencia y Tecnología para el Desarrollo.
+  </div>
+</div>
+
+<!-- Anuncio Año del Cerebro 2026 -->
+<div class="press-release">
+  <p style="margin: 0;"><strong>Año del Cerebro 2026:</strong> El programa académico del workshop fue revisado y validado para su incorporación oficial en la difusión del <strong>Año del Cerebro 2026</strong>. Próximamente la nota estará disponible en la <a href="https://año-del-cerebro.minciencia.gob.cl/" target="_blank" rel="noopener noreferrer">plataforma web oficial</a> del Ministerio de Ciencia, Tecnología, Conocimiento e Innovación.</p>
+</div>
+
+```
