@@ -55,6 +55,30 @@ author_profile: true
     line-height: 1.6;
   }
 
+  /* Bloque desplegable (FAQ/Juego) */
+  details.faq-accordion {
+    background: #111111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-top: 30px;
+    padding: 12px 16px;
+    color: #ffffff;
+  }
+  details.faq-accordion summary {
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #A63737;
+    outline: none;
+    padding: 4px 0;
+  }
+  #game-container {
+    width: 100%;
+    max-width: 480px;
+    margin: 15px auto 0 auto;
+    text-align: center;
+  }
+
   /* Adaptabilidad móvil */
   @media (max-width: 600px) {
     .news-card {
@@ -100,3 +124,15 @@ author_profile: true
   <p style="margin: 0;"><strong>Año del Cerebro 2026:</strong> El programa académico del workshop fue revisado y validado para su incorporación oficial en la difusión del <strong>Año del Cerebro 2026</strong>. Próximamente la nota estará disponible en la <a href="https://socneurociencia.cl/a%C3%B1o-del-cerebro/" target="_blank" rel="noopener noreferrer">plataforma web oficial</a> del Ministerio de Ciencia, Tecnología, Conocimiento e Innovación.</p>
 </div>
 
+<!-- Bloque Oculto / Juego Interactivo de Fourier -->
+<details class="faq-accordion" id="faq-juego">
+  <summary> ¡Desafío Interactivo: Reconstrucción de Fourier en MRI!</summary>
+  <p style="font-size: 0.9rem; color: #ccc; margin-top: 10px;">
+    Experimenta con las frecuencias del <em>Espacio k</em>. Ajusta los deslizadores para filtrar frecuencias altas (bordes y detalles) o frecuencias bajas (contraste y estructura global).
+  </p>
+  <div id="game-container"></div>
+</details>
+
+<!-- Scripts de p5.js y la lógica del juego -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+<script src="/workshop_glioma_web/assets/js/fourier-game.js"></script>
