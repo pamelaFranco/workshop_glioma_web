@@ -98,6 +98,7 @@ include:
   - .htaccess
   - _pages
   - files
+  - assets/html
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -212,4 +213,3 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
