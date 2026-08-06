@@ -142,9 +142,6 @@ collections:
   publicaciones:
     output: true
     permalink: /:collection/:path/
-  hands-on:
-    output: true
-    permalink: /:collection/:path/
   resumenes:
     output: true
     permalink: /:collection/:path/
