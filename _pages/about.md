@@ -1,3 +1,12 @@
+---
+permalink: /
+title: ""
+author_profile: true
+redirect_from:
+  - /about/
+  - /about.html
+---
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L67F5CXTWH"></script>
 <script>
@@ -8,14 +17,6 @@
   gtag('config', 'G-L67F5CXTWH');
 </script>
 
----
-permalink: /
-title: ""
-author_profile: true
-redirect_from:
-  - /about/
-  - /about.html
----
 
 <style>
   :root {
