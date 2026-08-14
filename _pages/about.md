@@ -415,6 +415,7 @@ Este workshop se presenta en el marco de **REBECCA-IA**, una iniciativa financia
   <div class="logo-item"><img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/falp.png" alt="FALP" /></div>
   <div class="logo-item"><img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/ISMRT.png" alt="ISMRT" /></div>
   <div class="logo-item"><img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/ieee-embs.png" alt="IEEE EMBS" /></div>
+  <div class="logo-item"><img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/iHEALTH.png" alt="Guerbet" /></div>
   <div class="logo-item"><img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/guerbet.jpg" alt="Guerbet" /></div>
   <div class="logo-item"><img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/rebeccaia.jpg" alt="Rebecca IA" style="border-radius: 4px;" /></div>
 </div>
