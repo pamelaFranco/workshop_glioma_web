@@ -13,8 +13,8 @@ title                   : "Workshop"
 title_separator         : "-"
 name                    : &name "Workshop IA Neurooncología"
 description             : &description "Decodificando la severidad tumoral mediante resonancia multimodal"
-url                     : "https://pamelaFranco.github.io" # Mantener la URL base donde se desplegará en GitHub Pages
-baseurl                 : "/workshop_glioma_web" 
+url                     : "https://gliomalab.cl" # Mantener la URL base donde se desplegará en GitHub Pages
+baseurl                 : "" 
 repository              : "pamelaFranco/workshop_glioma_web"
 
 # Site Author - Organizador Institucional
