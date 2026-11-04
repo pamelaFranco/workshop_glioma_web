@@ -33,8 +33,9 @@ const sketchFourier = (p) => {
   let imagenCargadaExito = false;
 
   p.preload = function() {
+    // URL directa (raw) al archivo de imagen en GitHub
     imgOriginal = p.loadImage(
-      './Figuras/brain_mri.png',
+      'https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/brain_mri.png',
       (img) => {
         imagenCargadaExito = true;
         img.resize(ANCHO_IMG, ALTO_IMG);
