@@ -5,7 +5,7 @@ let sliderBajas;
 let sliderAltas;
 let p5Iniciado = false;
 
-document.addEventListener("DOMContentLoaded", function() {
+function inicializarJuego() {
   const faqJuego = document.getElementById("faq-juego");
   if (faqJuego) {
     faqJuego.addEventListener("toggle", function() {
@@ -14,19 +14,29 @@ document.addEventListener("DOMContentLoaded", function() {
         new p5(sketchFourier);
       }
     });
+    // Si la pestaña ya venía abierta al cargar la página
     if (faqJuego.open && !p5Iniciado) {
       p5Iniciado = true;
       new p5(sketchFourier);
     }
   }
-});
+}
+
+// Garantiza la ejecución sin importar el estado de carga del documento
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", inicializarJuego);
+} else {
+  inicializarJuego();
+}
 
 const sketchFourier = (p) => {
   p.preload = function() {
+    // CORREGIDO: Ruta relativa adaptable a dominio propio
     imgOriginal = p.loadImage(
-      '/workshop_glioma_web/Figuras/brain_mri.png',
+      './Figuras/brain_mri.png',
       () => {},
       () => {
+        // Fallback en caso de que la imagen no cargue
         imgOriginal = p.createImage(256, 256);
         imgOriginal.loadPixels();
         for (let i = 0; i < imgOriginal.pixels.length; i += 4) {
@@ -146,12 +156,10 @@ const sketchFourier = (p) => {
         let dist = Math.sqrt((x - cx) ** 2 + (y - cy) ** 2);
         let kVal = 0;
 
-        // Brillo del centro si están activas las bajas frecuencias
         if (dist <= radioBajas) {
           kVal = Math.exp(-dist / 15) * 255;
         }
-        
-        // Brillo exterior si están activas las altas frecuencias
+
         if (highVal > 0 && dist > radioBajas) {
           kVal += (highVal / 10) * (50 + Math.random() * 40);
         }
