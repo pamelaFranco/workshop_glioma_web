@@ -28,46 +28,65 @@ if (document.readyState === "loading") {
 }
 
 const sketchFourier = (p) => {
+  const ANCHO_IMG = 256;
+  const ALTO_IMG = 256;
+  let imagenCargadaExito = false;
+
   p.preload = function() {
-    // Carga adaptable con fallback estructurado
     imgOriginal = p.loadImage(
       './Figuras/brain_mri.png',
-      () => {
+      (img) => {
+        imagenCargadaExito = true;
+        img.resize(ANCHO_IMG, ALTO_IMG);
         if (sliderBajas) aplicarFiltroFourier();
       },
       () => {
-        generarFantomaSintetico(p);
-        if (sliderBajas) aplicarFiltroFourier();
+        imagenCargadaExito = false;
       }
     );
   };
 
-  function generarFantomaSintetico(p) {
-    imgOriginal = p.createImage(256, 256);
-    imgOriginal.loadPixels();
-    let cx = 128, cy = 128;
-    for (let y = 0; y < 256; y++) {
-      for (let x = 0; x < 256; x++) {
-        let idx = (x + y * 256) * 4;
+  // Generador de estructura cerebral con contraste y texturas (frecuencias altas y bajas)
+  function generarFantomaCerebro() {
+    let img = p.createImage(ANCHO_IMG, ALTO_IMG);
+    img.loadPixels();
+    let cx = ANCHO_IMG / 2;
+    let cy = ALTO_IMG / 2;
+
+    for (let y = 0; y < ALTO_IMG; y++) {
+      for (let x = 0; x < ANCHO_IMG; x++) {
+        let idx = (x + y * ANCHO_IMG) * 4;
         let dist = Math.sqrt((x - cx) ** 2 + (y - cy) ** 2);
-        let val = 15; // Fondo
+        let val = 15; // Fondo oscuro
 
-        if (dist < 95) val = 180;  // Cráneo
-        if (dist < 85) val = 70;   // Tejido cerebral
-        if (dist < 45) val = 220;  // Ventrículos
+        if (dist < 100 && dist >= 90) {
+          val = 220; // Cráneo (hueso brillante)
+        } else if (dist < 90 && dist >= 80) {
+          val = 40;  // Espacio subaracnoideo
+        } else if (dist < 80) {
+          val = 110; // Masa cerebral
 
-        // Detalle de alta frecuencia (surcos/textura)
-        if ((x % 16 < 2 || y % 16 < 2) && dist < 80) {
-          val = p.constrain(val + 50, 0, 255);
+          // Ventrículos cerebrales (alto contraste interno)
+          let dx = Math.abs(x - cx);
+          let dy = Math.abs(y - cy);
+          if (dx < 25 && dy < 45 && dist > 12) {
+            val = 245;
+          }
+
+          // Textura de giros y surcos (detalles para probar las altas frecuencias)
+          let patron = Math.sin(x / 5) * Math.cos(y / 5);
+          val += patron * 40;
         }
 
-        imgOriginal.pixels[idx] = val;
-        imgOriginal.pixels[idx + 1] = val;
-        imgOriginal.pixels[idx + 2] = val;
-        imgOriginal.pixels[idx + 3] = 255;
+        val = p.constrain(val, 0, 255);
+        img.pixels[idx] = val;
+        img.pixels[idx + 1] = val;
+        img.pixels[idx + 2] = val;
+        img.pixels[idx + 3] = 255;
       }
     }
-    imgOriginal.updatePixels();
+    img.updatePixels();
+    return img;
   }
 
   p.setup = function() {
@@ -76,13 +95,14 @@ const sketchFourier = (p) => {
     let canvas = p.createCanvas(ancho || 600, 380);
     canvas.parent('game-container');
 
-    // Garantiza imagen válida en caso de fallo síncrono
-    if (!imgOriginal || imgOriginal.width === 0 || imgOriginal.width === undefined) {
-      generarFantomaSintetico(p);
+    // Si la imagen de archivo no cargó o mide 1x1, asignamos el fantoma de 256x256
+    if (!imagenCargadaExito || !imgOriginal || imgOriginal.width <= 1) {
+      imgOriginal = generarFantomaCerebro();
     }
 
-    imgFiltrada = p.createImage(imgOriginal.width, imgOriginal.height);
-    imgKSpace = p.createImage(imgOriginal.width, imgOriginal.height);
+    // Inicializar siempre buffers con tamaño fijo de 256x256
+    imgFiltrada = p.createImage(ANCHO_IMG, ALTO_IMG);
+    imgKSpace = p.createImage(ANCHO_IMG, ALTO_IMG);
 
     p.createP("<b>Frecuencias Bajas (Centro del espacio k / Contraste):</b>")
       .parent('game-container')
@@ -110,7 +130,7 @@ const sketchFourier = (p) => {
     let gap = (p.width - (tamano * 2)) / 3;
 
     // 1. Dibujar Espacio k
-    if (imgKSpace && imgKSpace.width > 0) {
+    if (imgKSpace && imgKSpace.width > 1) {
       p.image(imgKSpace, gap, 40, tamano, tamano);
     }
     p.fill(255);
@@ -119,12 +139,12 @@ const sketchFourier = (p) => {
     p.text("Espacio k (Frecuencias)", gap + tamano / 2, 20);
 
     // 2. Dibujar Imagen Reconstruida
-    if (imgFiltrada && imgFiltrada.width > 0) {
+    if (imgFiltrada && imgFiltrada.width > 1) {
       p.image(imgFiltrada, gap * 2 + tamano, 40, tamano, tamano);
     }
     p.text("Imagen Reconstruida", gap * 2 + tamano + tamano / 2, 20);
 
-    // Indicador visual
+    // Indicador explicativo
     p.fill(30);
     p.stroke(166, 55, 55);
     p.rect(gap, tamano + 55, p.width - (gap * 2), 55, 8);
@@ -138,20 +158,17 @@ const sketchFourier = (p) => {
   };
 
   function aplicarFiltroFourier() {
-    if (!imgOriginal || !imgFiltrada || !imgKSpace) return;
+    if (!imgOriginal || imgOriginal.width <= 1 || !imgFiltrada || !imgKSpace) return;
 
     imgOriginal.loadPixels();
     imgFiltrada.loadPixels();
     imgKSpace.loadPixels();
 
-    // Si los píxeles no están listos aún, no procesa
-    if (!imgOriginal.pixels || imgOriginal.pixels.length === 0) return;
-
     let blurVal = 11 - sliderBajas.value();
     let highVal = sliderAltas.value();
 
-    let w = imgOriginal.width;
-    let h = imgOriginal.height;
+    let w = ANCHO_IMG;
+    let h = ALTO_IMG;
     let cx = w / 2;
     let cy = h / 2;
     let maxRadius = Math.sqrt(cx * cx + cy * cy);
@@ -163,7 +180,7 @@ const sketchFourier = (p) => {
         let idx = (x + y * w) * 4;
         let val = imgOriginal.pixels[idx];
 
-        // 1. Reconstrucción
+        // 1. Procesamiento Pasa-Bajos / Pasa-Altos
         let smoothVal = val;
         if (blurVal > 1) {
           let sum = 0, count = 0;
