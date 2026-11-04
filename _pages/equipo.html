@@ -113,6 +113,52 @@ redirect_from:
         font-style: italic;
     }
 
+    /* Bloque Únete al Equipo / Join Us */
+    .join-box {
+        background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+        color: #ffffff;
+        border-radius: 12px;
+        padding: 32px 24px;
+        margin-top: 32px;
+        text-align: center;
+        box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.2);
+    }
+
+    .join-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+
+    .join-text {
+        font-size: 0.98rem;
+        line-height: 1.6;
+        color: #e2e8f0;
+        margin: 0 auto 20px auto;
+        max-width: 720px;
+    }
+
+    .join-btn {
+        display: inline-block;
+        background-color: #ffffff;
+        color: #1e3a8a;
+        font-weight: 700;
+        font-size: 0.95rem;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .join-btn:hover {
+        background-color: #f8fafc;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        color: #1d4ed8;
+    }
+
     /* Adaptación para pantallas de celulares */
     @media (max-width: 640px) {
         .member-card {
@@ -127,6 +173,9 @@ redirect_from:
         }
         .member-bio {
             text-align: left;
+        }
+        .join-box {
+            padding: 24px 16px;
         }
     }
 </style>
@@ -191,6 +240,17 @@ redirect_from:
 
     <div class="synergy-box">
         <div class="synergy-title">Sinergia Interdisciplinaria de Vanguardia:</div>
-        <p class="synergy-text">Lo que hace único a este equipo es la convergencia exacta de sus disciplinas. No es común reunir en un mismo proyecto capacidades avanzadas en Física Médica, Inteligencia Artificial Explicable e Informática Clínica. Esta colaboración entre la UNAB y la UC permite que el proyecto no solo desarrolle algoritmos de alta precisión, sino que estos sean médica y físicamente interpretables, transformando datos complejos de resonancia multimodal en herramientas diagnósticas reales y confiables para la neurooncología en Chile.</p>
+        <p class="synergy-text">Lo que hace único a este equipo es la convergencia exacta de sus disciplines. No es común reunir en un mismo proyecto capacidades avanzadas en Física Médica, Inteligencia Artificial Explicable e Informática Clínica. Esta colaboración entre la UNAB y la UC permite que el proyecto no solo desarrolle algoritmos de alta precisión, sino que estos sean médica y físicamente interpretables, transformando datos complejos de resonancia multimodal en herramientas diagnósticas reales y confiables para la neurooncología en Chile.</p>
+    </div>
+
+    <!-- Sección Join Us / Oportunidades -->
+    <div class="join-box">
+        <h3 class="join-title">Únete a nuestro grupo o colabora con nosotros</h3>
+        <p class="join-text">
+            Buscamos continuamente estudiantes de pregrado, posgrado (tesistas y memoristas) e investigadores interesados en Inteligencia Artificial, Física Médica y Neurooncología. Si deseas realizar tu tesis, proyecto o colaborar de cara a nuestras actividades y al Workshop Glioma, escríbenos directamente a nuestra casilla oficial.
+        </p>
+        <a href="mailto:neurooncologia.ia@gmail.com?subject=Consulta%20/%20Postulaci%C3%B3n%20-%20Workshop%20Glioma" class="join-btn">
+            ✉ Contactar a neurooncologia.ia@gmail.com
+        </a>
     </div>
 </div>
