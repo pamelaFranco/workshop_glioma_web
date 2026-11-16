@@ -2,31 +2,72 @@
 layout: archive
 permalink: /equipo/
 title: "Equipo"
-author_profile: true
-redirect_from:
-  - /wordpress/blog-posts/
+excerpt: "Equipo interdisciplinario de investigación y organización del Workshop Glioma (UNAB - UC)."
+author_profile: false
 ---
 
 <style>
-    /* Contenedor principal estilo web académica */
     .team-container {
-        max-width: 900px;
-        margin: 40px auto;
-        padding: 0 20px;
+        max-width: 960px;
+        margin: 20px auto 50px auto;
+        padding: 0 16px;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         color: #2d3748;
     }
 
     .team-title {
-        font-size: 2rem;
+        font-size: 1.9rem;
         color: #1a365d;
         font-weight: 700;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         border-bottom: 2px solid #e2e8f0;
-        padding-bottom: 10px;
+        padding-bottom: 12px;
     }
 
-    /* Estructura de la tarjeta de integrante */
+    /* Barra de logos institucionales */
+    .institutions-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 36px;
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 16px 24px;
+        margin-bottom: 28px;
+    }
+
+    .institutions-label {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: #64748b;
+        width: 100%;
+        text-align: center;
+        margin-bottom: -16px;
+    }
+
+    .logo-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-item img {
+        height: 58px;
+        width: auto;
+        max-width: 180px;
+        object-fit: contain;
+        transition: transform 0.2s ease;
+    }
+
+    .logo-item img:hover {
+        transform: scale(1.04);
+    }
+
+    /* Tarjeta de integrante */
     .member-card {
         display: flex;
         align-items: flex-start;
@@ -34,67 +75,125 @@ redirect_from:
         border: 1px solid #e2e8f0;
         border-radius: 12px;
         padding: 24px;
-        margin-bottom: 24px;
+        margin-bottom: 22px;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .member-card:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
     }
 
-    /* Contenedor y diseño de la Imagen */
+    /* Avatar */
     .member-avatar-container {
         flex-shrink: 0;
         margin-right: 24px;
     }
 
     .member-avatar {
-        width: 110px;
-        height: 110px;
+        width: 112px;
+        height: 112px;
         object-fit: cover;
         border-radius: 50%;
-        border: 3px solid #ffffff;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        background-color: #f7fafc;
+        border: 3px solid #f8fafc;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+        background-color: #e2e8f0;
     }
 
-    /* Bloque de Textos */
+    /* Información y encabezados */
     .member-info {
         flex-grow: 1;
+    }
+
+    .member-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 4px;
     }
 
     .member-name {
         font-size: 1.35rem;
         font-weight: 700;
         color: #1e3a8a;
-        margin: 0 0 4px 0;
+        margin: 0;
+    }
+
+    /* Etiquetas de institución */
+    .badge-inst {
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 3px 9px;
+        border-radius: 999px;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+    }
+
+    .badge-unab {
+        background-color: #fee2e2;
+        color: #991b1b;
+        border: 1px solid #fecaca;
+    }
+
+    .badge-uc {
+        background-color: #dbeafe;
+        color: #1e40af;
+        border: 1px solid #bfdbfe;
+    }
+
+    /* Enlace ORCID */
+    .link-orcid {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: #334155 !important;
+        background-color: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 999px;
+        padding: 2px 10px 2px 6px;
+        text-decoration: none !important;
+        transition: all 0.15s ease;
+    }
+
+    .link-orcid:hover {
+        background-color: #f0fdf4;
+        border-color: #86efac;
+        color: #166534 !important;
+    }
+
+    .orcid-icon {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
     }
 
     .member-role {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         font-weight: 600;
-        color: #4a5568;
-        margin-bottom: 12px;
+        color: #475569;
+        margin-bottom: 10px;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.4px;
     }
 
     .member-bio {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #4a5568;
+        font-size: 0.98rem;
+        line-height: 1.65;
+        color: #334155;
         margin: 0;
-        text-align: justify;
+        text-align: left;
     }
 
-    /* Bloque Destacado de Sinergia al Final */
+    /* Bloque Sinergia */
     .synergy-box {
         background-color: #f0fdf4;
         border-left: 4px solid #16a34a;
-        padding: 20px;
-        margin-top: 40px;
+        padding: 22px 24px;
+        margin-top: 36px;
         border-radius: 0 12px 12px 0;
     }
 
@@ -102,18 +201,18 @@ redirect_from:
         font-size: 1.1rem;
         font-weight: 700;
         color: #14532d;
-        margin-bottom: 6px;
+        margin: 0 0 8px 0;
     }
 
     .synergy-text {
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 0.96rem;
+        line-height: 1.65;
         color: #166534;
         margin: 0;
         font-style: italic;
     }
 
-    /* Bloque Únete al Equipo / Join Us */
+    /* Bloque Únete al Equipo */
     .join-box {
         background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
         color: #ffffff;
@@ -127,7 +226,7 @@ redirect_from:
     .join-title {
         font-size: 1.4rem;
         font-weight: 700;
-        margin-bottom: 10px;
+        margin: 0 0 10px 0;
         color: #ffffff;
     }
 
@@ -135,32 +234,39 @@ redirect_from:
         font-size: 0.98rem;
         line-height: 1.6;
         color: #e2e8f0;
-        margin: 0 auto 20px auto;
+        margin: 0 auto 22px auto;
         max-width: 720px;
     }
 
     .join-btn {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         background-color: #ffffff;
-        color: #1e3a8a;
+        color: #1e3a8a !important;
         font-weight: 700;
         font-size: 0.95rem;
         padding: 12px 24px;
         border-radius: 8px;
-        text-decoration: none;
+        text-decoration: none !important;
         transition: all 0.2s ease;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
     }
 
     .join-btn:hover {
         background-color: #f8fafc;
         transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        color: #1d4ed8;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
     }
 
-    /* Adaptación para pantallas de celulares */
     @media (max-width: 640px) {
+        .institutions-bar {
+            gap: 24px;
+            padding: 14px 16px;
+        }
+        .logo-item img {
+            height: 48px;
+        }
         .member-card {
             flex-direction: column;
             align-items: center;
@@ -171,86 +277,150 @@ redirect_from:
             margin-right: 0;
             margin-bottom: 16px;
         }
+        .member-header {
+            justify-content: center;
+        }
         .member-bio {
             text-align: left;
-        }
-        .join-box {
-            padding: 24px 16px;
         }
     }
 </style>
 
-<div class="team-container">
+<section class="team-container">
     <h2 class="team-title">Equipo de Investigación y Organización</h2>
 
-    <div class="member-card">
+    <!-- Logos Institucionales -->
+    <div class="institutions-bar">
+        <span class="institutions-label">Instituciones Participantes</span>
+        <div class="logo-item">
+            <img src="{{ '/Figuras/unab.png' | relative_url }}" alt="Universidad Andrés Bello (UNAB)" loading="lazy">
+        </div>
+        <div class="logo-item">
+            <img src="{{ '/Figuras/uc.png' | relative_url }}" alt="Pontificia Universidad Católica de Chile (UC)" loading="lazy">
+        </div>
+    </div>
+
+    <!-- Dra. Pamela Franco -->
+    <article class="member-card">
         <div class="member-avatar-container">
-            <img class="member-avatar" src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/images/PF.jpg" alt="Pamela Franco">
+            <img class="member-avatar"
+                 src="{{ '/images/PF.jpg' | relative_url }}"
+                 alt="Dra. Pamela Franco"
+                 loading="lazy"
+                 onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22112%22 height=%22112%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23dbeafe%22/><text x=%2250%25%22 y=%2255%25%22 font-family=%22sans-serif%22 font-size=%2234%22 font-weight=%22bold%22 fill=%22%231e3a8a%22 text-anchor=%22middle%22>PF</text></svg>';">
         </div>
         <div class="member-info">
-            <div class="member-name">Pamela Franco</div>
-            <div class="member-role">Workshop Chair, Webmaster & Soporte Técnico - Investigadora Responsable (Académica UNAB)</div>
+            <div class="member-header">
+                <h3 class="member-name">Dra. Pamela Franco</h3>
+                <span class="badge-inst badge-unab">UNAB</span>
+                <a class="link-orcid" href="https://orcid.org/0000-0001-7629-3653" target="_blank" rel="noopener noreferrer" title="Ver perfil ORCID">
+                    <svg class="orcid-icon" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#A6CE39"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7C191.7 111.2 178 93 148 93h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg>
+                    ORCID
+                </a>
+            </div>
+            <div class="member-role">Workshop Chair, Webmaster & Soporte Técnico · Investigadora Responsable</div>
             <p class="member-bio">Ingeniera Física, Física Médica y Doctora en Ciencias de la Ingeniería, área ingeniería eléctrica. Académica de la Facultad de Ingeniería de la Universidad Andrés Bello (UNAB), donde se especializa en el procesamiento avanzado de imágenes médicas, <em>machine learning</em> e Inteligencia Artificial Explicable (XAI). En este proyecto, lidera la dirección estratégica, el diseño de modelos predictivos y la integración de biomarcadores radiómicos, además del desarrollo de la plataforma web y la gestión del soporte técnico del evento.</p>
         </div>
-    </div>
+    </article>
 
-    <div class="member-card">
+    <!-- Dr. Ignacio Espinoza -->
+    <article class="member-card">
         <div class="member-avatar-container">
-            <img class="member-avatar" src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/images/IE.jpg" alt="Ignacio Espinoza">
+            <img class="member-avatar"
+                 src="{{ '/images/IE.jpg' | relative_url }}"
+                 alt="Dr. Ignacio Espinoza"
+                 loading="lazy"
+                 onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22112%22 height=%22112%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23dbeafe%22/><text x=%2250%25%22 y=%2255%25%22 font-family=%22sans-serif%22 font-size=%2234%22 font-weight=%22bold%22 fill=%22%231e3a8a%22 text-anchor=%22middle%22>IE</text></svg>';">
         </div>
         <div class="member-info">
-            <div class="member-name">Ignacio Espinoza</div>
-            <div class="member-role">Scientific Committee - Co-investigador Externo (Académico UC)</div>
+            <div class="member-header">
+                <h3 class="member-name">Dr. Ignacio Espinoza</h3>
+                <span class="badge-inst badge-uc">UC</span>
+                <a class="link-orcid" href="https://orcid.org/0000-0003-2400-4498" target="_blank" rel="noopener noreferrer" title="Ver perfil ORCID">
+                    <svg class="orcid-icon" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#A6CE39"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7C191.7 111.2 178 93 148 93h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg>
+                    ORCID
+                </a>
+            </div>
+            <div class="member-role">Scientific Committee · Co-investigador Externo</div>
             <p class="member-bio">Ingeniero Civil en Industrias, con Diploma Académico en Ingeniería Eléctrica, Licenciado en Física y Doctor en Física. Es académico en el Instituto de Física de la Pontificia Universidad Católica de Chile (UC), donde lidera una destacada línea de investigación en física médica. Aporta al equipo su experiencia en análisis computacional complejo y optimización del <em>pipeline</em> de extracción radiómica.</p>
         </div>
-    </div>
+    </article>
 
-    <div class="member-card">
+    <!-- Dra. M. Daniela Cornejo -->
+    <article class="member-card">
         <div class="member-avatar-container">
-            <img class="member-avatar" src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/images/DM.jpg" alt="Daniela Cornejo">
+            <img class="member-avatar"
+                 src="{{ '/images/DM.jpg' | relative_url }}"
+                 alt="Dra. M. Daniela Cornejo"
+                 loading="lazy"
+                 onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22112%22 height=%22112%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23dbeafe%22/><text x=%2250%25%22 y=%2255%25%22 font-family=%22sans-serif%22 font-size=%2234%22 font-weight=%22bold%22 fill=%22%231e3a8a%22 text-anchor=%22middle%22>DC</text></svg>';">
         </div>
         <div class="member-info">
-            <div class="member-name">Daniela Cornejo</div>
-            <div class="member-role">Scientific Committee - Co-investigadora Externa (Académica UC)</div>
+            <div class="member-header">
+                <h3 class="member-name">Dra. M. Daniela Cornejo</h3>
+                <span class="badge-inst badge-uc">UC</span>
+                <a class="link-orcid" href="https://orcid.org/0009-0003-0425-5721" target="_blank" rel="noopener noreferrer" title="Ver perfil ORCID">
+                    <svg class="orcid-icon" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#A6CE39"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7C191.7 111.2 178 93 148 93h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg>
+                    ORCID
+                </a>
+            </div>
+            <div class="member-role">Scientific Committee · Co-investigadora Externa</div>
             <p class="member-bio">Licenciada en Física, Doctora en Física Médica y académica conjunta en el Departamento de Psiquiatría de la Facultad de Medicina y el Instituto de Física de la UC. Cuenta con una vasta trayectoria científica en el área de neuroimágenes avanzadas y resonancia magnética funcional (fMRI), siendo la responsable de la validación neurocientífica y la aplicabilidad clínica de los hallazgos en pacientes con gliomas.</p>
         </div>
-    </div>
+    </article>
 
-    <div class="member-card">
+    <!-- Cristian Montalba -->
+    <article class="member-card">
         <div class="member-avatar-container">
-            <img class="member-avatar" src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/images/CM.jpg" alt="Cristian Montalba">
+            <img class="member-avatar"
+                 src="{{ '/images/CM.jpg' | relative_url }}"
+                 alt="Cristian Montalba"
+                 loading="lazy"
+                 onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22112%22 height=%22112%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23dbeafe%22/><text x=%2250%25%22 y=%2255%25%22 font-family=%22sans-serif%22 font-size=%2234%22 font-weight=%22bold%22 fill=%22%231e3a8a%22 text-anchor=%22middle%22>CM</text></svg>';">
         </div>
         <div class="member-info">
-            <div class="member-name">Cristian Montalba</div>
-            <div class="member-role">Chair, Scientific Committee - Personal Técnico (Investigador UC)</div>
+            <div class="member-header">
+                <h3 class="member-name">Cristian Montalba</h3>
+                <span class="badge-inst badge-uc">UC</span>
+            </div>
+            <div class="member-role">Chair, Scientific Committee · Personal Técnico</div>
             <p class="member-bio">Tecnólogo Médico, Magíster en Investigación en Ciencias de la Salud e investigador en el Centro de Imágenes Biomédicas (CIB) de la UC. Especializado en el procesamiento y manejo de datos de neurociencias basados en resonancia magnética (MRI), está a cargo de la anonimización, curaduría y estructuración de las bases de datos biomédicas, además de colaborar activamente en la gestión y vinculación para la obtención de patrocinios del workshop.</p>
         </div>
-    </div>
+    </article>
 
-    <div class="member-card">
+    <!-- Manuel Chapa -->
+    <article class="member-card">
         <div class="member-avatar-container">
-            <img class="member-avatar" src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/images/MC.png" alt="Manuel Chapa">
+            <img class="member-avatar"
+                 src="{{ '/images/MC.png' | relative_url }}"
+                 alt="Manuel Chapa"
+                 loading="lazy"
+                 onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22112%22 height=%22112%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23dbeafe%22/><text x=%2250%25%22 y=%2255%25%22 font-family=%22sans-serif%22 font-size=%2234%22 font-weight=%22bold%22 fill=%22%231e3a8a%22 text-anchor=%22middle%22>MC</text></svg>';">
         </div>
         <div class="member-info">
-            <div class="member-name">Manuel Chapa</div>
-            <div class="member-role">Diseño y Manufactura 3D de Galardones (Doctorante UC)</div>
+            <div class="member-header">
+                <h3 class="member-name">Manuel Chapa</h3>
+                <span class="badge-inst badge-uc">UC</span>
+            </div>
+            <div class="member-role">Diseño y Manufactura 3D de Galardones · Doctorante</div>
             <p class="member-bio">Químico y doctorante en ciencias de la ingeniería, área ingeniería eléctrica UC. Especialista a cargo del diseño conceptual, modelado e impresión 3D de los trofeos y reconocimientos otorgados en el Concurso Científico de Pósteres, combinando tecnología de manufactura aditiva y estética personalizada para el workshop.</p>
         </div>
-    </div>
+    </article>
 
+    <!-- Sinergia -->
     <div class="synergy-box">
-        <div class="synergy-title">Sinergia Interdisciplinaria de Vanguardia:</div>
-        <p class="synergy-text">Lo que hace único a este equipo es la convergencia exacta de sus disciplines. No es común reunir en un mismo proyecto capacidades avanzadas en Física Médica, Inteligencia Artificial Explicable e Informática Clínica. Esta colaboración entre la UNAB y la UC permite que el proyecto no solo desarrolle algoritmos de alta precisión, sino que estos sean médica y físicamente interpretables, transformando datos complejos de resonancia multimodal en herramientas diagnósticas reales y confiables para la neurooncología en Chile.</p>
+        <h3 class="synergy-title">Sinergia Interdisciplinaria de Vanguardia</h3>
+        <p class="synergy-text">Lo que hace único a este equipo es la convergencia exacta de sus disciplinas. No es común reunir en un mismo proyecto capacidades avanzadas en Física Médica, Inteligencia Artificial Explicable e Informática Clínica. Esta colaboración entre la UNAB y la UC permite que el proyecto no solo desarrolle algoritmos de alta precisión, sino que estos sean médica y físicamente interpretables, transformando datos complejos de resonancia multimodal en herramientas diagnósticas reales y confiables para la neurooncología en Chile.</p>
     </div>
 
-    <!-- Sección Join Us / Oportunidades -->
+    <!-- Join Us -->
     <div class="join-box">
         <h3 class="join-title">Únete a nuestro grupo o colabora con nosotros</h3>
         <p class="join-text">
             Buscamos continuamente estudiantes de pregrado, posgrado (tesistas y memoristas) e investigadores interesados en Inteligencia Artificial, Física Médica y Neurooncología. Si deseas realizar tu tesis, proyecto o colaborar de cara a nuestras actividades y al Workshop Glioma, escríbenos directamente a nuestra casilla oficial.
         </p>
         <a href="mailto:neurooncologia.ia@gmail.com?subject=Consulta%20/%20Postulaci%C3%B3n%20-%20Workshop%20Glioma" class="join-btn">
-            ✉ Contactar a neurooncologia.ia@gmail.com
+            <i class="fas fa-envelope" aria-hidden="true"></i> Contactar a neurooncologia.ia@gmail.com
         </a>
     </div>
-</div>
+</section>
