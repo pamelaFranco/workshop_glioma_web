@@ -21,9 +21,9 @@ repository              : "pamelaFranco/workshop_glioma_web"
 author:
   # Biographic information
   avatar           : "profile.png" 
-  name             : "Comité Organizador"
+  name             : "IA en Neurooncología"
   pronouns         : ""  
-  bio              : "Espacio de difusión y laboratorios virtuales sobre IA e Interpretabilidad aplicada a la Neurooncología."
+  bio              : "Espacio interinstitucional de difusión y práctica sobre IA e interpretabilidad aplicada a la neurooncología."
   location         : "Santiago, Chile"
   employer         : "UNAB - UC - FALP"
   uri              : 
