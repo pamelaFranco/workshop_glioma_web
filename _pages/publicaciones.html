@@ -5,147 +5,228 @@ permalink: /publicaciones/
 author_profile: true
 ---
 
-<h2>Publicaciones Asociadas</h2>
-<p>Este laboratorio virtual implementa los hallazgos descritos en los siguientes estudios.</p>
+<style>
+  .pub-header-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0 25px 0;
+  }
+  .pub-hero-figure {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 20px 0 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+  }
+  .pub-hero-figure img {
+    max-width: 340px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    margin: 0 auto;
+  }
+  .pub-hero-caption {
+    flex: 1;
+    min-width: 240px;
+    font-size: 0.9em;
+    color: #334155;
+    line-height: 1.55;
+  }
+  .pub-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .filter-btn {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: #0369a1;
+    color: #ffffff;
+    border-color: #0369a1;
+  }
+  .pub-section-title {
+    margin-top: 30px;
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #e2e8f0;
+    color: #0f172a;
+    font-size: 1.25em;
+  }
+  .pub-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .pub-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #0369a1;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .pub-card.conf-card {
+    border-left-color: #4f46e5;
+  }
+  .pub-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+  }
+  .pub-title {
+    font-size: 1.02em;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .pub-authors {
+    font-size: 0.88em;
+    color: #475569;
+    display: block;
+    margin-bottom: 10px;
+    line-height: 1.45;
+  }
+  .pub-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .badge-venue {
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .badge-journal { background: #e0f2fe; color: #0369a1; }
+  .badge-conf { background: #e0e7ff; color: #3730a3; }
+  .badge-highlight { background: #fef3c7; color: #92400e; }
+  .pub-venue-detail {
+    font-size: 0.84em;
+    color: #64748b;
+  }
+  .pub-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .pub-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.82em;
+    font-weight: 600;
+    text-decoration: none !important;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: opacity 0.15s ease;
+  }
+  .pub-btn:hover { opacity: 0.88; }
+  .pub-btn--paper { background: #0369a1; color: #ffffff !important; }
+  .pub-btn--code { background: #1e293b; color: #ffffff !important; }
+  .pub-btn--bib { background: #f8fafc; color: #334155 !important; border-color: #cbd5e1; }
+  .bib-box {
+    display: none;
+    margin-top: 12px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 12px;
+    position: relative;
+  }
+  .bib-box pre {
+    margin: 0;
+    font-size: 0.78em;
+    overflow-x: auto;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .copy-bib-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #0369a1;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 0.75em;
+    cursor: pointer;
+  }
+</style>
 
-<h3>Artículos y Conferencias</h3>
+<div markdown="0">
+  <p>Este laboratorio virtual implementa los modelos de conectómica estructural, radiómica y aprendizaje automático explicable (XAI) desarrollados en los siguientes estudios científicos.</p>
 
-<ul class="publication-list" style="list-style: none; padding-left: 0;">
-  
-  <!-- Artículo 1 -->
-<li style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
-    <strong>Tumor-masked structural connectomics for assessing tract-specific white matter disruption associated with glioma aggressiveness: an interpretable machine learning pilot study</strong><br />
-    <small><em>Franco, P., Montalba, C., Espinoza, I., Cornejo, M. D., Torres, F., Bennett, C., Chabert, S., Salas, R.</em></small><br />
-    <span class="badge" style="background-color: #e2e8f0; color: #1e293b; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">Neuroradiology (2026)</span>
-    <span style="font-size: 0.85em; color: #475569; margin-left: 6px;">Publicado · Noviembre 2026</span>
-    <p style="margin-top: 8px; margin-bottom: 0;">
-      <a href="https://doi.org/10.1007/s00234-026-04232-0" target="_blank" rel="noopener noreferrer" class="btn btn--small" style="background-color: #0369a1; color: white; margin-right: 6px;">
-        <i class="fas fa-fw fa-external-link-alt"></i> Leer Artículo
-      </a>
-      <a href="https://github.com/pamelaFranco/glioma-connectomics-xai" target="_blank" rel="noopener noreferrer" class="btn btn--small" style="background-color: #24292e; color: white;">
-        <i class="fab fa-fw fa-github"></i> Código
-      </a>
-    </p>
-  </li>
-
-  <!-- Artículo 2 -->
-  <li style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
-    <strong>Beyond Binary Classification: A Pilot Study of Imaging-Derived Glioma Severity Modeling Using T1-Weighted and Diffusion MRI Radiomics</strong><br />
-    <small><em>Franco, P., Montalba, C., Caulier-Cisterna, R., Espinoza, I., Cornejo, M. D., Torres, F., Bennett, C., Chabert, S., Salas, R.</em></small><br />
-    <span class="badge" style="background-color: #e2e8f0; color: #1e293b; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">MAGMA (2026)</span>
-<span style="font-size: 0.85em; color: #475569; margin-left: 6px;">Publicado · Abril 2026</span>
-    <p style="margin-top: 8px; margin-bottom: 0;">
-      <a href="https://link.springer.com/article/10.1007/s10334-026-01346-7" target="_blank" rel="noopener noreferrer" class="btn btn--small" style="background-color: #0369a1; color: white; margin-right: 6px;">
-        <i class="fas fa-fw fa-external-link-alt"></i> Leer Artículo
-      </a>
-      <a href="https://github.com/pamelaFranco/continuous-glioma-grading" target="_blank" rel="noopener noreferrer" class="btn btn--small" style="background-color: #24292e; color: white;">
-        <i class="fab fa-fw fa-github"></i> Código
-      </a>
-    </p>
-  </li>
-
-  <!-- Artículo 3 -->
-  <li style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
-    <strong>Unsupervised Manifold Mapping of Connectomic Fragility in Glioma: Simulating Global Efficiency Decay and Lobar Vulnerability</strong><br />
-    <small><em>Franco, P., Montalba, C., Espinoza, I., Cornejo, M. D., Chabert, S., Torres, F., Bennett, C., & Salas, R.</em></small><br />
-    <span class="badge" style="background-color: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">JCC 2026</span>
-    <span style="font-size: 0.85em; color: #475569; margin-left: 6px;">Workshop Chileno Sobre Reconocimiento de Patrones — Jornadas Chilenas de Computación (Aceptado)</span>
-    <p style="margin-top: 8px; margin-bottom: 0;">
-      <a href="https://github.com/pamelaFranco/unsupervised-glioma-connectomics" target="_blank" rel="noopener noreferrer" class="btn btn--small" style="background-color: #24292e; color: white;">
-        <i class="fab fa-fw fa-github"></i> Código
-      </a>
-    </p>
-  </li>
-
-  <!-- Artículo 4 -->
-  <li style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
-    <strong>Viabilidad de la conectómica estructural con enmascaramiento tumoral y aprendizaje automático explicable para evaluar alteraciones de la sustancia blanca en gliomas: un estudio piloto</strong><br />
-    <small><em>Cuevas, A., Montalba, C., Espinoza, I., Cornejo, M. D., Torres, F., Bennett, C., Chabert, S., Salas, R., & Franco, P.</em></small><br />
-    <span class="badge" style="background-color: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">CChR 2026</span>
-    <span style="font-size: 0.85em; color: #475569; margin-left: 6px;">Presentación Oral (Id #2280) — Congreso Chileno de Radiología</span>
-  </li>
-
-  <!-- Artículo 5 -->
-  <li style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
-    <strong>Feasibility of Tumor-Masked Structural Connectomics and Explainable Machine Learning for Assessing White Matter Disruption in Gliomas: A Pilot Study</strong><br />
-    <small><em>Montalba, C., Espinoza, I., Cornejo, M. D., Torres, F., Bennett, C., Chabert, S., Salas, R., & Franco, P.</em></small><br />
-    <span class="badge" style="background-color: #f3f4f6; color: #374151; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">ESMRMB 2026</span>
-    <span style="font-size: 0.85em; color: #475569; margin-left: 6px;">
-      Lightning Talk (Abstract #54477) — European Society for Magnetic Resonance in Medicine and Biology
-    </span>
-    <br />
-    <span class="badge" style="background-color: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; font-weight: 600; margin-top: 4px; display: inline-block;">
-      GliMR Meeting
-    </span>
-    <span style="font-size: 0.85em; color: #475569; margin-left: 6px;">
-      Incluido en <em>Selected abstract presentations</em> (PG185), Sesión S4: "GliMR: where we stand and new challenges"
-    </span>
-    
-    <p style="margin-top: 8px; margin-bottom: 15px;">
-      <a href="https://link.springer.com/journal/10334" class="btn btn--info btn--small" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-external-link-alt"></i> Ver Proceedings en Springer (MAGMA)
-      </a>
-      <a href="https://github.com/pamelaFranco/glioma-ml-tractography" target="_blank" rel="noopener noreferrer" class="btn btn--small" style="background-color: #24292e; color: white;">
-        <i class="fab fa-fw fa-github"></i> Código
-      </a>
-    </p>
-
-    <!-- FIGURA -->
-    <div style="text-align: center; margin: 15px 0;">
-      <figure style="display: inline-block; max-width: 480px; width: 100%; border: 1px solid #e1e4e8; border-radius: 8px; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); background-color: #ffffff;">
-        <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/Paciente1_dti.fib.gif" 
-             alt="Tractografía DTI y segmentación del Paciente 1" 
-             style="width: 100%; height: auto; border-radius: 4px; display: block; margin: 0 auto;">
-        <figcaption style="margin-top: 10px; font-size: 0.85em; color: #586069; line-height: 1.4; text-align: left;">
-          <strong>Figura 1:</strong> Reconstrucción tridimensional mediante tensores de difusión (DTI) y tractografía de fibras de sustancia blanca en un paciente, junto a la segmentación del glioma (en rojo).
-        </figcaption>
-      </figure>
+  <!-- Resumen Gráfico Destacado -->
+  <div class="pub-hero-figure">
+    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/Paciente1_dti.fib.gif"
+         alt="Tractografía DTI y segmentación tumoral del Paciente 1"
+         loading="lazy">
+    <div class="pub-hero-caption">
+      <strong>Marco Metodológico · Conectómica Enmascarada por Tumor</strong><br />
+      Reconstrucción tridimensional mediante tensores de difusión (DTI) y tractografía de fibras de sustancia blanca en un paciente con glioma, superpuesta a la segmentación volumétrica del tumor (en rojo) para cuantificar disrupción de tractos y fragilidad de red.
     </div>
-  </li>
+  </div>
 
-  <!-- Artículo 6 -->
-  <li style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
-    <strong>Radiomic Glioma Grading Using T1-weighted MRI vs. Diffusion Tensor Metrics: A Proof-of-Concept Comparative Analysis with Explainable Machine Learning</strong><br />
-    <small><em>Franco, P., Montalba, C. B., Caulier-Cisterna, R., Espinoza, I., Cornejo, M. D., Torres, F., Bennett, C., Chabert, S., Salas, R.</em></small><br />
-    <span class="badge" style="background-color: #e2e8f0; color: #1e293b; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">ICPRS 2025</span>
-    <span style="font-size: 0.85em; color: #475569; margin-left: 6px;">15th IEEE International Conference on Pattern Recognition Systems</span>
-    <p style="margin-top: 8px; margin-bottom: 0;">
-      <a href="https://ieeexplore.ieee.org/document/11302837" class="btn btn--info btn--small" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-external-link-alt"></i> Ver en IEEE Xplore
-      </a>
-      <a href="https://github.com/pamelaFranco/radiomic-glioma-grading" target="_blank" rel="noopener noreferrer" class="btn btn--small" style="background-color: #24292e; color: white;">
-        <i class="fab fa-fw fa-github"></i> Código
-      </a>
-    </p>
-  </li>
+  <!-- Barra de Filtros -->
+  <div class="pub-filters" role="group" aria-label="Filtrar publicaciones">
+    <button class="filter-btn active" onclick="filterPubs('all', this)">Todas (7)</button>
+    <button class="filter-btn" onclick="filterPubs('journal', this)">Revistas Indexadas (2)</button>
+    <button class="filter-btn" onclick="filterPubs('conference', this)">Conferencias y Abstracts (5)</button>
+    <button class="filter-btn" onclick="filterPubs('code', this)">Con Código en GitHub (6)</button>
+  </div>
 
-  <!-- Artículo 7 -->
-  <li style="margin-bottom: 25px;">
-    <strong>Explainable machine learning models for radiomic-based assessment of glioma severity using multiparametric MRI (Abstract #215)</strong><br />
-    <small><em>Franco, P., Montalba, C., Caulier-Cisterna, R., Espinoza, I., Bennet, C., Torres, F., Chabert, S., & Salas, R.</em></small><br />
-    <span class="badge" style="background-color: #e2e8f0; color: #1e293b; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">ESMRMB 2025</span>
-    <span style="font-size: 0.85em; color: #475569; margin-left: 6px;">Lightning Talk (Abstract #46748)</span>
-    <p style="margin-top: 8px; margin-bottom: 0;">
-      <a href="https://link.springer.com/article/10.1007/s10334-025-01278-8" class="btn btn--info btn--small" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-external-link-alt"></i> Ver Proceedings en Springer (MAGMA)
-      </a>
-      <a href="https://github.com/pamelaFranco/radiomic-glioma-grading" target="_blank" rel="noopener noreferrer" class="btn btn--small" style="background-color: #24292e; color: white;">
-        <i class="fab fa-fw fa-github"></i> Código
-      </a>
-    </p>
-  </li>
+  <!-- SECCIÓN 1: REVISTAS -->
+  <h3 class="pub-section-title" id="sec-journal">Artículos en Revistas Indexadas</h3>
+  <ul class="pub-list">
 
-</ul>
-
-<hr />
-
-<h2>Citas (BibTeX)</h2>
-<p>Si utilizas este código o los hallazgos para tu investigación, por favor cita los siguientes trabajos:</p>
-
-<details style="background: #f8fafc; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0; cursor: pointer;">
-  <summary><b>Haz clic aquí para desplegar las citas en formato BibTeX</b></summary>
-  <br />
-  <pre><code class="language-bibtex">@article{franco2026quantifying,
+    <!-- Artículo 1 -->
+    <li class="pub-card" data-type="journal" data-code="true">
+      <span class="pub-title">Tumor-masked structural connectomics for assessing tract-specific white matter disruption associated with glioma aggressiveness: an interpretable machine learning pilot study</span>
+      <span class="pub-authors"><strong>Franco, P.</strong>, Montalba, C., Espinoza, I., Cornejo, M. D., Torres, F., Bennett, C., Chabert, S., Salas, R.</span>
+      <div class="pub-meta">
+        <span class="badge-venue badge-journal">Neuroradiology (2026)</span>
+        <span class="pub-venue-detail">Publicado · Noviembre 2026</span>
+      </div>
+      <div class="pub-actions">
+        <a href="https://doi.org/10.1007/s00234-026-04232-0" target="_blank" rel="noopener noreferrer" class="pub-btn pub-btn--paper">
+          <i class="fas fa-external-link-alt"></i> DOI / Artículo
+        </a>
+        <a href="https://github.com/pamelaFranco/glioma-connectomics-xai" target="_blank" rel="noopener noreferrer" class="pub-btn pub-btn--code">
+          <i class="fab fa-github"></i> Código
+        </a>
+        <button class="pub-btn pub-btn--bib" onclick="toggleBib('bib-1')">
+          <i class="fas fa-quote-right"></i> BibTeX
+        </button>
+      </div>
+      <div id="bib-1" class="bib-box">
+        <button class="copy-bib-btn" onclick="copyBib('bib-1-code', this)">Copiar</button>
+        <pre><code id="bib-1-code">@article{franco2026quantifying,
   title={Tumor-masked structural connectomics for assessing tract-specific white matter disruption associated with glioma aggressiveness: an interpretable machine learning pilot study},
   author={Franco, Pamela and Montalba, Cristian and Espinoza, Ignacio and Cornejo, M. Daniela and Torres, Francisco and Bennett, Carlos and Chabert, Steren and Salas, Rodrigo},
   journal={Neuroradiology},
@@ -153,56 +234,192 @@ author_profile: true
   month={nov},
   doi={10.1007/s00234-026-04232-0},
   url={https://doi.org/10.1007/s00234-026-04232-0}
-}
+}</code></pre>
+      </div>
+    </li>
 
-@article{Franco2026Glioma,
+    <!-- Artículo 2 -->
+    <li class="pub-card" data-type="journal" data-code="true">
+      <span class="pub-title">Beyond Binary Classification: A Pilot Study of Imaging-Derived Glioma Severity Modeling Using T1-Weighted and Diffusion MRI Radiomics</span>
+      <span class="pub-authors"><strong>Franco, P.</strong>, Montalba, C., Caulier-Cisterna, R., Espinoza, I., Cornejo, M. D., Torres, F., Bennett, C., Chabert, S., Salas, R.</span>
+      <div class="pub-meta">
+        <span class="badge-venue badge-journal">MAGMA (2026)</span>
+        <span class="pub-venue-detail">Publicado · Abril 2026</span>
+      </div>
+      <div class="pub-actions">
+        <a href="https://link.springer.com/article/10.1007/s10334-026-01346-7" target="_blank" rel="noopener noreferrer" class="pub-btn pub-btn--paper">
+          <i class="fas fa-external-link-alt"></i> Leer en Springer
+        </a>
+        <a href="https://github.com/pamelaFranco/continuous-glioma-grading" target="_blank" rel="noopener noreferrer" class="pub-btn pub-btn--code">
+          <i class="fab fa-github"></i> Código
+        </a>
+        <button class="pub-btn pub-btn--bib" onclick="toggleBib('bib-2')">
+          <i class="fas fa-quote-right"></i> BibTeX
+        </button>
+      </div>
+      <div id="bib-2" class="bib-box">
+        <button class="copy-bib-btn" onclick="copyBib('bib-2-code', this)">Copiar</button>
+        <pre><code id="bib-2-code">@article{Franco2026Glioma,
   title={Beyond Binary Classification: A Pilot Study of Imaging-Derived Glioma Severity Modeling Using T1-Weighted and Diffusion MRI Radiomics},
-  author={Franco, Pamela and Montalba, Cristian and Caulier-Cisterna, Raúl and Espinoza, Ignacio and Cornejo, M. Daniela and others},
+  author={Franco, Pamela and Montalba, Cristian and Caulier-Cisterna, Ra{\'u}l and Espinoza, Ignacio and Cornejo, M. Daniela and Torres, Francisco and Bennett, Carlos and Chabert, Steren and Salas, Rodrigo},
   journal={Magnetic Resonance Materials in Physics, Biology and Medicine (MAGMA)},
   year={2026},
   doi={10.1007/s10334-026-01346-7}
-}
+}</code></pre>
+      </div>
+    </li>
+  </ul>
 
-@inproceedings{Franco2026JCC,
+  <!-- SECCIÓN 2: CONFERENCIAS -->
+  <h3 class="pub-section-title" id="sec-conf">Congresos, Proceedings y Presentaciones</h3>
+  <ul class="pub-list">
+
+    <!-- Artículo 3 -->
+    <li class="pub-card conf-card" data-type="conference" data-code="true">
+      <span class="pub-title">Unsupervised Manifold Mapping of Connectomic Fragility in Glioma: Simulating Global Efficiency Decay and Lobar Vulnerability</span>
+      <span class="pub-authors"><strong>Franco, P.</strong>, Montalba, C., Espinoza, I., Cornejo, M. D., Chabert, S., Torres, F., Bennett, C., &amp; Salas, R.</span>
+      <div class="pub-meta">
+        <span class="badge-venue badge-conf">JCC 2026</span>
+        <span class="badge-venue badge-highlight">Aceptado</span>
+        <span class="pub-venue-detail">Workshop Chileno Sobre Reconocimiento de Patrones — Jornadas Chilenas de Computación</span>
+      </div>
+      <div class="pub-actions">
+        <a href="https://github.com/pamelaFranco/unsupervised-glioma-connectomics" target="_blank" rel="noopener noreferrer" class="pub-btn pub-btn--code">
+          <i class="fab fa-github"></i> Código
+        </a>
+        <button class="pub-btn pub-btn--bib" onclick="toggleBib('bib-3')">
+          <i class="fas fa-quote-right"></i> BibTeX
+        </button>
+      </div>
+      <div id="bib-3" class="bib-box">
+        <button class="copy-bib-btn" onclick="copyBib('bib-3-code', this)">Copiar</button>
+        <pre><code id="bib-3-code">@inproceedings{Franco2026JCC,
   title={Unsupervised Manifold Mapping of Connectomic Fragility in Glioma: Simulating Global Efficiency Decay and Lobar Vulnerability},
   author={Franco, Pamela and Montalba, Cristian and Espinoza, Ignacio and Cornejo, M. Daniela and Chabert, Steren and Torres, Francisco and Bennett, Carlos and Salas, Rodrigo},
   booktitle={Workshop Chileno Sobre Reconocimiento de Patrones, Jornadas Chilenas de Computaci{\'o}n (JCC 2026)},
   year={2026},
   note={Aceptado para presentaci{\'o}n}
-}
+}</code></pre>
+      </div>
+    </li>
 
-@inproceedings{cuevas2026viabilidad,
-  title={Viabilidad de la conect{\'o}mica estructural con enmascaramiento tumoral y aprendizaje autom{\'a}tico explicable para evaluar alterations de la sustancia blanca en gliomas: un estudio piloto},
+    <!-- Artículo 4 -->
+    <li class="pub-card conf-card" data-type="conference" data-code="false">
+      <span class="pub-title">Viabilidad de la conectómica estructural con enmascaramiento tumoral y aprendizaje automático explicable para evaluar alteraciones de la sustancia blanca en gliomas: un estudio piloto</span>
+      <span class="pub-authors">Cuevas, A., Montalba, C., Espinoza, I., Cornejo, M. D., Torres, F., Bennett, C., Chabert, S., Salas, R., &amp; <strong>Franco, P.</strong></span>
+      <div class="pub-meta">
+        <span class="badge-venue badge-conf">CChR 2026</span>
+        <span class="pub-venue-detail">Presentación Oral (Id #2280) — Congreso Chileno de Radiología</span>
+      </div>
+      <div class="pub-actions">
+        <button class="pub-btn pub-btn--bib" onclick="toggleBib('bib-4')">
+          <i class="fas fa-quote-right"></i> BibTeX
+        </button>
+      </div>
+      <div id="bib-4" class="bib-box">
+        <button class="copy-bib-btn" onclick="copyBib('bib-4-code', this)">Copiar</button>
+        <pre><code id="bib-4-code">@inproceedings{cuevas2026viabilidad,
+  title={Viabilidad de la conect{\'o}mica estructural con enmascaramiento tumoral y aprendizaje autom{\'a}tico explicable para evaluar alteraciones de la sustancia blanca en gliomas: un estudio piloto},
   author={Cuevas, Alexandra and Montalba, Cristian and Espinoza, Ignacio and Cornejo, M. Daniela and Torres, Francisco and Bennett, Carlos and Chabert, Steren and Salas, Rodrigo and Franco, Pamela},
   booktitle={Congreso Chileno de Radiolog{\'i}a (CChR 2026)},
   year={2026},
   note={Presentaci{\'o}n Oral, Id \#2280}
-}
+}</code></pre>
+      </div>
+    </li>
 
-@inproceedings{montalba2026feasibility,
+    <!-- Artículo 5 -->
+    <li class="pub-card conf-card" data-type="conference" data-code="true">
+      <span class="pub-title">Feasibility of Tumor-Masked Structural Connectomics and Explainable Machine Learning for Assessing White Matter Disruption in Gliomas: A Pilot Study</span>
+      <span class="pub-authors">Montalba, C., Espinoza, I., Cornejo, M. D., Torres, F., Bennett, C., Chabert, S., Salas, R., &amp; <strong>Franco, P.</strong></span>
+      <div class="pub-meta">
+        <span class="badge-venue badge-conf">ESMRMB 2026</span>
+        <span class="badge-venue badge-highlight">GliMR Selected Abstract</span>
+        <span class="pub-venue-detail">Lightning Talk (#54477) · Sesión S4 (PG185): "GliMR: where we stand and new challenges"</span>
+      </div>
+      <div class="pub-actions">
+        <a href="https://link.springer.com/journal/10334" target="_blank" rel="noopener noreferrer" class="pub-btn pub-btn--paper">
+          <i class="fas fa-external-link-alt"></i> Proceedings (MAGMA)
+        </a>
+        <a href="https://github.com/pamelaFranco/glioma-ml-tractography" target="_blank" rel="noopener noreferrer" class="pub-btn pub-btn--code">
+          <i class="fab fa-github"></i> Código
+        </a>
+        <button class="pub-btn pub-btn--bib" onclick="toggleBib('bib-5')">
+          <i class="fas fa-quote-right"></i> BibTeX
+        </button>
+      </div>
+      <div id="bib-5" class="bib-box">
+        <button class="copy-bib-btn" onclick="copyBib('bib-5-code', this)">Copiar</button>
+        <pre><code id="bib-5-code">@inproceedings{montalba2026feasibility,
   title={Feasibility of Tumor-Masked Structural Connectomics and Explainable Machine Learning for Assessing White Matter Disruption in Gliomas: A Pilot Study},
   author={Montalba, Cristian and Espinoza, Ignacio and Cornejo, M. Daniela and Torres, Francisco and Bennett, Carlos and Chabert, Steren and Salas, Rodrigo and Franco, Pamela},
   booktitle={Proceedings of the 42nd Annual Scientific Meeting of the European Society for Magnetic Resonance in Medicine and Biology (ESMRMB 2026)},
   journal={Magnetic Resonance Materials in Physics, Biology and Medicine (MAGMA)},
   year={2026},
   address={Girona, Spain},
-  note={Lightning Talk D24 - LTD2-3, Session PG185, Abstract \#54477. Selected abstract presentation in GliMR Session S4: GliMR: where we stand and new challenges},
+  note={Lightning Talk D24 - LTD2-3, Session PG185, Abstract \#54477. Selected abstract presentation in GliMR Session S4},
   url={https://link.springer.com/journal/10334}
-}
+}</code></pre>
+      </div>
+    </li>
 
-@inproceedings{Franco2025ICPRS,
+    <!-- Artículo 6 -->
+    <li class="pub-card conf-card" data-type="conference" data-code="true">
+      <span class="pub-title">Radiomic Glioma Grading Using T1-weighted MRI vs. Diffusion Tensor Metrics: A Proof-of-Concept Comparative Analysis with Explainable Machine Learning</span>
+      <span class="pub-authors"><strong>Franco, P.</strong>, Montalba, C., Caulier-Cisterna, R., Espinoza, I., Cornejo, M. D., Torres, F., Bennett, C., Chabert, S., Salas, R.</span>
+      <div class="pub-meta">
+        <span class="badge-venue badge-conf">IEEE ICPRS 2025</span>
+        <span class="pub-venue-detail">15th IEEE International Conference on Pattern Recognition Systems (pp. 1–7)</span>
+      </div>
+      <div class="pub-actions">
+        <a href="https://ieeexplore.ieee.org/document/11302837" target="_blank" rel="noopener noreferrer" class="pub-btn pub-btn--paper">
+          <i class="fas fa-external-link-alt"></i> IEEE Xplore
+        </a>
+        <a href="https://github.com/pamelaFranco/radiomic-glioma-grading" target="_blank" rel="noopener noreferrer" class="pub-btn pub-btn--code">
+          <i class="fab fa-github"></i> Código
+        </a>
+        <button class="pub-btn pub-btn--bib" onclick="toggleBib('bib-6')">
+          <i class="fas fa-quote-right"></i> BibTeX
+        </button>
+      </div>
+      <div id="bib-6" class="bib-box">
+        <button class="copy-bib-btn" onclick="copyBib('bib-6-code', this)">Copiar</button>
+        <pre><code id="bib-6-code">@inproceedings{Franco2025ICPRS,
   title={Radiomic Glioma Grading Using T1-weighted MRI vs. Diffusion Tensor Metrics: A Proof-of-Concept Comparative Analysis with Explainable Machine Learning},
-  author={Franco, Pamela and Montalba, Cristian Beethet and Caulier-Cisterna, Raúl and Espinoza, Ignacio and Cornejo, M. Daniela and others},
+  author={Franco, Pamela and Montalba, Cristian and Caulier-Cisterna, Ra{\'u}l and Espinoza, Ignacio and Cornejo, M. Daniela and Torres, Francisco and Bennett, Carlos and Chabert, Steren and Salas, Rodrigo},
   booktitle={2025 15th IEEE International Conference on Pattern Recognition Systems (ICPRS)},
   pages={1--7},
   year={2025},
   publisher={IEEE},
   doi={10.1109/ICPRS64124.2025.11302837}
-}
+}</code></pre>
+      </div>
+    </li>
 
-@article{Franco2025ESMRMB,
+    <!-- Artículo 7 -->
+    <li class="pub-card conf-card" data-type="conference" data-code="true">
+      <span class="pub-title">Explainable machine learning models for radiomic-based assessment of glioma severity using multiparametric MRI (Abstract #215)</span>
+      <span class="pub-authors"><strong>Franco, P.</strong>, Montalba, C., Caulier-Cisterna, R., Espinoza, I., Bennett, C., Torres, F., Chabert, S., &amp; Salas, R.</span>
+      <div class="pub-meta">
+        <span class="badge-venue badge-conf">ESMRMB 2025</span>
+        <span class="pub-venue-detail">Lightning Talk (Abstract #46748) · MAGMA Vol. 38(1), pp. 201–202</span>
+      </div>
+      <div class="pub-actions">
+        <a href="https://link.springer.com/article/10.1007/s10334-025-01278-8" target="_blank" rel="noopener noreferrer" class="pub-btn pub-btn--paper">
+          <i class="fas fa-external-link-alt"></i> Proceedings (MAGMA)
+        </a>
+        <a href="https://github.com/pamelaFranco/radiomic-glioma-grading" target="_blank" rel="noopener noreferrer" class="pub-btn pub-btn--code">
+          <i class="fab fa-github"></i> Código
+        </a>
+        <button class="pub-btn pub-btn--bib" onclick="toggleBib('bib-7')">
+          <i class="fas fa-quote-right"></i> BibTeX
+        </button>
+      </div>
+      <div id="bib-7" class="bib-box">
+        <button class="copy-bib-btn" onclick="copyBib('bib-7-code', this)">Copiar</button>
+        <pre><code id="bib-7-code">@article{Franco2025ESMRMB,
   title={Explainable machine learning models for radiomic-based assessment of glioma severity using multiparametric MRI (Abstract \#215)},
-  author={Franco, Pamela and Montalba, Cristian and Caulier-Cisterna, Raúl and Espinoza, Ignacio and Bennet, Carlos and Torres, Francisco and Chabert, Steren and Salas, Rodrigo},
+  author={Franco, Pamela and Montalba, Cristian and Caulier-Cisterna, Ra{\'u}l and Espinoza, Ignacio and Bennett, Carlos and Torres, Francisco and Chabert, Steren and Salas, Rodrigo},
   journal={Magnetic Resonance Materials in Physics, Biology and Medicine},
   volume={38},
   number={1},
@@ -211,4 +428,48 @@ author_profile: true
   publisher={Springer},
   doi={10.1007/s10334-025-01278-8}
 }</code></pre>
-</details>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function toggleBib(id) {
+    const el = document.getElementById(id);
+    el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+  }
+
+  function copyBib(codeId, btn) {
+    const text = document.getElementById(codeId).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.innerText;
+      btn.innerText = '¡Copiado!';
+      btn.style.background = '#15803d';
+      setTimeout(() => {
+        btn.innerText = original;
+        btn.style.background = '#0369a1';
+      }, 1800);
+    });
+  }
+
+  function filterPubs(filter, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const cards = document.querySelectorAll('.pub-card');
+    cards.forEach(card => {
+      const type = card.getAttribute('data-type');
+      const hasCode = card.getAttribute('data-code') === 'true';
+      if (filter === 'all') {
+        card.style.display = 'block';
+      } else if (filter === 'code') {
+        card.style.display = hasCode ? 'block' : 'none';
+      } else {
+        card.style.display = (type === filter) ? 'block' : 'none';
+      }
+    });
+
+    document.getElementById('sec-journal').style.display = (filter === 'conference') ? 'none' : 'block';
+    document.getElementById('sec-conf').style.display = (filter === 'journal') ? 'none' : 'block';
+  }
+</script>
