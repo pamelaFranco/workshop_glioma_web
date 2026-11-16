@@ -55,6 +55,29 @@ author_profile: true
     line-height: 1.6;
   }
 
+  /* Encabezado sección Instagram */
+  .ig-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+  }
+  .ig-section-header h2 {
+    margin: 0;
+  }
+  .ig-follow-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #A63737;
+    text-decoration: none;
+  }
+  .ig-follow-link:hover {
+    text-decoration: underline;
+  }
+
   /* Bloque desplegable (FAQ/Juego) */
   details.faq-accordion {
     background: #111111;
@@ -123,7 +146,6 @@ author_profile: true
 <div class="news-card">
   <div class="news-logo-wrapper">
     <a href="https://i-health.cl/events/workshop-interpretable-ai-in-neuro-oncology" target="_blank" rel="noopener noreferrer" style="border-bottom: none;">
-      <!-- Asegúrate de colocar la ruta o enlace directo a la imagen del logo de iHealth -->
       <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/iHEALTH.png" alt="Logo iHealth" />
     </a>
   </div>
@@ -136,6 +158,21 @@ author_profile: true
 <div class="press-release">
   <p style="margin: 0;"><strong>Año del Cerebro 2026:</strong> El programa académico de este workshop forma parte oficial del catálogo del <strong>Año del Cerebro 2026</strong>. Puedes revisar la publicación oficial del curso en la <a href="https://xn--aodelcerebro-9gb.minciencia.gob.cl/curso/ia-interpretable-en-neurooncologia-decodificando-la-severidad-tumoral-mediante-resonancia-multimodal/" target="_blank" rel="noopener noreferrer">plataforma del Ministerio de Ciencia, Tecnología, Conocimiento e Innovación</a>.</p>
 </div>
+
+<!-- Sección Instagram Automática -->
+<div class="ig-section-header">
+  <h2>Últimas Publicaciones en Instagram</h2>
+  <a class="ig-follow-link" href="https://www.instagram.com/neuro_artint/" target="_blank" rel="noopener noreferrer">Ver perfil @neuro_artint →</a>
+</div>
+
+<behold-widget feed-id="WyvDvIsYkO3DNjuCcxB8"></behold-widget>
+<script>
+  (() => {
+    if(window.__bhldScript)return;window.__bhldScript=true;
+    const d=document,s=d.createElement("script");s.type="module";
+    s.src="https://w.behold.so/widget.js";setTimeout(()=>{d.head.append(s);},0);
+  })();
+</script>
 
 <!-- Bloque Oculto / Juego Interactivo de Fourier -->
 <details class="faq-accordion" id="faq-juego">
