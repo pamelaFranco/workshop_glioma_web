@@ -6,171 +6,429 @@ author_profile: true
 ---
 
 <style>
-  /* Contenedores visuales y tarjetas */
-  .support-card {
-    background: #ffffff;
-    border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+  .apoyos-container {
+    --primary-accent: #A63737;
+    --secondary-accent: #1e40af;
+    --text-main: #1e293b;
+    --text-muted: #475569;
+    --bg-surface: #ffffff;
+    --bg-subtle: #f8fafc;
+    --border-color: #e2e8f0;
+    color: var(--text-main);
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  /* Encabezados de sección */
+  .apoyos-section {
+    margin-bottom: 2.75rem;
+  }
+  .apoyos-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 1.25rem 0;
+    padding-bottom: 0.65rem;
+    border-bottom: 2px solid var(--border-color);
+    position: relative;
+  }
+  .apoyos-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 64px;
+    height: 2px;
+    background-color: var(--primary-accent);
+  }
+  .apoyos-sub {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem 0;
+  }
+
+  /* Tarjeta destacada (Alianza REBECCA-IA) */
+  .featured-alliance {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--primary-accent);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  }
+  .featured-top {
     display: flex;
     align-items: center;
     gap: 24px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 18px;
+  }
+  .featured-logo {
+    flex: 0 0 190px;
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  }
+  .featured-logo img {
+    width: 100%;
+    max-width: 170px;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+  .inst-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .inst-pill {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
+  .inst-pill strong {
+    display: block;
+    color: #0f172a;
+    margin-bottom: 2px;
+  }
+  .inst-pill span {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+  }
+
+  /* Tarjetas de respaldo / patrocinadores */
+  .support-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   }
   .support-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    border-color: #cbd5e1;
   }
-
   .support-logo-wrapper {
-    flex: 0 0 180px;
+    flex: 0 0 175px;
+    height: 105px;
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 10px;
+    padding: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .support-logo-wrapper img {
+  .support-logo-wrapper a {
+    border-bottom: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    max-width: 180px;
-    height: auto;
-    display: block;
-    object-fit: contain;
+    height: 100%;
   }
-
+  .support-logo-wrapper img {
+    max-width: 155px;
+    max-height: 82px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
   .support-content {
     flex: 1;
-    line-height: 1.6;
-    color: #333333;
-    font-size: 0.95rem;
+    color: var(--text-main);
+    font-size: 0.94rem;
+  }
+  .support-content p {
+    margin: 0 0 10px 0;
+  }
+  .support-content p:last-child {
+    margin-bottom: 0;
   }
 
-  /* Cajas informativas / Callouts */
-  .info-box {
-    background-color: #f8f9fa;
-    border-left: 4px solid #A63737;
-    padding: 16px 20px;
-    border-radius: 0 8px 8px 0;
-    margin: 20px 0;
+  /* Cajas informativas (Financiamiento e Idioma) */
+  .callout-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 22px;
+    border-radius: 10px;
+    margin: 16px 0;
   }
-  
-  .language-box {
-    background-color: #f0f4f8;
-    border-left: 4px solid #2b5797;
-    padding: 16px 20px;
-    border-radius: 0 8px 8px 0;
-    margin: 20px 0;
+  .callout-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+  .callout-funding {
+    background-color: #fdf8f8;
+    border: 1px solid #f3d8d8;
+    border-left: 4px solid var(--primary-accent);
+  }
+  .callout-funding .callout-icon {
+    background-color: #fae6e6;
+    color: var(--primary-accent);
+  }
+  .project-badge {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid #e2c2c2;
+    color: var(--primary-accent);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
+  .callout-language {
+    background-color: #f4f7fb;
+    border: 1px solid #dbe5f1;
+    border-left: 4px solid var(--secondary-accent);
     font-size: 0.92rem;
-    line-height: 1.5;
+  }
+  .callout-language .callout-icon {
+    background-color: #e0eaf8;
+    color: var(--secondary-accent);
   }
 
-  /* Layout adaptable para móviles */
-  @media (max-width: 600px) {
+  /* Grid de canales de contacto */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 16px 18px;
+    text-decoration: none !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .contact-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-accent) !important;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+  }
+  .contact-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #0f172a;
+  }
+  .contact-card-header svg {
+    color: var(--primary-accent);
+    flex-shrink: 0;
+  }
+  .contact-card-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+  .contact-card-link {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--primary-accent);
+    margin-top: auto;
+    padding-top: 4px;
+  }
+
+  /* Responsividad */
+  @media (max-width: 640px) {
+    .featured-top,
     .support-card {
       flex-direction: column;
-      align-items: center;
       text-align: center;
       gap: 16px;
     }
+    .featured-logo,
     .support-logo-wrapper {
       flex: initial;
+      width: 100%;
+      max-width: 220px;
+    }
+    .callout-box {
+      flex-direction: column;
+      gap: 12px;
     }
   }
 </style>
 
-<h2>Alianza e Integración Internacional</h2>
-<p>Este workshop se presenta en el marco de <strong>REBECCA-IA</strong>, una iniciativa financiada por el Programa Iberoamericano de Ciencia y Tecnología para el Desarrollo (CYTED) e impulsada por el <a href="https://www.itm.edu.co" target="_blank" rel="noopener noreferrer">Instituto Tecnológico de Medellín (ITM)</a>.</p>
+<div class="apoyos-container">
 
-<p>Desde la red <strong>REBECCA-IA</strong>, el evento cuenta con la participación de las siguientes instituciones internacionales:</p>
-<ul>
-  <li><strong>Institución Universitaria ITM</strong> (Medellín, Colombia)</li>
-  <li><strong>Universidad Militar Nueva Granada</strong> (Bogotá, Colombia)</li>
-  <li><strong>Universidad de Zacatecas</strong> (Zacatecas, México)</li>
-</ul>
+  <!-- SECCIÓN 1: ALIANZA -->
+  <section class="apoyos-section">
+    <h2 class="apoyos-heading">Alianza e Integración Internacional</h2>
+    <div class="featured-alliance">
+      <div class="featured-top">
+        <div class="featured-logo">
+          <a href="https://www.itm.edu.co" target="_blank" rel="noopener noreferrer" style="border-bottom: none;">
+            <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/rebeccaia.jpg" alt="Logo REBECCA-IA" />
+          </a>
+        </div>
+        <div>
+          <p style="margin-top: 0;">Este workshop se presenta en el marco de <strong>REBECCA-IA</strong>, una iniciativa financiada por el Programa Iberoamericano de Ciencia y Tecnología para el Desarrollo (CYTED) e impulsada por el <a href="https://www.itm.edu.co" target="_blank" rel="noopener noreferrer">Instituto Tecnológico de Medellín (ITM)</a>.</p>
+          <p style="margin-bottom: 0; color: var(--text-muted); font-size: 0.9rem;">Instituciones internacionales participantes desde la red <strong>REBECCA-IA</strong>:</p>
+        </div>
+      </div>
+      <div class="inst-grid">
+        <div class="inst-pill">
+          <strong>Institución Universitaria ITM</strong>
+          <span>Medellín, Colombia</span>
+        </div>
+        <div class="inst-pill">
+          <strong>Univ. Militar Nueva Granada</strong>
+          <span>Bogotá, Colombia</span>
+        </div>
+        <div class="inst-pill">
+          <strong>Universidad de Zacatecas</strong>
+          <span>Zacatecas, México</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div style="margin: 20px 0 30px 0;">
-  <a href="https://www.itm.edu.co" target="_blank" rel="noopener noreferrer" style="border-bottom: none; display: inline-block;">
-    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/rebeccaia.jpg" alt="Logo REBECCA-IA" style="width: 200px; max-width: 100%; height: auto; border-radius: 6px;"/>
-  </a>
-</div>
+  <!-- SECCIÓN 2: RECONOCIMIENTO NACIONAL -->
+  <section class="apoyos-section">
+    <h2 class="apoyos-heading">Reconocimiento Nacional</h2>
+    <div class="support-card">
+      <div class="support-logo-wrapper">
+        <a href="https://i-health.cl/" target="_blank" rel="noopener noreferrer">
+          <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/iHEALTH.png" alt="Logo iHEALTH" />
+        </a>
+      </div>
+      <div class="support-content">
+        <p>Agradecemos el valioso apoyo de <strong>iHEALTH</strong> (<em>Instituto Milenio en Ingeniería e Inteligencia Artificial para la Salud</em>), centro de excelencia dedicado al desarrollo e innovación tecnológica para la salud, impulsando la investigación interdisciplinaria y el avance del análisis avanzado de imágenes médicas.</p>
+      </div>
+    </div>
+  </section>
 
-<hr />
+  <!-- SECCIÓN 3: RECONOCIMIENTO INTERNACIONAL -->
+  <section class="apoyos-section">
+    <h2 class="apoyos-heading">Reconocimiento Internacional</h2>
 
-<h2>Reconocimiento Nacional</h2>
-<!-- Bloque iHEALTH -->
-<div class="support-card">
-  <div class="support-logo-wrapper">
-    <a href="https://i-health.cl/" target="_blank" rel="noopener noreferrer" style="border-bottom: none;">
-      <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/iHEALTH.png" alt="Logo iHEALTH" />
-    </a>
-  </div>
-  <div class="support-content">
-    Agradecemos el valioso apoyo de <strong>iHEALTH</strong> (<em>Instituto Milenio en Ingeniería e Inteligencia Artificial para la Salud</em>), centro de excelencia dedicado al desarrollo e innovación tecnológica para la salud, impulsando la investigación interdisciplinaria y el avance del análisis avanzado de imágenes médicas.
-  </div>
-</div>
+    <div class="support-card">
+      <div class="support-logo-wrapper">
+        <a href="https://www.ismrm.org/ismrt/" target="_blank" rel="noopener noreferrer">
+          <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/ISMRT.png" alt="Logo ISMRT" />
+        </a>
+      </div>
+      <div class="support-content">
+        <p>Este workshop y su entorno de laboratorios virtuales cuentan con el <strong>respaldo oficial (Endorsement) de la ISMRT</strong> (<em>International Society for Magnetic Resonance Technicians</em>), ratificado por su Junta Ejecutiva durante la reunión anual en Ciudad del Cabo, Sudáfrica, 2026.</p>
+        <p>Para conocer más sobre la división y sus directrices internacionales, visite el sitio oficial de la <a href="https://www.ismrm.org/ismrt/" target="_blank" rel="noopener noreferrer"><strong>ISMRT International</strong></a>.</p>
+      </div>
+    </div>
 
-<hr />
+    <div class="support-card">
+      <div class="support-logo-wrapper">
+        <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/ieee-embs.png" alt="Logo IEEE EMBS" />
+      </div>
+      <div class="support-content">
+        <p>Asimismo, esta iniciativa cuenta con el valioso <strong>respaldo técnico y académico del Capítulo EMBS</strong> (<em>Engineering in Medicine and Biology Society</em>) de la <strong>IEEE</strong>, fortaleciendo el desarrollo y la difusión de la ingeniería biomédica y la inteligencia artificial en el ámbito de la salud.</p>
+      </div>
+    </div>
 
+    <div class="support-card">
+      <div class="support-logo-wrapper">
+        <a href="https://www.guerbet.com" target="_blank" rel="noopener noreferrer">
+          <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/guerbet.jpg" alt="Logo Guerbet" />
+        </a>
+      </div>
+      <div class="support-content">
+        <p>Agradecemos también el destacado <strong>apoyo y colaboración de Guerbet</strong>, líder global en soluciones de imagen médica y medios de contraste, cuyo compromiso contribuye activamente al éxito de este espacio de formación y actualización en neurorradiología avanzada.</p>
+      </div>
+    </div>
+  </section>
 
-<h2>Reconocimiento Internacional</h2>
+  <!-- SECCIÓN 4: AGRADECIMIENTOS -->
+  <section class="apoyos-section">
+    <h2 class="apoyos-heading">Agradecimientos</h2>
+    <div class="callout-box callout-funding">
+      <div class="callout-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+      </div>
+      <div>
+        <p style="margin: 0;">Este trabajo fue financiado por el Concurso Endowment I + D en Salud de la <strong>Universidad Andrés Bello (UNAB) 2025</strong>, proyecto <span class="project-badge">DI-07-25/ICS</span>.</p>
+      </div>
+    </div>
+  </section>
 
-<!-- Bloque ISMRT -->
-<div class="support-card">
-  <div class="support-logo-wrapper">
-    <a href="https://www.ismrm.org/ismrt/" target="_blank" rel="noopener noreferrer" style="border-bottom: none;">
-      <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/ISMRT.png" alt="Logo ISMRT" />
-    </a>
-  </div>
-  <div class="support-content">
-    Este workshop y su entorno de laboratorios virtuales cuentan con el <strong>respaldo oficial (Endorsement) de la ISMRT</strong> (<em>International Society for Magnetic Resonance Technicians</em>), ratificado por su Junta Ejecutiva durante la reunión anual en Ciudad del Cabo, Sudáfrica, 2026.<br /><br />
-    Para conocer más sobre la división y sus directrices internacionales, visite el sitio oficial de la <a href="https://www.ismrm.org/ismrt/" target="_blank" rel="noopener noreferrer"><strong>ISMRT International</strong></a>.
-  </div>
-</div>
+  <!-- SECCIÓN 5: CONTACTO E INTERNACIONALIZACIÓN -->
+  <section class="apoyos-section" style="margin-bottom: 1rem;">
+    <h2 class="apoyos-heading">Contacto, Soporte e Internacionalización</h2>
 
-<!-- Bloque IEEE EMBS -->
-<div class="support-card">
-  <div class="support-logo-wrapper">
-    <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/ieee-embs.png" alt="Logo IEEE EMBS" />
-  </div>
-  <div class="support-content">
-    Asimismo, esta iniciativa cuenta con el valioso <strong>respaldo técnico y académico del Capítulo EMBS</strong> (<em>Engineering in Medicine and Biology Society</em>) de la <strong>IEEE</strong>, fortaleciendo el desarrollo y la difusión de la ingeniería biomédica y la inteligencia artificial en el ámbito de la salud.
-  </div>
-</div>
+    <h3 class="apoyos-sub">Contacto y Soporte Técnico</h3>
+    <p style="margin-top: 0;">Si tienes dudas académicas, consultas sobre las inscripciones o experimentas problemas técnicos al ejecutar los cuadernos de Google Colab o de forma local, puedes comunicarte a través de los siguientes canales:</p>
 
-<!-- Bloque Guerbet -->
-<div class="support-card">
-  <div class="support-logo-wrapper">
-    <a href="https://www.guerbet.com" target="_blank" rel="noopener noreferrer" style="border-bottom: none;">
-      <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/guerbet.jpg" alt="Logo Guerbet" />
-    </a>
-  </div>
-  <div class="support-content">
-    Agradecemos también el destacado <strong>apoyo y colaboración de Guerbet</strong>, líder global en soluciones de imagen médica y medios de contraste, cuyo compromiso contribuye activamente al éxito de este espacio de formación y actualización en neurorradiología avanzada.
-  </div>
-</div>
+    <div class="contact-grid">
+      <a class="contact-card" href="https://github.com/pamelaFranco/workshop_glioma/issues" target="_blank" rel="noopener noreferrer">
+        <div class="contact-card-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <span>Reportar un problema</span>
+        </div>
+        <span class="contact-card-desc">Abre un Issue detallando errores de código o ejecución en los notebooks.</span>
+        <span class="contact-card-link">GitHub Issues &rarr;</span>
+      </a>
 
-<hr />
+      <a class="contact-card" href="mailto:neurooncologia.ia@gmail.com">
+        <div class="contact-card-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>Consultas Generales</span>
+        </div>
+        <span class="contact-card-desc">Escríbenos directamente para dudas académicas o de inscripción.</span>
+        <span class="contact-card-link">neurooncologia.ia@gmail.com</span>
+      </a>
 
-<h2>Agradecimientos</h2>
-<div class="info-box">
-  <p style="margin: 0;">Este trabajo fue financiado por el Concurso Endowment I + D en Salud de la <strong>Universidad Andrés Bello (UNAB) 2025</strong>, proyecto <code>DI-07-25/ICS</code>.</p>
-</div>
+      <a class="contact-card" href="https://www.instagram.com/neuro_artint/" target="_blank" rel="noopener noreferrer">
+        <div class="contact-card-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          <span>Comunidad</span>
+        </div>
+        <span class="contact-card-desc">Síguenos y envíanos mensajes directos para novedades del workshop.</span>
+        <span class="contact-card-link">@neuro_artint &rarr;</span>
+      </a>
+    </div>
 
-<hr />
+    <h3 class="apoyos-sub" style="margin-top: 2rem;">Language / Idioma</h3>
+    <div class="callout-box callout-language">
+      <div class="callout-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div>
+        <p style="margin-top: 0; margin-bottom: 8px;"><em>The materials, documentation, and interactive notebooks in this repository are written in <strong>Spanish</strong> to support the local Latin American neuro-oncology and medical physics community.</em></p>
+        <p style="margin-bottom: 0;"><strong>Non-Spanish speakers:</strong> You can easily run and translate the Google Colab notebooks using standard browser translation extensions. The underlying Python code and medical imaging libraries (PyRadiomics, NiLearn, DIPY) follow international standards.</p>
+      </div>
+    </div>
+  </section>
 
-<h2>Contacto, Soporte e Internacionalización</h2>
-
-<h3>Contacto y Soporte Técnico</h3>
-<p>Si tienes dudas académicas, consultas sobre las inscripciones o experimentas problemas técnicos al ejecutar los cuadernos de Google Colab o de forma local, puedes comunicarte a través de los siguientes canales:</p>
-
-<ul>
-  <li><strong>Reportar un problema:</strong> Abre un <a href="https://github.com/pamelaFranco/workshop_glioma/issues" target="_blank" rel="noopener noreferrer">Issue en GitHub</a> detallando el error.</li>
-  <li><strong>Consultas Generales:</strong> Escríbenos directamente a <a href="mailto:neurooncologia.ia@gmail.com">neurooncologia.ia@gmail.com</a>.</li>
-  <li><strong>Comunidad:</strong> Síguenos y envíanos un mensaje en nuestro Instagram oficial <a href="https://www.instagram.com/neuro_artint/" target="_blank" rel="noopener noreferrer">@neuro_artint</a>.</li>
-</ul>
-
-<h3>Language / Idioma</h3>
-<div class="language-box">
-  <p style="margin-top: 0;"><em>The materials, documentation, and interactive notebooks in this repository are written in <strong>Spanish</strong> to support the local Latin American neuro-oncology and medical physics community.</em></p>
-  <p style="margin-bottom: 0;"><strong>Non-Spanish speakers:</strong> You can easily run and translate the Google Colab notebooks using standard browser translation extensions. The underlying Python code and medical imaging libraries (PyRadiomics, NiLearn, DIPY) follow international standards.</p>
 </div>
