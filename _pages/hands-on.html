@@ -1,737 +1,557 @@
 ---
-layout: archive
-title: "Charlas y Expositores"
-permalink: /charlas/
+layout: single
+title: "Hands-on"
+permalink: /hands-on/
 author_profile: true
+author: "Pamela Franco"
+excerpt: "Materiales y cuadernos interactivos en Google Colab para el laboratorio virtual de neurooncología de precisión."
+header:
+  teaser: https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson1.png
 ---
 
 <style>
   :root {
     --primary: #A63737;
-    --secondary: #074E8C;
-    --accent: #402C7C;
-    --dark: #0f172a;
-    --text-muted: #64748b;
-    --light-bg: #f8fafc;
-    --border-color: #e2e8f0;
+    --primary-dark: #822a2a;
+    --primary-soft: #fdf5f5;
+    --primary-border: rgba(166, 55, 55, 0.22);
+    --text-main: #1f2328;
+    --text-muted: #59636e;
+    --border-subtle: #e5e7eb;
+    --bg-subtle: #f8fafc;
   }
 
-  /* -------------------------------------------------------------
-     ENCABEZADOS DE SECCIÓN (Anula estilos base de Jekyll/Minimal Mistakes)
-  ------------------------------------------------------------- */
-  .ws-section-head {
-    margin: 42px 0 22px 0;
+  /* Contenedor Hero / Introducción */
+  .workshop-hero {
+    background: linear-gradient(135deg, #ffffff 0%, var(--primary-soft) 100%);
+    border: 1px solid var(--primary-border);
+    border-top: 4px solid var(--primary);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
   }
-
-  .ws-eyebrow {
-    display: block;
-    font-size: 0.72rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.4px;
-    color: var(--primary);
-    margin-bottom: 4px;
+  .workshop-hero p {
+    margin: 0 0 16px 0;
+    color: var(--text-main);
+    font-size: 0.96rem;
+    line-height: 1.6;
   }
-
-  .ws-section-head h2 {
-    margin: 0 0 8px 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    font-size: 1.55rem;
-    font-weight: 800;
-    color: var(--dark);
-    letter-spacing: -0.3px;
-  }
-
-  .ws-section-head p {
-    margin: 0 !important;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  /* -------------------------------------------------------------
-     1. ESTADÍSTICAS DESTACADAS (Grid Uniforme con Íconos)
-  ------------------------------------------------------------- */
-  .grid-stats {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 14px;
-    margin: 24px 0 40px 0;
-  }
-
-  .stat-card {
-    background: linear-gradient(180deg, #ffffff 0%, #fcfdfe 100%);
-    border: 1px solid var(--border-color);
-    border-top: 3px solid var(--primary);
-    padding: 18px 10px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+  .hero-meta {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
   }
-
-  .stat-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
-  }
-
-  .stat-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: rgba(166, 55, 55, 0.08);
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
-  }
-
-  .stat-value {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 2.1rem;
-    font-size: 1.65rem;
-    font-weight: 800;
-    color: var(--dark);
-    line-height: 1.1;
-    margin-bottom: 4px;
-  }
-
-  .stat-value.is-text {
-    font-size: 1.25rem;
-    color: var(--primary);
-  }
-
-  .stat-label {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.6px;
-  }
-
-  @media (max-width: 900px) {
-    .grid-stats { grid-template-columns: repeat(3, 1fr); }
-  }
-  @media (max-width: 550px) {
-    .grid-stats { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  /* -------------------------------------------------------------
-     2. DIRECTORIO DE EXPOSITORES (Tarjetas 2 Columnas)
-  ------------------------------------------------------------- */
-  .grid-speakers {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin-bottom: 45px;
-  }
-
-  .speaker-card {
+  .meta-pill {
     background: #ffffff;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 14px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
-    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .speaker-card:hover {
-    border-color: #cbd5e1;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
-  }
-
-  .speaker-main {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: 0;
-  }
-
-  .speaker-avatar {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: rgba(7, 78, 140, 0.09);
-    color: var(--secondary);
-    font-weight: 800;
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    letter-spacing: 0.5px;
-  }
-
-  .speaker-card:nth-child(even) .speaker-avatar {
-    background: rgba(64, 44, 124, 0.09);
-    color: var(--accent);
-  }
-
-  .speaker-info {
-    min-width: 0;
-  }
-
-  .speaker-name {
-    display: block;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--dark);
-    line-height: 1.25;
-    margin-bottom: 2px;
-  }
-
-  .speaker-topic {
-    display: block;
-    font-size: 0.82rem;
-    color: #475569;
-    line-height: 1.3;
-    margin-bottom: 5px;
-  }
-
-  .speaker-inst {
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 700;
-    color: var(--secondary);
-    background: #f1f5f9;
-    padding: 2px 8px;
-    border-radius: 4px;
-    letter-spacing: 0.3px;
-  }
-
-  .social-pill {
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-decoration: none !important;
-    flex-shrink: 0;
-    transition: all 0.2s ease;
   }
 
-  .social-pill.orcid {
-    background: #f4f9e8;
-    color: #4d6b10 !important;
-    border: 1px solid #d9ebb3;
-  }
-  .social-pill.orcid:hover {
-    background: #a6ce39;
-    color: #ffffff !important;
-    border-color: #a6ce39;
-  }
-
-  .social-pill.linkedin {
-    background: #eef6fb;
-    color: #00669c !important;
-    border: 1px solid #cce3f2;
-  }
-  .social-pill.linkedin:hover {
-    background: #0077b5;
-    color: #ffffff !important;
-    border-color: #0077b5;
-  }
-
-  @media (max-width: 768px) {
-    .grid-speakers { grid-template-columns: 1fr; }
-  }
-
-  /* -------------------------------------------------------------
-     3. GRID DE FASES DEL WORKSHOP (Codificado por Bloque Temático)
-  ------------------------------------------------------------- */
-  .grid-phases {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin: 22px 0 40px 0;
-  }
-
-  .phase-card {
-    --phase-color: var(--secondary);
-    background: #ffffff;
-    border: 1px solid var(--border-color);
-    border-left: 4px solid var(--phase-color);
-    border-radius: 10px;
-    padding: 18px 18px 18px 16px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.02);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  /* Módulo 1 (Fases 1-3): Física RM -> Azul */
-  .phase-card.mod-physics { --phase-color: var(--secondary); }
-  /* Módulo 2 (Fases 4-6): Conectividad y Función -> Púrpura */
-  .phase-card.mod-func { --phase-color: var(--accent); }
-  /* Módulo 3 (Fases 7-9): Radiómica e IA -> Burdeo */
-  .phase-card.mod-ai { --phase-color: var(--primary); }
-
-  .phase-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
-  }
-
-  .phase-watermark {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    font-size: 2.1rem;
-    font-weight: 900;
-    color: var(--phase-color);
-    opacity: 0.07;
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
-  }
-
-  .phase-badge {
-    display: inline-block;
-    background: color-mix(in srgb, var(--phase-color) 10%, transparent);
-    color: var(--phase-color);
-    font-weight: 800;
-    font-size: 0.7rem;
-    padding: 3px 8px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-  }
-
-  .phase-title {
-    font-weight: 700;
-    color: var(--dark);
-    font-size: 0.98rem;
-    margin: 0 0 6px 0 !important;
-    line-height: 1.3;
-  }
-
-  .phase-desc {
-    font-size: 0.84rem;
-    color: var(--text-muted);
-    margin: 0 !important;
-    line-height: 1.45;
-  }
-
-  @media (max-width: 900px) {
-    .grid-phases { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 600px) {
-    .grid-phases { grid-template-columns: 1fr; }
-  }
-
-  /* -------------------------------------------------------------
-     4. BANNER CTA PROGRAMA COMPLETO
-  ------------------------------------------------------------- */
-  .cta-banner {
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 30px 24px;
-    text-align: center;
-    margin: 40px 0 30px 0;
-  }
-
-  .cta-banner h3 {
-    margin: 0 0 6px 0 !important;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--dark);
-  }
-
-  .cta-banner p {
-    margin: 0 0 20px 0 !important;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-  }
-
-  .btn-pdf-cta {
+  /* Botón Principal GitHub */
+  .btn-github {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     background-color: var(--primary);
     color: #ffffff !important;
-    padding: 13px 30px;
+    padding: 10px 20px;
+    border-radius: 8px;
     text-decoration: none !important;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 0.3px;
-    box-shadow: 0 4px 14px rgba(166, 55, 55, 0.25);
-    transition: all 0.25s ease;
-    border: 2px solid var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 6px rgba(166, 55, 55, 0.28);
+    transition: all 0.2s ease;
+  }
+  .btn-github:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(166, 55, 55, 0.35);
   }
 
-  .btn-pdf-cta:hover {
-    background-color: #ffffff;
+  /* Encabezados de Bloque / Módulo */
+  .block-header {
+    background: linear-gradient(90deg, var(--bg-subtle) 0%, #ffffff 100%);
+    border-left: 4px solid var(--primary);
+    border-top: 1px solid var(--border-subtle);
+    border-right: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 14px 18px;
+    border-radius: 0 10px 10px 0;
+    margin: 38px 0 18px 0;
+  }
+  .block-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+  .block-header h3 {
+    margin: 0 !important;
+    color: var(--text-main);
+    font-size: 1.12rem;
+    font-weight: 700;
+  }
+  .block-header p {
+    margin: 4px 0 0 0 !important;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  /* Contenedores Grid (3 columnas fijas en desktop para evitar filas 2+1) */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  @media (max-width: 820px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 540px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Tarjetas */
+  .card-handson {
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  }
+  .card-handson:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(166, 55, 55, 0.1);
+    border-color: var(--primary);
+  }
+
+  /* Contenedor de imagen con zoom y badge */
+  .card-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-subtle);
+    background-color: #f1f5f9;
+  }
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+  .card-handson:hover .card-image {
+    transform: scale(1.05);
+  }
+  .card-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(4px);
+    color: var(--primary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 6px;
+    border: 1px solid var(--primary-border);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-body {
+    padding: 15px 15px 10px 15px;
+  }
+  .card-title {
+    margin: 0 0 7px 0 !important;
+    color: var(--text-main);
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.32;
+  }
+  .card-text {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    margin: 0 !important;
+    line-height: 1.48;
+  }
+
+  .card-footer {
+    padding: 8px 15px 15px 15px;
+  }
+
+  .btn-colab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background-color: var(--primary-soft);
+    border: 1px solid var(--primary-border);
     color: var(--primary) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(166, 55, 55, 0.2);
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.82rem;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .btn-colab:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(166, 55, 55, 0.25);
+  }
+
+  /* Grilla Estructura del Repositorio */
+  .repo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+  @media (max-width: 600px) {
+    .repo-grid { grid-template-columns: 1fr; }
+  }
+  .repo-item {
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+  .repo-item strong {
+    display: block;
+    color: var(--text-main);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.86rem;
+    margin-bottom: 3px;
+  }
+
+  /* Píldoras de Requisitos Técnicos */
+  .tech-box {
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    margin-top: 14px;
+  }
+  .tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .tech-pill {
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-main);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  .tech-pill.python-ver {
+    background: var(--primary-soft);
+    border-color: var(--primary-border);
+    color: var(--primary);
+    font-weight: 700;
   }
 </style>
 
-<!-- 1. ESTADÍSTICAS DESTACADAS -->
-<div class="grid-stats">
-  <div class="stat-card">
-    <div class="stat-icon">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-    </div>
-    <span class="stat-value">14</span>
-    <span class="stat-label">Expositores</span>
+<div class="workshop-hero">
+  <p>Este repositorio reúne los materiales desarrollados por <strong>Pamela Franco</strong> para el laboratorio virtual sobre <strong>neurooncología de precisión</strong>. El workshop integra nueve fases críticas del análisis cuantitativo de imágenes médicas, organizadas progresivamente en tres bloques metodológicos.</p>
+  
+  <div class="hero-meta">
+    <span class="meta-pill">📚 3 Bloques Metodológicos</span>
+    <span class="meta-pill">📓 9 Cuadernos Interactivos</span>
+    <span class="meta-pill">☁️ Ejecución directa en Google Colab</span>
   </div>
 
-  <div class="stat-card">
-    <div class="stat-icon">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-    </div>
-    <span class="stat-value">8 hrs</span>
-    <span class="stat-label">De Contenido</span>
-  </div>
-
-  <div class="stat-card">
-    <div class="stat-icon">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-    </div>
-    <span class="stat-value">9</span>
-    <span class="stat-label">Sesiones Prácticas</span>
-  </div>
-
-  <div class="stat-card">
-    <div class="stat-icon">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-    </div>
-    <span class="stat-value is-text">Híbrido</span>
-    <span class="stat-label">Formato Evento</span>
-  </div>
-
-  <div class="stat-card">
-    <div class="stat-icon">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-    </div>
-    <span class="stat-value is-text">Pósteres</span>
-    <span class="stat-label">Competencia</span>
-  </div>
-</div>
-
-<!-- 2. DIRECTORIO DE EXPOSITORES -->
-<div class="ws-section-head">
-  <span class="ws-eyebrow">Panel Académico y Clínico</span>
-  <h2>Expositores y Especialistas</h2>
-  <p>Equipo multidisciplinario de expertos en física médica, ingeniería, radiología y neurooncología:</p>
-</div>
-
-<div class="grid-speakers">
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">HR</div>
-      <div class="speaker-info">
-        <span class="speaker-name">Dr. Héctor Ramos</span>
-        <span class="speaker-topic">Neurooncología Clínica</span>
-        <span class="speaker-inst">(CIIC) FALP</span>
-      </div>
-    </div>
-    <a class="social-pill orcid" href="https://orcid.org/0000-0002-0612-8289" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 256 256"><path fill="currentColor" d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10zm113.5 67.5c0 33.4-24.7 53.5-58.1 53.5h-32.3V79.1h33.9c31.8 0 56.5 19.3 56.5 53.6zm-15.9 0c0-25.2-16.8-39.8-41.8-39.8h-17.3v79.6h18.1c24.4 0 41-14.8 41-39.8z"/></svg>
-      ORCID
-    </a>
-  </div>
-
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">AC</div>
-      <div class="speaker-info">
-        <span class="speaker-name">TM. Alejandro Cerda</span>
-        <span class="speaker-topic">Protocolos Clínicos en Gliomas</span>
-        <span class="speaker-inst">UNAB · ISMRT</span>
-      </div>
-    </div>
-    <a class="social-pill linkedin" href="https://cl.linkedin.com/in/alejandro-cerda-escobar-53b13ba3" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-      LinkedIn
-    </a>
-  </div>
-
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">IE</div>
-      <div class="speaker-info">
-        <span class="speaker-name">Dr. Ignacio Espinoza</span>
-        <span class="speaker-topic">Física de la RM</span>
-        <span class="speaker-inst">UC</span>
-      </div>
-    </div>
-    <a class="social-pill orcid" href="https://orcid.org/0000-0003-2400-4498" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 256 256"><path fill="currentColor" d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10zm113.5 67.5c0 33.4-24.7 53.5-58.1 53.5h-32.3V79.1h33.9c31.8 0 56.5 19.3 56.5 53.6zm-15.9 0c0-25.2-16.8-39.8-41.8-39.8h-17.3v79.6h18.1c24.4 0 41-14.8 41-39.8z"/></svg>
-      ORCID
-    </a>
-  </div>
-
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">HM</div>
-      <div class="speaker-info">
-        <span class="speaker-name">Dr. Hernán Mella</span>
-        <span class="speaker-topic">Artefactos en RM</span>
-        <span class="speaker-inst">PUCV</span>
-      </div>
-    </div>
-    <a class="social-pill orcid" href="https://orcid.org/0000-0001-8712-146X" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 256 256"><path fill="currentColor" d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10zm113.5 67.5c0 33.4-24.7 53.5-58.1 53.5h-32.3V79.1h33.9c31.8 0 56.5 19.3 56.5 53.6zm-15.9 0c0-25.2-16.8-39.8-41.8-39.8h-17.3v79.6h18.1c24.4 0 41-14.8 41-39.8z"/></svg>
-      ORCID
-    </a>
-  </div>
-
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">CM</div>
-      <div class="speaker-info">
-        <span class="speaker-name">MSc. Cristian Montalba</span>
-        <span class="speaker-topic">Difusión y Tractografía</span>
-        <span class="speaker-inst">UC · iHEALTH</span>
-      </div>
-    </div>
-    <a class="social-pill orcid" href="https://orcid.org/0000-0003-3370-0233" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 256 256"><path fill="currentColor" d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10zm113.5 67.5c0 33.4-24.7 53.5-58.1 53.5h-32.3V79.1h33.9c31.8 0 56.5 19.3 56.5 53.6zm-15.9 0c0-25.2-16.8-39.8-41.8-39.8h-17.3v79.6h18.1c24.4 0 41-14.8 41-39.8z"/></svg>
-      ORCID
-    </a>
-  </div>
-
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">DC</div>
-      <div class="speaker-info">
-        <span class="speaker-name">Dra. M. Daniela Cornejo</span>
-        <span class="speaker-topic">Mapeo Funcional fMRI</span>
-        <span class="speaker-inst">UC</span>
-      </div>
-    </div>
-    <a class="social-pill orcid" href="https://orcid.org/0009-0003-0425-5721" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 256 256"><path fill="currentColor" d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10zm113.5 67.5c0 33.4-24.7 53.5-58.1 53.5h-32.3V79.1h33.9c31.8 0 56.5 19.3 56.5 53.6zm-15.9 0c0-25.2-16.8-39.8-41.8-39.8h-17.3v79.6h18.1c24.4 0 41-14.8 41-39.8z"/></svg>
-      ORCID
-    </a>
-  </div>
-
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">DO</div>
-      <div class="speaker-info">
-        <span class="speaker-name">Dr. David Ortiz-Puerta</span>
-        <span class="speaker-topic">PINNs y Modelado BOLD</span>
-        <span class="speaker-inst">UV · iHEALTH</span>
-      </div>
-    </div>
-    <a class="social-pill orcid" href="https://orcid.org/0000-0001-6285-3066" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 256 256"><path fill="currentColor" d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10zm113.5 67.5c0 33.4-24.7 53.5-58.1 53.5h-32.3V79.1h33.9c31.8 0 56.5 19.3 56.5 53.6zm-15.9 0c0-25.2-16.8-39.8-41.8-39.8h-17.3v79.6h18.1c24.4 0 41-14.8 41-39.8z"/></svg>
-      ORCID
-    </a>
-  </div>
-
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">AE</div>
-      <div class="speaker-info">
-        <span class="speaker-name">Dr. Antonio Eblen-Zajjur</span>
-        <span class="speaker-topic">Neurovascular y fNIRS</span>
-        <span class="speaker-inst">UA</span>
-      </div>
-    </div>
-    <a class="social-pill orcid" href="https://orcid.org/0000-0002-0077-0318" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 256 256"><path fill="currentColor" d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10zm113.5 67.5c0 33.4-24.7 53.5-58.1 53.5h-32.3V79.1h33.9c31.8 0 56.5 19.3 56.5 53.6zm-15.9 0c0-25.2-16.8-39.8-41.8-39.8h-17.3v79.6h18.1c24.4 0 41-14.8 41-39.8z"/></svg>
-      ORCID
-    </a>
-  </div>
-
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">JS</div>
-      <div class="speaker-info">
-        <span class="speaker-name">Dr. Julio Sotelo</span>
-        <span class="speaker-topic">Hemodinámica y FEM</span>
-        <span class="speaker-inst">USM · iHEALTH</span>
-      </div>
-    </div>
-    <a class="social-pill orcid" href="https://orcid.org/0000-0002-0915-5215" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 256 256"><path fill="currentColor" d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10zm113.5 67.5c0 33.4-24.7 53.5-58.1 53.5h-32.3V79.1h33.9c31.8 0 56.5 19.3 56.5 53.6zm-15.9 0c0-25.2-16.8-39.8-41.8-39.8h-17.3v79.6h18.1c24.4 0 41-14.8 41-39.8z"/></svg>
-      ORCID
-    </a>
-  </div>
-
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">DM</div>
-      <div class="speaker-info">
-        <span class="speaker-name">Dr. Domingo Mery</span>
-        <span class="speaker-topic">Machine Learning</span>
-        <span class="speaker-inst">UC · iHEALTH · CENIA</span>
-      </div>
-    </div>
-    <a class="social-pill orcid" href="https://orcid.org/0000-0003-4748-3882" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 256 256"><path fill="currentColor" d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10zm113.5 67.5c0 33.4-24.7 53.5-58.1 53.5h-32.3V79.1h33.9c31.8 0 56.5 19.3 56.5 53.6zm-15.9 0c0-25.2-16.8-39.8-41.8-39.8h-17.3v79.6h18.1c24.4 0 41-14.8 41-39.8z"/></svg>
-      ORCID
-    </a>
-  </div>
-
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">PC</div>
-      <div class="speaker-info">
-        <span class="speaker-name">Dra. Paola Caprile</span>
-        <span class="speaker-topic">Radiómica</span>
-        <span class="speaker-inst">UC · iHEALTH</span>
-      </div>
-    </div>
-    <a class="social-pill orcid" href="https://orcid.org/0000-0001-7060-262X" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 256 256"><path fill="currentColor" d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10zm113.5 67.5c0 33.4-24.7 53.5-58.1 53.5h-32.3V79.1h33.9c31.8 0 56.5 19.3 56.5 53.6zm-15.9 0c0-25.2-16.8-39.8-41.8-39.8h-17.3v79.6h18.1c24.4 0 41-14.8 41-39.8z"/></svg>
-      ORCID
-    </a>
-  </div>
-
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">PF</div>
-      <div class="speaker-info">
-        <span class="speaker-name">Dra. Pamela Franco</span>
-        <span class="speaker-topic">IA e Interpretabilidad</span>
-        <span class="speaker-inst">UNAB</span>
-      </div>
-    </div>
-    <a class="social-pill orcid" href="https://orcid.org/0000-0001-7629-3653" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 256 256"><path fill="currentColor" d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10zm113.5 67.5c0 33.4-24.7 53.5-58.1 53.5h-32.3V79.1h33.9c31.8 0 56.5 19.3 56.5 53.6zm-15.9 0c0-25.2-16.8-39.8-41.8-39.8h-17.3v79.6h18.1c24.4 0 41-14.8 41-39.8z"/></svg>
-      ORCID
-    </a>
-  </div>
-
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">DM</div>
-      <div class="speaker-info">
-        <span class="speaker-name">Dr. Diego Mellado</span>
-        <span class="speaker-topic">Interpretabilidad Visual</span>
-        <span class="speaker-inst">UNAB · ITISB</span>
-      </div>
-    </div>
-    <a class="social-pill orcid" href="https://orcid.org/0000-0001-8078-253X" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 256 256"><path fill="currentColor" d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10zm113.5 67.5c0 33.4-24.7 53.5-58.1 53.5h-32.3V79.1h33.9c31.8 0 56.5 19.3 56.5 53.6zm-15.9 0c0-25.2-16.8-39.8-41.8-39.8h-17.3v79.6h18.1c24.4 0 41-14.8 41-39.8z"/></svg>
-      ORCID
-    </a>
-  </div>
-
-  <div class="speaker-card">
-    <div class="speaker-main">
-      <div class="speaker-avatar">LJ</div>
-      <div class="speaker-info">
-        <span class="speaker-name">Dra. Liliana Jorquera</span>
-        <span class="speaker-topic">IEEE EMBS Chile</span>
-        <span class="speaker-inst">UNAB · EMBS</span>
-      </div>
-    </div>
-    <a class="social-pill orcid" href="https://orcid.org/0000-0002-6530-2080" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 256 256"><path fill="currentColor" d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10zm113.5 67.5c0 33.4-24.7 53.5-58.1 53.5h-32.3V79.1h33.9c31.8 0 56.5 19.3 56.5 53.6zm-15.9 0c0-25.2-16.8-39.8-41.8-39.8h-17.3v79.6h18.1c24.4 0 41-14.8 41-39.8z"/></svg>
-      ORCID
-    </a>
-  </div>
-</div>
-
-<!-- 3. FASES DEL WORKSHOP -->
-<div class="ws-section-head">
-  <span class="ws-eyebrow">Metodología Hands-On</span>
-  <h2>Introducción al Workshop y Fases Prácticas</h2>
-  <p>El laboratorio virtual sobre neurooncología de precisión integra nueve fases críticas de análisis de imágenes médicas:</p>
-</div>
-
-<div class="grid-phases">
-  <!-- Bloque 1: Física RM -->
-  <div class="phase-card mod-physics">
-    <span class="phase-watermark">01</span>
-    <span class="phase-badge">FASE 01 · FÍSICA RM</span>
-    <h3 class="phase-title">Fundamentos del Espacio K</h3>
-    <p class="phase-desc">Exploración práctica del dominio de la frecuencia en resonancia magnética.</p>
-  </div>
-
-  <div class="phase-card mod-physics">
-    <span class="phase-watermark">02</span>
-    <span class="phase-badge">FASE 02 · FÍSICA RM</span>
-    <h3 class="phase-title">Simulación de Secuencias</h3>
-    <p class="phase-desc">Modelado interactivo de las ecuaciones de Bloch para entender el contraste (<em>TR</em>, <em>TE</em>, <em>α</em>).</p>
-  </div>
-
-  <div class="phase-card mod-physics">
-    <span class="phase-watermark">03</span>
-    <span class="phase-badge">FASE 03 · FÍSICA RM</span>
-    <h3 class="phase-title">Física de Resonancia</h3>
-    <p class="phase-desc">Generación y análisis de mapas paramétricos (<em>T1</em> y <em>T2</em>).</p>
-  </div>
-
-  <!-- Bloque 2: Conectividad y Fisiología -->
-  <div class="phase-card mod-func">
-    <span class="phase-watermark">04</span>
-    <span class="phase-badge">FASE 04 · CONECTIVIDAD</span>
-    <h3 class="phase-title">Microestructura Tisular</h3>
-    <p class="phase-desc">Procesamiento de Tensores de Difusión (<em>DTI</em>) y reconstrucción tractográfica.</p>
-  </div>
-
-  <div class="phase-card mod-func">
-    <span class="phase-watermark">05</span>
-    <span class="phase-badge">FASE 05 · FUNCIÓN</span>
-    <h3 class="phase-title">Mapeo Funcional</h3>
-    <p class="phase-desc">Exploración de la dinámica de la señal <em>BOLD</em> y aplicaciones en <em>fMRI</em>.</p>
-  </div>
-
-  <div class="phase-card mod-func">
-    <span class="phase-watermark">06</span>
-    <span class="phase-badge">FASE 06 · FISIOLOGÍA</span>
-    <h3 class="phase-title">Hemodinámica y Biomecánica</h3>
-    <p class="phase-desc">Reconstrucción de la vasculatura mediante secuencias <em>TOF-MRA</em>.</p>
-  </div>
-
-  <!-- Bloque 3: Radiómica e IA -->
-  <div class="phase-card mod-ai">
-    <span class="phase-watermark">07</span>
-    <span class="phase-badge">FASE 07 · RADIÓMICA</span>
-    <h3 class="phase-title">Extracción de Radiómica</h3>
-    <p class="phase-desc">Extracción de características cuantitativas de grado médico desde imágenes digitales.</p>
-  </div>
-
-  <div class="phase-card mod-ai">
-    <span class="phase-watermark">08</span>
-    <span class="phase-badge">FASE 08 · IA CLÍNICA</span>
-    <h3 class="phase-title">Clasificación de Gliomas</h3>
-    <p class="phase-desc">Pipeline radiómico automatizado para diferenciar bajo (LGG) y alto grado (HGG) en T1.</p>
-  </div>
-
-  <div class="phase-card mod-ai">
-    <span class="phase-watermark">09</span>
-    <span class="phase-badge">FASE 09 · XAI</span>
-    <h3 class="phase-title">IA Interpretable</h3>
-    <p class="phase-desc">Decodificación de la severidad clínica mediante radiómica explicable con <em>SHAP</em>.</p>
-  </div>
-</div>
-
-<!-- 4. BANNER CTA PROGRAMA COMPLETO -->
-<div class="cta-banner">
-  <h3>¿Quieres revisar los horarios detallados de cada bloque?</h3>
-  <p>Descarga o visualiza el cronograma completo con las charlas magistrales y sesiones de laboratorio.</p>
-  <a class="btn-pdf-cta" href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/pamelaFranco/workshop_glioma/main/Programa/Charlas___Workshop_IA_Interpretable_Neurooncologia.pdf" target="_blank" rel="noopener">
-    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-      <polyline points="14 2 14 8 20 8"></polyline>
-      <line x1="16" y1="13" x2="8" y2="13"></line>
-      <line x1="16" y1="17" x2="8" y2="17"></line>
+  <a href="https://github.com/pamelaFranco/workshop_glioma" target="_blank" class="btn-github">
+    <svg height="18" width="18" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
     </svg>
-    Ver Programa Completo (PDF)
+    Repositorio Principal en GitHub (@pamelaFranco)
   </a>
+</div>
+
+<h2>Actividades del Workshop</h2>
+
+<!-- ================= BLOQUE 1 ================= -->
+<div class="block-header">
+  <span class="block-tag">Bloque I</span>
+  <h3>Fundamentos de Física de RM y Mapas Paramétricos</h3>
+  <p>Formación de imagen en el espacio K, simulación de contraste y mapeo de relajación tisular.</p>
+</div>
+
+<div class="grid-container">
+  <!-- Tarjeta 1 -->
+  <div class="card-handson">
+    <div>
+      <div class="card-img-wrapper">
+        <span class="card-badge">Hands-on I.A</span>
+        <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson1.png" alt="Espacio K" class="card-image" />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Espacio K y Formación de Imágenes</h4>
+        <p class="card-text">Comprender la relación entre el Espacio K y la imagen real mediante la Transformada de Fourier.</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/EspacioK.ipynb" target="_blank" class="btn-colab">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 15px;" />
+        Abrir en Colab
+      </a>
+    </div>
+  </div>
+
+  <!-- Tarjeta 2 -->
+  <div class="card-handson">
+    <div>
+      <div class="card-img-wrapper">
+        <span class="card-badge">Hands-on I.B</span>
+        <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson2.png" alt="Simulador de Secuencias" class="card-image" />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Simulador de Secuencias (Bloch)</h4>
+        <p class="card-text">Experimentar con parámetros de adquisición (TR, TE, &alpha;) y su efecto en el contraste del fantoma.</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/simulador_secuencias.ipynb" target="_blank" class="btn-colab">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 15px;" />
+        Abrir en Colab
+      </a>
+    </div>
+  </div>
+
+  <!-- Tarjeta 3 -->
+  <div class="card-handson">
+    <div>
+      <div class="card-img-wrapper">
+        <span class="card-badge">Hands-on II</span>
+        <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson3.png" alt="Mapas Paramétricos" class="card-image" />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Mapas Paramétricos (T1 y T2)</h4>
+        <p class="card-text">Calcular mapas de tiempos de relajación mediante modelos de ajuste no lineal para caracterizar tejidos.</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/T1_T2_maps.ipynb" target="_blank" class="btn-colab">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 15px;" />
+        Abrir en Colab
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= BLOQUE 2 ================= -->
+<div class="block-header">
+  <span class="block-tag">Bloque II</span>
+  <h3>Neuroimagen Avanzada (Microestructura, fMRI y Vasculatura)</h3>
+  <p>Evaluación de conectividad funcional, microestructura tisular y angiografía por resonancia.</p>
+</div>
+
+<div class="grid-container">
+  <!-- Tarjeta 4 -->
+  <div class="card-handson">
+    <div>
+      <div class="card-img-wrapper">
+        <span class="card-badge">Hands-on III</span>
+        <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson4.png" alt="Mapas de Difusión" class="card-image" />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Mapas de Difusión (DTI)</h4>
+        <p class="card-text">Obtener mapas de FA, MD, RD y AD para caracterizar la microestructura e infiltración tumoral.</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/DTI_mapas_difusion.ipynb" target="_blank" class="btn-colab">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 15px;" />
+        Abrir en Colab
+      </a>
+    </div>
+  </div>
+
+  <!-- Tarjeta 5 -->
+  <div class="card-handson">
+    <div>
+      <div class="card-img-wrapper">
+        <span class="card-badge">Hands-on IV</span>
+        <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson5.png" alt="Mapeo Funcional" class="card-image" />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Mapeo Funcional (fMRI)</h4>
+        <p class="card-text">Mapear la arquitectura funcional cerebral mediante el análisis de señales de baja frecuencia (rs-fMRI).</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/fMRI.ipynb" target="_blank" class="btn-colab">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 15px;" />
+        Abrir en Colab
+      </a>
+    </div>
+  </div>
+
+  <!-- Tarjeta 6 -->
+  <div class="card-handson">
+    <div>
+      <div class="card-img-wrapper">
+        <span class="card-badge">Hands-on V</span>
+        <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson6.png" alt="Hemodinámica Cerebral" class="card-image" />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Hemodinámica y Vasculatura</h4>
+        <p class="card-text">Reconstrucción 3D de la vasculatura cerebral mediante imágenes TOF-MRA y proyecciones MIP.</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/Vasculatura_Cerebral.ipynb" target="_blank" class="btn-colab">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 15px;" />
+        Abrir en Colab
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= BLOQUE 3 ================= -->
+<div class="block-header">
+  <span class="block-tag">Bloque III</span>
+  <h3>Radiómica e Inteligencia Artificial Interpretable</h3>
+  <p>Extracción de fenotipos digitales, machine learning y modelos explicables en neurooncología.</p>
+</div>
+
+<div class="grid-container">
+  <!-- Tarjeta 7 -->
+  <div class="card-handson">
+    <div>
+      <div class="card-img-wrapper">
+        <span class="card-badge">Hands-on VI</span>
+        <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson7.png" alt="Radiómica" class="card-image" />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Características y Textura (GLCM)</h4>
+        <p class="card-text">Cuantificar la heterogeneidad del glioma mediante la extracción de métricas radiómicas cuantitativas.</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/radiomics.ipynb" target="_blank" class="btn-colab">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 15px;" />
+        Abrir en Colab
+      </a>
+    </div>
+  </div>
+
+  <!-- Tarjeta 8 -->
+  <div class="card-handson">
+    <div>
+      <div class="card-img-wrapper">
+        <span class="card-badge">Hands-on VII.A</span>
+        <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson8.png" alt="Pipeline de Clasificación" class="card-image" />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Pipeline Radiómico (LGG vs. HGG)</h4>
+        <p class="card-text">Pipeline de Machine Learning para clasificar el grado tumoral a partir de firmas radiómicas.</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/ML.ipynb" target="_blank" class="btn-colab">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 15px;" />
+        Abrir en Colab
+      </a>
+    </div>
+  </div>
+
+  <!-- Tarjeta 9 -->
+  <div class="card-handson">
+    <div>
+      <div class="card-img-wrapper">
+        <span class="card-badge">Hands-on VII.B</span>
+        <img src="https://raw.githubusercontent.com/pamelaFranco/workshop_glioma_web/master/Figuras/handson9.png" alt="Explicabilidad SHAP" class="card-image" />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Predicción e Interpretabilidad (SHAP)</h4>
+        <p class="card-text">Modelar la severidad tumoral mediante Machine Learning interpretable (Caja Blanca) con análisis SHAP.</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://colab.research.google.com/github/pamelaFranco/workshop_glioma/blob/main/Code/Glioma_classification.ipynb" target="_blank" class="btn-colab">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Colab Logo" style="height: 15px;" />
+        Abrir en Colab
+      </a>
+    </div>
+  </div>
+</div>
+
+<hr style="margin: 40px 0 30px 0;" />
+
+<h2>Estructura del Repositorio</h2>
+<div class="repo-grid">
+  <div class="repo-item">
+    <strong>📁 Code/</strong>
+    Notebooks interactivos <code>.ipynb</code> correspondientes a cada <em>Hands-on</em>.
+  </div>
+  <div class="repo-item">
+    <strong>📊 Dataset/</strong>
+    Datos multimodales en formatos <code>.mat</code>, <code>.nii.gz</code>, <code>.dcm</code> y <code>.csv</code>.
+  </div>
+  <div class="repo-item">
+    <strong>🖼️ Figuras/</strong>
+    Recursos visuales, fantomas y diagramas explicativos del taller.
+  </div>
+  <div class="repo-item">
+    <strong>📝 Formato Abstract/</strong>
+    Plantillas para redactar el resumen (<em>abstract</em>) en Word y LaTeX.
+  </div>
+  <div class="repo-item">
+    <strong>🎞️ Template/</strong>
+    Formato editable de presentación (PPTX) e instrucciones para póster.
+  </div>
+  <div class="repo-item">
+    <strong>📅 Programa/</strong>
+    Cronograma detallado de las sesiones del workshop en formato PDF.
+  </div>
+</div>
+
+<h2 style="margin-top: 32px;">Requisitos Técnicos (Uso Local)</h2>
+<div class="tech-box">
+  <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted);">Si prefieres clonar el repositorio y ejecutar los cuadernos en tu propio entorno local, asegúrate de contar con:</p>
+  <div class="tech-pills">
+    <span class="tech-pill python-ver">Python 3.10+</span>
+    <span class="tech-pill">numpy</span>
+    <span class="tech-pill">pandas</span>
+    <span class="tech-pill">scipy</span>
+    <span class="tech-pill">matplotlib</span>
+    <span class="tech-pill">scikit-learn</span>
+    <span class="tech-pill">nibabel</span>
+    <span class="tech-pill">dipy</span>
+    <span class="tech-pill">nilearn</span>
+    <span class="tech-pill">pyradiomics</span>
+    <span class="tech-pill">shap</span>
+  </div>
 </div>
