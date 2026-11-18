@@ -49,11 +49,15 @@ header:
     color: var(--text-muted);
     font-size: 0.78rem;
     font-weight: 600;
-    padding: 4px 10px;
+    padding: 5px 11px;
     border-radius: 999px;
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
+  }
+  .meta-pill svg {
+    color: var(--primary);
+    flex-shrink: 0;
   }
 
   /* Botón Principal GitHub */
@@ -110,7 +114,7 @@ header:
     color: var(--text-muted);
   }
 
-  /* Contenedores Grid (3 columnas fijas en desktop para evitar filas 2+1) */
+  /* Contenedores Grid */
   .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -168,7 +172,7 @@ header:
     position: absolute;
     top: 10px;
     left: 10px;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(4px);
     color: var(--primary);
     font-size: 0.72rem;
@@ -243,12 +247,19 @@ header:
     color: var(--text-muted);
     line-height: 1.4;
   }
-  .repo-item strong {
-    display: block;
+  .repo-folder {
+    display: flex;
+    align-items: center;
+    gap: 7px;
     color: var(--text-main);
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 0.86rem;
-    margin-bottom: 3px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .repo-folder svg {
+    color: var(--primary);
+    flex-shrink: 0;
   }
 
   /* Píldoras de Requisitos Técnicos */
@@ -286,9 +297,18 @@ header:
   <p>Este repositorio reúne los materiales desarrollados por <strong>Pamela Franco</strong> para el laboratorio virtual sobre <strong>neurooncología de precisión</strong>. El workshop integra nueve fases críticas del análisis cuantitativo de imágenes médicas, organizadas progresivamente en tres bloques metodológicos.</p>
   
   <div class="hero-meta">
-    <span class="meta-pill">📚 3 Bloques Metodológicos</span>
-    <span class="meta-pill">📓 9 Cuadernos Interactivos</span>
-    <span class="meta-pill">☁️ Ejecución directa en Google Colab</span>
+    <span class="meta-pill">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+      3 Bloques Metodológicos
+    </span>
+    <span class="meta-pill">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+      9 Cuadernos Interactivos
+    </span>
+    <span class="meta-pill">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+      Ejecución directa en Google Colab
+    </span>
   </div>
 
   <a href="https://github.com/pamelaFranco/workshop_glioma" target="_blank" class="btn-github">
@@ -513,27 +533,45 @@ header:
 <h2>Estructura del Repositorio</h2>
 <div class="repo-grid">
   <div class="repo-item">
-    <strong>📁 Code/</strong>
+    <div class="repo-folder">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+      Code/
+    </div>
     Notebooks interactivos <code>.ipynb</code> correspondientes a cada <em>Hands-on</em>.
   </div>
   <div class="repo-item">
-    <strong>📊 Dataset/</strong>
+    <div class="repo-folder">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+      Dataset/
+    </div>
     Datos multimodales en formatos <code>.mat</code>, <code>.nii.gz</code>, <code>.dcm</code> y <code>.csv</code>.
   </div>
   <div class="repo-item">
-    <strong>🖼️ Figuras/</strong>
+    <div class="repo-folder">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+      Figuras/
+    </div>
     Recursos visuales, fantomas y diagramas explicativos del taller.
   </div>
   <div class="repo-item">
-    <strong>📝 Formato Abstract/</strong>
+    <div class="repo-folder">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+      Formato Abstract/
+    </div>
     Plantillas para redactar el resumen (<em>abstract</em>) en Word y LaTeX.
   </div>
   <div class="repo-item">
-    <strong>🎞️ Template/</strong>
+    <div class="repo-folder">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+      Template/
+    </div>
     Formato editable de presentación (PPTX) e instrucciones para póster.
   </div>
   <div class="repo-item">
-    <strong>📅 Programa/</strong>
+    <div class="repo-folder">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+      Programa/
+    </div>
     Cronograma detallado de las sesiones del workshop en formato PDF.
   </div>
 </div>
