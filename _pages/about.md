@@ -714,7 +714,7 @@ redirect_from:
   <h2>Sobre el Workshop</h2>
 </div>
 
-Este encuentro ofrece una **inmersión teórico-práctica** en el pipeline avanzado de la neurooncología de precisión. A través de un enfoque multidisciplinario, el programa aborda de forma integral el ciclo de vida del dato médico: desde la biología molecular del glioma y los principios físicos esenciales en la adquisición de Resonancia Magnética (RM), hasta el modelado predictivo de vanguardia mediante Inteligencia Artificial (IA) e interpretabilidad clínica.
+Este encuentro ofrece una inmersión teórico-práctica en el pipeline avanzado de la neurooncología de precisión. A través de un enfoque multidisciplinario, el programa aborda de forma integral el ciclo de vida del dato médico: desde la biología molecular del glioma y los principios físicos esenciales en la adquisición de Resonancia Magnética (RM), hasta el modelado predictivo de vanguardia mediante Inteligencia Artificial (IA) e interpretabilidad clínica.
 
 <div class="ws-pillars-grid">
   <div class="ws-pillar-card">
